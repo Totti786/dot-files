@@ -1,0 +1,15 @@
+/* colors */
+
+* {
+    BG:    #091213FF; 
+    BGA:   #091213FF;
+    FG:    #d7c2acFF;
+    BDR:   #50524AFF;
+    SEL:   #091213FF;
+    UGT:   #50524AFF;
+IMG:   #354848FF;
+ON:    #354848FF;
+OFF:   #50524AFF;
+
+}
+
