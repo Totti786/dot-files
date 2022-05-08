@@ -7,6 +7,8 @@ DIR="$HOME/.config/polybar"
 
 rofi_command="rofi -theme $DIR/rofi/themes/powermenu.rasi"
 
+current_desktop=$(wmctrl -m |sed -n 1p | sed -e 's/Name: //g') 
+
 uptime=$(uptime -p | sed -e 's/up //g')
 
 # Options
@@ -60,7 +62,13 @@ case $chosen in
     $logout)
 		ans=$($HOME/.config/polybar/rofi/bin/confirm &)
 		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
-			openbox --exit
+			if [[ $current_desktop == "Openbox" ]]; then
+				openbox --exit
+			elif [[ $current_desktop == "i3" ]]; then
+				i3 exit
+			elif [[ $current_desktop == "bspwm" ]]; then
+				bspc quit
+			fi
 		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
 			exit
         else
