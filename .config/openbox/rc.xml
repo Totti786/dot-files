@@ -64,7 +64,7 @@
     </font>
   </theme>
   <desktops>
-    <number>6</number>
+    <number>5</number>
     <firstdesk>0</firstdesk>
     <names>
       <name>1</name>
@@ -130,6 +130,11 @@
     <keybind key="W-5">
       <action name="GoToDesktop">
         <to>5</to>
+      </action>
+    </keybind>
+    <keybind key="W-6">
+      <action name="GoToDesktop">
+        <to>6</to>
       </action>
     </keybind>
     <!-- Move application to specific desktop -->
@@ -246,7 +251,7 @@
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
         <x>15</x>
-        <y>15</y>
+        <y>31</y>
         <height>97%</height>
         <width>32%</width>
       </action>
@@ -255,7 +260,7 @@
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
         <x>34%</x>
-        <y>15</y>
+        <y>31</y>
         <height>97%</height>
         <width>32%</width>
       </action>
@@ -264,7 +269,7 @@
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
         <x>-17</x>
-        <y>15</y>
+        <y>31</y>
         <height>97%</height>
         <width>32%</width>
       </action>
@@ -532,7 +537,7 @@
     </keybind>
     <keybind key="W-m">
       <action name="Execute">
-        <command>~/.config/polybar/rofi/bin/mpd</command>
+        <command>~/.config/polybar/rofi/bin/media</command>
       </action>
     </keybind>
     <keybind key="W-x">
@@ -672,7 +677,7 @@
     <!-- trayToggle -->
     <keybind key="W-S-m">
       <action name="Execute">
-        <command>/home/tarek/.scripts/trayToggle.sh</command>
+        <command> sh ~/.scripts/trayToggle.sh</command>
       </action>
     </keybind>
     <!-- Bluetooth Disconnect -->

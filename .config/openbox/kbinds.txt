@@ -1,111 +1,114 @@
-o W-1             	GoToDesktop
-o W-2             	GoToDesktop
-o W-3             	GoToDesktop
-o W-4             	GoToDesktop
-o W-5             	GoToDesktop
-o S-W-1           	SendToDesktop
-o S-W-2           	SendToDesktop
-o S-W-3           	SendToDesktop
-o S-W-4           	SendToDesktop
-o S-W-5           	SendToDesktop
-o A-Tab           	NextWindow
-o W-Tab           	NextWindow
-o W-Left          	UnmaximizeFull
-o W-Right         	UnmaximizeFull
-o W-Up            	MaximizeFull
-o W-Down          	UnmaximizeFull
-o W-k             	Unmaximize
-o W-h             	Unmaximize
-o W-j             	Unmaximize
-o W-l             	Unmaximize
-o A-z             	Unmaximize
-o A-x             	Unmaximize
-o A-c             	Unmaximize
-o W-KP_1          	UnmaximizeFull
-o W-KP_2          	UnmaximizeFull
-o W-KP_3          	UnmaximizeFull
-o W-KP_4          	UnmaximizeFull
-o W-KP_5          	MaximizeFull
-o W-KP_6          	UnmaximizeFull
-o W-KP_7          	UnmaximizeFull
-o W-KP_8          	UnmaximizeFull
-o W-KP_9          	UnmaximizeFull
-o W-A-Up          	MoveRelative
-o W-A-Down        	MoveRelative
-o W-A-Left        	MoveRelative
-o W-A-Right       	MoveRelative
-o C-A-Right       	ResizeRelative
-o C-A-Left        	ResizeRelative
-o C-A-Down        	ResizeRelative
-o C-A-Up          	ResizeRelative
-o W-S-Left        	SendToDesktopLeft
-o W-S-Right       	SendToDesktopRight
-x XF86AudioRaiseVolume	volume --inc
-x XF86AudioLowerVolume	volume --dec
-x XF86AudioMute   	volume --toggle
-x XF86AudioStop   	playerctl -a pause
-x XF86AudioPlay   	playerctl play-pause
-x XF86AudioPause  	playerctl play-pause
-x XF86AudioPrev   	playerctl previous
-x XF86AudioNext   	playerctl next
-x XF86Tools       	playerctld shift
-x XF86Search      	dmenu_run -nb '#071B21' -sf '#091D23' -sb '#61F3F4' -nf '#61F3F4'
-x XF86MonBrightnessUp	brightness --inc
-x XF86MonBrightnessDown	brightness --dec
-x Print           	flameshot full -p ~/Pictures/Screenshots
-x A-Print         	flameshot gui
-x S-Print         	flameshot full -c
-x C-Print         	takeshot --win
-x C-A-Print       	takeshot --area
-x W-Return        	alacritty
-x W-t             	sh /home/tarek/.config/bspwm/bin/bspterm
-x W-e             	thunar
-x W-f             	firefox
-x W-w             	geany
-x W-S-r           	rhythmbox
-x A-F1            	~/.config/polybar/rofi/bin/launcher
-x W-n             	networkmanager_dmenu
-x W-m             	~/.config/polybar/rofi/bin/mpd
-x W-S-s           	~/.config/openbox/rofi/bin/smusic
-x W-x             	~/.config/polybar/rofi/bin/powermenu
-x W-s             	~/.config/polybar/rofi/bin/screenshot
-x W-i             	~/.config/polybar/rofi/bin/network
-x W-r             	~/.config/polybar/rofi/bin/runner
-x W-p             	color-gpick
-x W-v             	~/.config/polybar/rofi/bin/launcher
-x C-A-t           	alacritty
-x C-A-v           	alacritty -e vim
-x C-A-n           	alacritty -e nvim
-x C-A-r           	alacritty -e ranger
-x C-A-h           	alacritty -e htop
-x C-A-b           	alacritty -e bashtop
-x C-A-l           	sh /home/tarek/.config/i3/bin/i3lock.sh
-x W-a             	aniwrapper
-x W-S-a           	alacritty -e aniwrapper -c
-x W-y             	ytfzf -fD
-x W-S-y           	alacritty -e ytfzf -tf
-x W-o             	obs
-x W-g             	evince
-x W-z             	discord --no-sandbox
-x W-S-c           	copyq show
-x W-S-b           	blueman-manager
-x W-S-v           	pavucontrol
-x W-S-d           	dmenu_run -nb '#071B21' -sf '#091D23' -sb '#61F3F4' -nf '#61F3F4'
-x W-S-m           	/home/tarek/.scripts/trayToggle.sh
-x W-S-O           	bluetoothctl disconnect
-x W-S-P           	bluetoothctl connect 00:00:00:00:11:3F
-o C-S-Escape      	Exit
-o C-S-BackSpace   	Restart
-o C-S-R           	Reconfigure
-x W-Escape        	xkill
-o W-c             	Close
-o W-q             	Close
-o A-F5            	Iconify
-o W-S-f           	ToggleMaximize
-o A-F7            	ToggleDecorations
-o W-d             	ToggleShowDesktop
-o A-r             	Resize
-o A-m             	Move
-o W-space         	root-menu
-o C-A-space       	app-menu
-o A-space         	client-menu
+2022-05-10	rc.xml KEYBINDS
+-------------------------------
+
+ 0	W-1           				GoToDesktop
+ 1	W-2           				GoToDesktop
+ 2	W-3           				GoToDesktop
+ 3	W-4           				GoToDesktop
+ 4	W-5           				GoToDesktop
+ 5	W-6           				GoToDesktop
+ 6	S-W-1         				SendToDesktop
+ 7	S-W-2         				SendToDesktop
+ 8	S-W-3         				SendToDesktop
+ 9	S-W-4         				SendToDesktop
+10	S-W-5         				SendToDesktop
+11	A-Tab         				NextWindow
+12	W-Tab         				NextWindow
+13	W-Left        				UnmaximizeFull
+14	W-Right       				UnmaximizeFull
+15	W-Up          				MaximizeFull
+16	W-Down        				UnmaximizeFull
+17	W-k           				Unmaximize
+18	W-h           				Unmaximize
+19	W-j           				Unmaximize
+20	W-l           				Unmaximize
+21	A-z           				Unmaximize
+22	A-x           				Unmaximize
+23	A-c           				Unmaximize
+24	W-KP_1        				UnmaximizeFull
+25	W-KP_2        				UnmaximizeFull
+26	W-KP_3        				UnmaximizeFull
+27	W-KP_4        				UnmaximizeFull
+28	W-KP_5        				MaximizeFull
+29	W-KP_6        				UnmaximizeFull
+30	W-KP_7        				UnmaximizeFull
+31	W-KP_8        				UnmaximizeFull
+32	W-KP_9        				UnmaximizeFull
+33	W-A-Up        				MoveRelative
+34	W-A-Down      				MoveRelative
+35	W-A-Left      				MoveRelative
+36	W-A-Right     				MoveRelative
+37	C-A-Right     				ResizeRelative
+38	C-A-Left      				ResizeRelative
+39	C-A-Down      				ResizeRelative
+40	C-A-Up        				ResizeRelative
+41	W-S-Left      				SendToDesktopLeft
+42	W-S-Right     				SendToDesktopRight
+43	XF86AudioRaiseVolume	volume --inc
+44	XF86AudioLowerVolume	volume --dec
+45	XF86AudioMute  			volume --toggle
+46	XF86AudioStop  			playerctl -a pause
+47	XF86AudioPlay  			playerctl play-pause
+48	XF86AudioPause 			playerctl play-pause
+49	XF86AudioPrev  			playerctl previous
+50	XF86AudioNext  			playerctl next
+51	XF86Tools     				playerctld shift
+52	XF86Search     			dmenu_run -nb '#071B21' -sf '#091D23' -sb '#61F3F4' -nf '#61F3F4'
+53	XF86MonBrightnessUp	brightness --inc
+54	XF86MonBrightnessDown	brightness --dec
+55	Print         				flameshot full -p ~/Pictures/Screenshots
+56	A-Print       				flameshot gui
+57	S-Print       				flameshot full -c
+58	C-Print       				takeshot --win
+59	C-A-Print     				takeshot --area
+60	W-Return      				alacritty
+61	W-t           				sh ~/.config/polybar/bin/fulscreenterm
+62	W-e           				thunar
+63	W-f           				firefox
+64	W-w           				geany
+65	W-S-r         				rhythmbox
+66	A-F1          				~/.config/polybar/rofi/bin/launcher
+67	W-n           				~/.config/polybar/rofi/bin/network_menu
+68	W-m           				~/.config/polybar/rofi/bin/media
+69	W-x           				~/.config/polybar/rofi/bin/powermenu
+70	W-s           				~/.config/polybar/rofi/bin/screenshot
+71	W-i           				~/.config/polybar/rofi/bin/network
+72	W-r           				~/.config/polybar/rofi/bin/asroot
+73	W-p           				color-gpick
+74	W-v           				~/.config/polybar/rofi/bin/launcher
+75	C-A-t         				alacritty
+76	C-A-v         				alacritty -e vim
+77	C-A-n         				alacritty -e nvim
+78	C-A-r         				alacritty -e ranger
+79	C-A-h         				alacritty -e htop
+80	C-A-b         				alacritty -e bashtop
+81	C-A-l         				sh /home/tarek/.config/polybar/bin/i3lock.sh
+82	W-a           				aniwrapper
+83	W-S-a         				alacritty -e aniwrapper -c
+84	W-y           				ytfzf -fD
+85	W-S-y         				alacritty -e ytfzf -tf
+86	W-o           				obs
+87	W-g           				evince
+88	W-z           				discord --no-sandbox
+89	W-S-c         				copyq show
+90	W-S-b         				blueman-manager
+91	W-S-v         				pavucontrol
+92	W-S-d         				sh ~/.scripts/dmenu.sh
+93	W-S-m         				 sh ~/.scripts/trayToggle.sh
+94	W-S-O         				bluetoothctl disconnect
+95	W-S-P         				bluetoothctl connect 00:00:00:00:11:3F
+96	C-S-Escape     			Exit
+97	C-S-BackSpace  			Restart
+98	C-S-R         				Reconfigure
+99	W-Escape      				xkill
+100	W-c           				Close
+101	W-q           				Close
+102	A-F5          				Iconify
+103	W-S-f         				ToggleMaximize
+104	A-F7          				ToggleDecorations
+105	W-d           				ToggleShowDesktop
+106	A-r           				Resize
+107	A-m           				Move
+108	W-space       				root-menu
+109	C-A-space     				app-menu
+110	A-space       				client-menu

@@ -3,8 +3,8 @@
 ## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
-## Kill if already running
-killall -9 nitrogen xfsettingsd picom polybar mpd dunst ksuperkey xfce4-power-manager mpd-mpris
+# Kill already running process
+killall -9 picom dunst ksuperkey mpd xfce-polkit xfce4-power-manager polybar trackma-gtk xfsettingsd
 
 ## Restore Wallpaper
 #nitrogen --restore &
@@ -17,20 +17,17 @@ xfsettingsd &
 	#/usr/lib/xfce-polkit/xfce-polkit &
 #fi
 
+## Restore Wallpaper
+exec wal -Re &
+
 ## Enable power management
 xfce4-power-manager &
-
-## Launch Polybar
-bash ~/.config/polybar/launch.sh &
 
 ## Start Compositing Manager
 exec picom &
 
 ## Notification Daemon
 exec dunst &
-
-## Restore Wallpaper
-exec wal -R &
 
 ## Start Music Player Daemon
 exec mpd &
@@ -40,6 +37,9 @@ exec mpd &
 
 ## Thunar Daemon
 exec thunar --daemon &
+
+## Launch Polybar
+bash ~/.config/polybar/launch.sh &
 
 ## Discord Launch
 exec discord &
@@ -52,6 +52,9 @@ exec copyq &
 
 ## Excute Screenshot script
 bash /home/tarek/.scripts/sc.sh &
+
+## Trackma Launch
+exec trackma-gtk &
 
 ## Touchegg
 exec touchegg --daemon &
