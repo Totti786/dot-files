@@ -250,28 +250,28 @@
     <keybind key="A-z">
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
-        <x>15</x>
+        <x>0</x>
         <y>31</y>
         <height>97%</height>
-        <width>32%</width>
+        <width>33%</width>
       </action>
     </keybind>
     <keybind key="A-x">
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
-        <x>34%</x>
+        <x>636</x>
         <y>31</y>
         <height>97%</height>
-        <width>32%</width>
+        <width>33%</width>
       </action>
     </keybind>
     <keybind key="A-c">
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
-        <x>-17</x>
+        <x>-1</x>
         <y>31</y>
         <height>97%</height>
-        <width>32%</width>
+        <width>33%</width>
       </action>
     </keybind>
     <!-- Windows Tiling -->

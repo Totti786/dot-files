@@ -50,6 +50,9 @@ exec kdeconnect-indicator &
 #CopyQ
 exec copyq &
 
+## Syncthing
+exec syncthing &
+
 ## Excute Screenshot script
 bash /home/tarek/.scripts/sc.sh &
 

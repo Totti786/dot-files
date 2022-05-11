@@ -13,7 +13,7 @@ AFILE="$HOME/.config/aniwrapper/themes/aniwrapper.rasi"
 
 # Get colors
 pywal_set() {
-	wpg -s "$1" 
+	wpg -Re "$wallpaper" 
 	
 }
 
@@ -78,6 +78,7 @@ change_color() {
 	sed -i -e "s/bg=#.*/bg=${BG}/g" $GFILE
 	sed -i -e "s/fg=#.*/fg=${FG}/g" $GFILE
 	sed -i -e "s/margin_bg_grey=#.*/margin_bg_grey=${SH8}/g" $GFILE
+
 	
 
 	
@@ -85,39 +86,36 @@ change_color() {
 
 # Main
 if [[ -f "/usr/bin/wpg" ]]; then
-	if [[ "$1" ]]; then
-		pywal_set "$1"
+	
+	#pywal_set "$wallpaper"
 
-		# Source the pywal color file
-		. "$HOME/.cache/wal/colors.sh"
+	# Source the pywal color file
+	. "$HOME/.cache/wal/colors.sh"
 
-		BG=`printf "%s\n" "$background"`
-		ST=`printf "%s\n" "$background"`
-		FG=`printf "%s\n" "$foreground"`
-		FGA=`printf "%s\n" "$foreground"`
-		RED=`printf "%s\n" "$color1"`
-		BLUE=`printf "%s\n" "$color2"`
-		YELLOW=`printf "%s\n" "$color3"`
-		SH4=`printf "%s\n" "$color2"`
-		SH5=`printf "%s\n" "$color1"`
-		SH6=`printf "%s\n" "$color2"`
-		SH7=`printf "%s\n" "$color1"`
-		SH8=`printf "%s\n" "$color0"`
+	BG=`printf "%s\n" "$background"`
+	ST=`printf "%s\n" "$background"`
+	FG=`printf "%s\n" "$foreground"`
+	FGA=`printf "%s\n" "$foreground"`
+	RED=`printf "%s\n" "$color1"`
+	BLUE=`printf "%s\n" "$color2"`
+	YELLOW=`printf "%s\n" "$color3"`
+	SH4=`printf "%s\n" "$color2"`
+	SH5=`printf "%s\n" "$color1"`
+	SH6=`printf "%s\n" "$color2"`
+	SH7=`printf "%s\n" "$color1"`
+	SH8=`printf "%s\n" "$color0"`
 
-		change_color
-		killall -9 polybar spotify
-		sh ~/.config/polybar/launch.sh
-		pywalfox update
-		openbox --reconfigure
-		#razer-cli -a
-		wal-telegram --wal
-		sh ~/.scripts/alacritty_color.sh
-		pywal-discord
-		spicetify apply
-	else
-		echo -e "[!] Please enter the path to wallpaper. \n"
-		echo "Usage : ./pywal.sh path/to/image"
-	fi
+	change_color
+	killall -9 polybar spotify
+	sh ~/.config/polybar/launch.sh
+	pywalfox update
+	openbox --reconfigure
+	#razer-cli -a
+	wal-telegram --wal
+	sh ~/.scripts/alacritty_color.sh
+	pywal-discord
+	spicetify apply
+
 else
 	echo "[!] 'pywal' is not installed."
 fi
