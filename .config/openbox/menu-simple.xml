@@ -2,7 +2,7 @@
 <!-- Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com> -->
 <!-- Everyone is permitted to copy and distribute copies of this file under GNU-GPL3 -->
 <!DOCTYPE menu [
-  <!ENTITY pipes "~/.config/polybar/bin/">
+  <!ENTITY pipes "~/.config/openbox/pipemenus/">
 ]>
 <openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/  file:///usr/share/openbox/menu.xsd">
   <menu id="root-menu" title="Menu" label="Openbox 3">
@@ -112,29 +112,29 @@
 		<menu id="KeybindsPipeMenu" execute="&pipes;/ac-kb-pipemenu" label="Keybinds"/>
 		<item label="Lock Screen">
 			<action name="Execute">
-				<command>sh /home/tarek/.config/polybar/bin/i3lock.sh</command>
+				<command>sh ~/.config/polybar/bin/i3lock.sh</command>
 			</action>
 		</item>
 		<menu id="Exit" label="System">
 				<menu id="SystemPipeMenu" execute="&pipes;/ac-sysinfo" label="Stats"/>
 				<item label="Logout">
 					<action name="Execute">
-						<command>/usr/share/archcraft/openbox/pipemenus/ac-powermenu --logout</command>
+						<command>~/.config/openbox/pipemenus/ac-powermenu --logout</command>
 					</action>
 				</item>
 				<item label="Suspend">
 					<action name="Execute">
-						<command>/usr/share/archcraft/openbox/pipemenus/ac-powermenu --suspent</command>
+						<command>~/.config/openbox/pipemenus/ac-powermenu --suspent</command>
 					</action>
 				</item>
 				<item label="Reboot">
 					<action name="Execute">
-						<command>/usr/share/archcraft/openbox/pipemenus/ac-powermenu --reboot</command>
+						<command>~/.config/openbox/pipemenus/ac-powermenu --reboot</command>
 					</action>
 				</item>
 				<item label="Shutdown">
 					<action name="Execute">
-						<command>/usr/share/archcraft/openbox/pipemenus/ac-powermenu --shutdown</command>
+						<command>~/.config/openbox/pipemenus/ac-powermenu --shutdown</command>
 					</action>
 				</item>
 		</menu>

@@ -163,6 +163,11 @@
         <desktop>5</desktop>
       </action>
     </keybind>
+    <keybind key="S-W-6">
+      <action name="SendToDesktop">
+        <desktop>6</desktop>
+      </action>
+    </keybind>
     <!-- Switch b/w Applications -->
     <keybind key="A-Tab">
       <action name="NextWindow">
@@ -641,7 +646,7 @@
     <!-- Evince -->
     <keybind key="W-g">
       <action name="Execute">
-        <command>evince</command>
+        <command>zathura</command>
       </action>
     </keybind>
     <!-- Discord -->
@@ -995,7 +1000,7 @@ s      <mousebind action="Press" button="A-Right"><action name="ShowMenu"><menu>
     <middle>no</middle>
     <submenuShowDelay>100</submenuShowDelay>
     <submenuHideDelay>200</submenuHideDelay>
-    <applicationIcons>no</applicationIcons>
+    <applicationIcons>yes</applicationIcons>
     <manageDesktops>yes</manageDesktops>
   </menu>
   <!-- ################################ Applications Rules ################################ -->
@@ -1104,7 +1109,7 @@ s      <mousebind action="Press" button="A-Right"><action name="ShowMenu"><menu>
   # end of the example
 -->
     <application name="obs">
-      <decor>no</decor>
+      <decor>yes</decor>
       <layer>default</layer>
     </application>
     <application name="gl" class="mpv" type="normal">
@@ -1120,7 +1125,7 @@ s      <mousebind action="Press" button="A-Right"><action name="ShowMenu"><menu>
     <application/>
     <application/>
     <application name="Alacritty" class="Alacritty" type="normal">
-      <decor>no</decor>
+      <decor>yes</decor>
     </application>
     <application name="org.pwmt.zathura" class="Zathura" title="org.pwmt.zathura" type="normal">
       <decor>no</decor>

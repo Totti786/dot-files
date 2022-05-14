@@ -11,5 +11,4 @@ changeTray(){
 }
 changeTray 
 killall -9 polybar 
-polybar -q top -c ~/.config/polybar/config.ini &
-polybar -q bottom -c ~/.config/polybar/config.ini
+sh ~/.config/polybar/launch.sh

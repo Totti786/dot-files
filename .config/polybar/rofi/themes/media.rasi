@@ -2,15 +2,6 @@
 /* Everyone is permitted to copy and distribute copies of this file under GNU-GPL3 */
 
 configuration {
-    font:				    "Open Sans 11";
-    display-drun:			"Dmenu";
-    scroll-method:			0;
-    disable-history:		false;
-    sidebar-mode:			true;
-
-}
-
-configuration {
     font:                           "JetBrains Mono Medium 10";
     show-icons:                     false;
     display-drun: 					"";
@@ -25,9 +16,9 @@ window {
     transparency:                   "real";
     background-color:               @background;
     text-color:                     @foreground;
-    border:                  		0px;
-    border-color:                  	@selected;
-    border-radius:                  12px;
+    border:                  		2px;
+    border-color:                  	@border;
+    border-radius:                  10px;
     width:                          550px;
     location:                       center;
     anchor:                         center;
@@ -49,8 +40,8 @@ prompt {
 textbox-prompt-colon {
 	expand: 						false;
 	str: 							"ﱘ";
-    border-radius:                  10px;
-    background-color:               @highlight;
+    border-radius:                  8px;
+    background-color:               @on;
     text-color:                     @background;
     padding:    					6px 10px 6px 10px;
 	font:							"Iosevka Nerd Font 10";
@@ -109,7 +100,7 @@ element {
     background-color:               @background-alt;
     text-color:                     @foreground;
     orientation:                    horizontal;
-    border-radius:                  100%;
+    border-radius:                  10px;
     padding:                        25px;
 }
 
@@ -136,7 +127,7 @@ element selected {
     background-color:               @selected;
     text-color:                     @background;
     border:                  		0px;
-    border-radius:                  100%;
+    border-radius:                  10px;
     border-color:                  	@selected;
 }
 
@@ -145,7 +136,7 @@ element.selected.urgent {
   background-color: @on;
   text-color: @background;
   border-color: @on;
-  border-radius: 100%;
+  border-radius: 10px;
 }
 
 element.selected.urgent {
@@ -157,7 +148,7 @@ element.selected.active {
   background-color: @off;
   text-color: @background;
   border-color: @off;
-  border-radius: 100%;
+  border-radius: 10px;
 }
 
 element.selected.active {

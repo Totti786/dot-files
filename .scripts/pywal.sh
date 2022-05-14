@@ -1,6 +1,7 @@
 #!/usr/bin/env bash 	
 
 # Color files
+ALFILE="$HOME/.config/alacritty/colors.yml"
 PFILE="$HOME/.config/polybar/colors.ini"
 RFILE="$HOME/.config/polybar/rofi/themes/colors.rasi"
 DFILE="$HOME/.config/BetterDiscord/data/stable/custom.css"
@@ -11,29 +12,35 @@ GZFILE="$HOME/.config/zathura/genzathurarc"
 ASFILE="$HOME/.cache/wal/colors-rofi-dark.rasi"
 AFILE="$HOME/.config/aniwrapper/themes/aniwrapper.rasi"
 
+
 # Get colors
 pywal_set() {
 	wpg -s "$1" 
 	
 }
 
+
 # Change colors
 change_color() {
 	
-	# polybar
-	sed -i -e "s/background = #.*/background = ${BG}10/g" $PFILE
-	sed -i -e "s/systemtray = #.*/systemtray = ${ST}77/g" $PFILE
-	sed -i -e "s/foreground = #.*/foreground = $FG/g" $PFILE
-	sed -i -e "s/foreground-alt = #.*/foreground-alt = $FGA/g" $PFILE
-	sed -i -e "s/red = #.*/red = $RED/g" $PFILE
-	sed -i -e "s/blue = #.*/blue = $BLUE/g" $PFILE
-	sed -i -e "s/yellow = #.*/yellow = $YELLOW/g" $PFILE
-	sed -i -e "s/shade4 = #.*/shade4 = $SH4/g" $PFILE
-	sed -i -e "s/shade5 = #.*/shade5 = $SH5/g" $PFILE
-	sed -i -e "s/shade6 = #.*/shade6 = $SH6/g" $PFILE
-	sed -i -e "s/shade7 = #.*/shade7 = $SH7/g" $PFILE
-	sed -i -e "s/shade8 = #.*/shade8 = $SH8/g" $PFILE
-	
+	# polybar	
+	cat > $PFILE <<- EOF
+		[color]
+		;; main colors
+		background = ${BG}
+		systemtray = ${ST}
+		foreground = $FG
+		primary = $FG
+		red = $red
+		green = $green
+		yellow = $yellow
+		blue = $blue
+		magenta = $magenta
+		cyan = $cyan
+		white = $white
+		
+		EOF
+		
 	# rofi
 	cat > $RFILE <<- EOF
 	/* colors */
@@ -41,13 +48,43 @@ change_color() {
 		background:       ${BG}FF; 
 		background-alt:   ${BG}FF;
 		foreground:       ${FG}FF;
-		selected:         ${BLUE}FF;
-		highlight:        ${RED}FF;
-		urgent:           ${BLUE}FF;
-		on:               ${RED}FF;
-		off:              ${RED}FF;
+		selected:         ${blue}FF;
+		highlight:        ${FG}FF;
+		urgent:           ${blue}FF;
+		on:               ${red}FF;
+		off:              ${red}FF;
 	}
 		EOF
+	
+	# alacritty 
+	cat > $ALFILE <<- EOF 
+	#Colors 
+	colors:
+	  primary:
+	    background: '$BG'
+	    foreground: '$FG'
+	  cursor:
+	    text:       '$black'
+	    cursor:     '$white'
+	  normal:
+	    black:      '$black'
+	    red:        '$red'
+	    green:      '$green'
+	    yellow:     '$yellow'
+	    blue:       '$blue'
+	    magenta:    '$magenta'
+	    cyan:       '$cyan'
+	    white:      '$white'
+	  bright:
+	    black:      '$bright_black'
+	    red:        '$bright_red'
+	    green:      '$bright_green'
+	    yellow:     '$bright_yellow'
+	    blue:       '$bright_blue'
+	    magenta:    '$bright_magenta'
+	    cyan:       '$bright_cyan'
+	    white:      '$bright_white'
+	EOF
 	
 	# discord
 	sed -i -e "s/--accent-color: #.*/--accent-color: ${FG};/g" $DFILE
@@ -55,19 +92,18 @@ change_color() {
 	sed -i -e "s/--background-1: #.*/--background-1: ${BG};/g" $DFILE
 	sed -i -e "s/--background-2: #.*/--background-2: ${BG};/g" $DFILE
 	sed -i -e "s/--background-accent: #.*/--background-accent: ${BG};/g" $DFILE
-	sed -i -e "s/--button-background-hover: #.*/--button-background-hover: ${RED};/g" $DFILE
-	sed -i -e "s/--tab-selected: #.*/--tab-selected: ${BLUE};/g" $DFILE
+	sed -i -e "s/--button-background-hover: #.*/--button-background-hover: ${red};/g" $DFILE
+	sed -i -e "s/--tab-selected: #.*/--tab-selected: ${blue};/g" $DFILE
 	sed -i -e "s/--text-muted: #.*/--text-muted: ${FG};/g" $DFILE
 	
 	# dunst
 	sed -i -e "s/background = \"#.*\"/background = \"${BG}\"/g" $NFILE
 	sed -i -e "s/foreground = \"#.*\"/foreground = \"${FG}\"/g" $NFILE
-	sed -i -e "s/frame_color = \"#.*\"/frame_color = \"${YELLOW}\"/g" $NFILE
+	sed -i -e "s/frame_color = \"#.*\"/frame_color = \"${yellow}\"/g" $NFILE
 
 	# zathura
 	$GZFILE > $ZFILE
-	
-	
+		
 	# aniwrapper 
 	cat $ASFILE > $AFILE
 	
@@ -77,9 +113,7 @@ change_color() {
 	# geany
 	sed -i -e "s/bg=#.*/bg=${BG}/g" $GFILE
 	sed -i -e "s/fg=#.*/fg=${FG}/g" $GFILE
-	sed -i -e "s/margin_bg_grey=#.*/margin_bg_grey=${SH8}/g" $GFILE
-	
-
+	sed -i -e "s/margin_bg_grey=#.*/margin_bg_grey=${black}/g" $GFILE
 	
 }
 
@@ -91,27 +125,38 @@ if [[ -f "/usr/bin/wpg" ]]; then
 		# Source the pywal color file
 		. "$HOME/.cache/wal/colors.sh"
 
+		# Normal colors
 		BG=`printf "%s\n" "$background"`
 		ST=`printf "%s\n" "$background"`
 		FG=`printf "%s\n" "$foreground"`
 		FGA=`printf "%s\n" "$foreground"`
-		RED=`printf "%s\n" "$color1"`
-		BLUE=`printf "%s\n" "$color2"`
-		YELLOW=`printf "%s\n" "$color3"`
-		SH4=`printf "%s\n" "$color2"`
-		SH5=`printf "%s\n" "$color1"`
-		SH6=`printf "%s\n" "$color2"`
-		SH7=`printf "%s\n" "$color1"`
-		SH8=`printf "%s\n" "$color0"`
-
+		black=`printf "%s\n" "$color0"`
+		red=`printf "%s\n" "$color1"`
+		green=`printf "%s\n" "$color2"`
+		yellow=`printf "%s\n" "$color3"`
+		blue=`printf "%s\n" "$color4"`
+		magenta=`printf "%s\n" "$color5"`
+		cyan=`printf "%s\n" "$color6"`
+		white=`printf "%s\n" "$color7"`
+		# Bright colors
+		bright_black=`printf "%s\n" "$color8"`
+		bright_red=`printf "%s\n" "$color9"`
+		bright_green=`printf "%s\n" "$color10"`
+		bright_yellow=`printf "%s\n" "$color11"`
+		bright_blue=`printf "%s\n" "$color12"`
+		bright_magenta=`printf "%s\n" "$color13"`
+		bright_cyan=`printf "%s\n" "$color14"`
+		bright_white=`printf "%s\n" "$color15"`
+	
+	
 		change_color
-		killall -9 polybar spotify
-		sh ~/.config/polybar/launch.sh
+		xrdb -merge ~/.cache/wal/colors.Xresources
+		killall -9 polybar spotify dunst	
 		pywalfox update
 		openbox --reconfigure
-		#razer-cli -a
+		razer-cli -a
 		wal-telegram --wal
-		sh ~/.scripts/alacritty_color.sh
+		sh ~/.config/polybar/launch.sh
 		pywal-discord
 		spicetify apply
 	else
