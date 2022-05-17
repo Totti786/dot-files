@@ -682,7 +682,7 @@
     <!-- trayToggle -->
     <keybind key="W-S-m">
       <action name="Execute">
-        <command> sh ~/.scripts/trayToggle.sh</command>
+        <command>sh ~/.scripts/trayToggle.sh</command>
       </action>
     </keybind>
     <!-- Bluetooth Disconnect -->

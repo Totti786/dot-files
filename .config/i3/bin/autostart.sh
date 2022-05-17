@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
-## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 ## Autostart Programs
 
 ## Kill already running process
@@ -38,10 +36,10 @@ ksuperkey -e 'Super_R=Alt_L|F1' &
 #nitrogen --restore
 
 ## Launch Polybar
-bash ~/.config/polybar/launch.sh &
+exec sh ~/.config/polybar/launch.sh &
 
 ## Excute Screenshot script
-bash /home/tarek/.scripts/sc.sh &
+exec sh ~/.scripts/check.sh &
 
 ## Start mpd
 exec mpd &

@@ -1,7 +1,5 @@
 #!/bin/bash
 
-STYLE=$(sed -n 37p /home/tarek/.config/openbox/polybar/launch.sh  | grep -o '".*"' | sed 's/"//g')
-
 changeTray(){
 	if [[ $(grep -i "tray-position = " ~/.config/polybar/config.ini) = "tray-position = right" ]]; then
 		sed -i -e 's/tray-position = right/tray-position = none/g' ~/.config/polybar/config.ini
@@ -10,5 +8,5 @@ changeTray(){
 	fi
 }
 changeTray 
-killall -9 polybar 
+killall -q polybar 
 sh ~/.config/polybar/launch.sh

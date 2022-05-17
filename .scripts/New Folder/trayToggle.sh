@@ -11,5 +11,5 @@ changeTray(){
 }
 
 changeTray
-killall -9 polybar
-sh /home/tarek/.config/openbox/polybar/launch.sh
+killall -q polybar
+sh ~/.config/openbox/polybar/launch.sh

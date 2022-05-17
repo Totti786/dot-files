@@ -108,6 +108,8 @@ change_color() {
 	sed -i -e "s/fg=#.*/fg=${FG}/g" $GFILE
 	sed -i -e "s/margin_bg_grey=#.*/margin_bg_grey=${black}/g" $GFILE
 	
+
+	
 }
 
 
@@ -151,7 +153,10 @@ if [[ -f "/usr/bin/wpg" ]]; then
 	sh ~/.config/polybar/launch.sh
 	pywal-discord
 	spicetify apply
-	cp $wallpaper /home/tarek/.config/wpg/wallpapers/wallpaper.jpg && kdeconnect-cli -d f9e245b97817ce82 --share /home/tarek/.config/wpg/wallpapers/wallpaper.jpg && kdeconnect-cli -d f9e245b97817ce82 --ping
+	razer-cli -a
+	cp $wallpaper /home/tarek/.config/wpg/wallpapers/wallpaper.jpg \
+	&& kdeconnect-cli -d f9e245b97817ce82 --share \
+	/home/tarek/.config/wpg/wallpapers/wallpaper.jpg && kdeconnect-cli -d f9e245b97817ce82 --ping
 	
 else
 	echo "[!] 'wpgtk' is not installed."

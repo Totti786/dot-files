@@ -51,7 +51,7 @@ exec copyq &
 exec syncthing &
 
 ## Excute Screenshot script
-bash /home/tarek/.scripts/sc.sh &
+bash ~/.scripts/check.sh &
 
 ## Trackma Launch
 exec trackma-gtk &
