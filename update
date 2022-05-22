@@ -1,0 +1,123 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	modified:   .config/openbox/pipemenus/ac-powermenu
+#	modified:   .config/openbox/rc.xml
+#	modified:   .config/polybar/colors.ini
+#	modified:   .config/polybar/config.ini
+#	modified:   .config/polybar/rofi/bin/powermenu
+#	modified:   .config/polybar/rofi/bin/screenshot
+#	modified:   .config/polybar/rofi/themes/colors.rasi
+#	modified:   .config/polybar/system.ini
+#	modified:   .config/zathura/zathurarc
+#	deleted:    .gitattributes
+#	deleted:    .local/share/fonts/bitmap-fonts/scientifica-doubled/bold/ScientificaBold-22.otb
+#	deleted:    .local/share/fonts/bitmap-fonts/scientifica-doubled/italic/ScientificaItalic-22.otb
+#	deleted:    .local/share/fonts/bitmap-fonts/scientifica-doubled/regular/ScientificaRegular-22.otb
+#	deleted:    .local/share/fonts/bitmap-fonts/scientifica/bold/ScientificaBold.otb
+#	deleted:    .local/share/fonts/bitmap-fonts/scientifica/italic/ScientificaItalic.otb
+#	deleted:    .local/share/fonts/bitmap-fonts/scientifica/regular/ScientificaRegular.otb
+#	deleted:    .local/share/fonts/icon-fonts/Icomoon-Feather.ttf
+#	deleted:    .local/share/fonts/icon-fonts/MaterialIconsOutlined-Regular.otf
+#	deleted:    .local/share/fonts/icon-fonts/MaterialIconsRound-Regular.otf
+#	deleted:    .local/share/fonts/icon-fonts/MaterialIconsTwoTone-Regular.otf
+#	deleted:    .local/share/fonts/icon-fonts/Siji.bdf
+#	deleted:    .local/share/fonts/icon-fonts/Waffle.bdf
+#	deleted:    .local/share/fonts/icon-fonts/archcraft.ttf
+#	deleted:    .local/share/fonts/icon-fonts/google-mdi.ttf
+#	deleted:    .local/share/fonts/icon-fonts/typicons.ttf
+#	deleted:    .local/share/fonts/nerd-fonts/Bitstream Vera Sans Mono Nerd Font Complete.ttf
+#	deleted:    .local/share/fonts/nerd-fonts/Blex Mono Nerd Font Complete.ttf
+#	deleted:    .local/share/fonts/nerd-fonts/Fantasque Sans Mono Regular Nerd Font Complete.ttf
+#	deleted:    .local/share/fonts/nerd-fonts/Fira Code Regular Nerd Font Complete.ttf
+#	deleted:    .local/share/fonts/nerd-fonts/Hack Regular Nerd Font Complete.ttf
+#	deleted:    .local/share/fonts/nerd-fonts/Iosevka Nerd Font Complete.ttf
+#	deleted:    .local/share/fonts/nerd-fonts/Iosevka Term Nerd Font Complete.ttf
+#	deleted:    .local/share/fonts/nerd-fonts/JetBrains Mono Regular Nerd Font Complete.ttf
+#	deleted:    .local/share/fonts/normal-fonts/Comfortaa/Comfortaa-Bold.ttf
+#	deleted:    .local/share/fonts/normal-fonts/Comfortaa/Comfortaa-Light.ttf
+#	deleted:    .local/share/fonts/normal-fonts/Comfortaa/Comfortaa-Regular.ttf
+#	deleted:    .local/share/fonts/normal-fonts/IBM-Plex-Mono/IBMPlexMono-Bold.ttf
+#	deleted:    .local/share/fonts/normal-fonts/IBM-Plex-Mono/IBMPlexMono-BoldItalic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/IBM-Plex-Mono/IBMPlexMono-ExtraLight.ttf
+#	deleted:    .local/share/fonts/normal-fonts/IBM-Plex-Mono/IBMPlexMono-ExtraLightItalic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/IBM-Plex-Mono/IBMPlexMono-Italic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/IBM-Plex-Mono/IBMPlexMono-Light.ttf
+#	deleted:    .local/share/fonts/normal-fonts/IBM-Plex-Mono/IBMPlexMono-LightItalic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/IBM-Plex-Mono/IBMPlexMono-Medium.ttf
+#	deleted:    .local/share/fonts/normal-fonts/IBM-Plex-Mono/IBMPlexMono-MediumItalic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/IBM-Plex-Mono/IBMPlexMono-Regular.ttf
+#	deleted:    .local/share/fonts/normal-fonts/IBM-Plex-Mono/IBMPlexMono-SemiBold.ttf
+#	deleted:    .local/share/fonts/normal-fonts/IBM-Plex-Mono/IBMPlexMono-SemiBoldItalic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/IBM-Plex-Mono/IBMPlexMono-Thin.ttf
+#	deleted:    .local/share/fonts/normal-fonts/IBM-Plex-Mono/IBMPlexMono-ThinItalic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/Iosevka/iosevka-bold.ttf
+#	deleted:    .local/share/fonts/normal-fonts/Iosevka/iosevka-heavy.ttf
+#	deleted:    .local/share/fonts/normal-fonts/Iosevka/iosevka-italic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/Iosevka/iosevka-light.ttf
+#	deleted:    .local/share/fonts/normal-fonts/Iosevka/iosevka-medium.ttf
+#	deleted:    .local/share/fonts/normal-fonts/Iosevka/iosevka-oblique.ttf
+#	deleted:    .local/share/fonts/normal-fonts/Iosevka/iosevka-regular.ttf
+#	deleted:    .local/share/fonts/normal-fonts/IosevkaCustom/Iosevka-bold.ttf
+#	deleted:    .local/share/fonts/normal-fonts/IosevkaCustom/Iosevka-bolditalic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/IosevkaCustom/Iosevka-boldoblique.ttf
+#	deleted:    .local/share/fonts/normal-fonts/IosevkaCustom/Iosevka-italic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/IosevkaCustom/Iosevka-oblique.ttf
+#	deleted:    .local/share/fonts/normal-fonts/IosevkaCustom/Iosevka-regular.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMono-Bold.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMono-BoldItalic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMono-ExtraBold.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMono-ExtraBoldItalic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMono-ExtraLight.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMono-ExtraLightItalic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMono-Italic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMono-Light.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMono-LightItalic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMono-Medium.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMono-MediumItalic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMono-Regular.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMono-Thin.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMono-ThinItalic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMonoNL-Bold.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMonoNL-BoldItalic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMonoNL-ExtraBold.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMonoNL-ExtraBoldItalic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMonoNL-ExtraLight.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMonoNL-ExtraLightItalic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMonoNL-Italic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMonoNL-Light.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMonoNL-LightItalic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMonoNL-Medium.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMonoNL-MediumItalic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMonoNL-Regular.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMonoNL-Thin.ttf
+#	deleted:    .local/share/fonts/normal-fonts/JetBrainsMono/JetBrainsMonoNL-ThinItalic.ttf
+#	deleted:    .local/share/fonts/normal-fonts/Typewriter.ttf
+#	deleted:    .scripts/New Folder/trayToggle.sh
+#	deleted:    .scripts/evince.py
+#	modified:   .scripts/wpgtk.sh
+#	deleted:    README.md
+#
+# Untracked files:
+#	.config/GIMP/
+#	.config/bin/
+#	.config/colors.ini
+#	.config/config.ini
+#	.config/launch.sh
+#	.config/modules.ini
+#	.config/mpv/
+#	.config/rofi/
+#	.config/scripts/
+#	.config/system.ini
+#	.scripts/backup.sh
+#	.scripts/betterdiscord.sh
+#	.scripts/check.sh
+#	.scripts/chmod.sh
+#	.scripts/github.sh
+#	.scripts/install.sh
+#

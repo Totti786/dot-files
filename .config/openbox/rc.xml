@@ -426,7 +426,7 @@
     </keybind>
     <keybind key="XF86AudioStop">
       <action name="Execute">
-        <command>playerctl -a pause</command>
+        <command>playerctl -a stop</command>
       </action>
     </keybind>
     <keybind key="XF86AudioPlay">

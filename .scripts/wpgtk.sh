@@ -11,7 +11,9 @@ ZFILE="$HOME/.config/zathura/zathurarc"
 GZFILE="$HOME/.config/zathura/genzathurarc"
 ASFILE="$HOME/.cache/wal/colors-rofi-dark.rasi"
 AFILE="$HOME/.config/aniwrapper/themes/aniwrapper.rasi"
-
+apps=(betterlockscreen razer-cli kdeconnect-cli wal-telegram spicetify pywalfox openbox aniwrapper polybar \
+rofi zathura geany)
+#deviceID=$(kdeconnect-cli --id-only  -l)
 
 # Change colors
 change_color() {
@@ -112,8 +114,20 @@ change_color() {
 	
 }
 
+checkApps(){
+	for _apps in "${apps[@]}"; do
+		if ! command -v $_apps &> /dev/null; then
+		echo "$_apps is not installed"
+		yay -S $_apps
+		else 
+			echo "$_apps is installed"
+		fi
+	done
+	}
 
-# Main
+
+
+main(){
 if [[ -f "/usr/bin/wpg" ]]; then
 	
 	# Source the pywal color file
@@ -148,16 +162,18 @@ if [[ -f "/usr/bin/wpg" ]]; then
 	killall -9 polybar spotify dunst	
 	pywalfox update
 	openbox --reconfigure
-	razer-cli -a
 	wal-telegram --wal
 	sh ~/.config/polybar/launch.sh
 	pywal-discord
 	spicetify apply
 	razer-cli -a
 	cp $wallpaper /home/tarek/.config/wpg/wallpapers/wallpaper.jpg \
-	&& kdeconnect-cli -d f9e245b97817ce82 --share \
-	/home/tarek/.config/wpg/wallpapers/wallpaper.jpg && kdeconnect-cli -d f9e245b97817ce82 --ping
-	
+	&& kdeconnect-cli -d $deviceID --share \
+	/home/tarek/.config/wpg/wallpapers/wallpaper.jpg && kdeconnect-cli -d $deviceID --ping
+	betterlockscreen -u $wallpaper
 else
 	echo "[!] 'wpgtk' is not installed."
 fi
+}
+
+"$@"
