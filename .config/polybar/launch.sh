@@ -61,6 +61,9 @@ launch_bar() {
 
 	# Launch the bar
 	polybar -q top -c "$DIR"/config.ini &
+	#polybar -q topRight -c "$DIR"/config.ini &
+	#polybar -q topCenter -c "$DIR"/config.ini &
+	#polybar -q topLeft -c "$DIR"/config.ini &
 	polybar -q bottom -c "$DIR"/config.ini &
 }
 

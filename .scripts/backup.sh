@@ -1,5 +1,5 @@
 #! /bin/bash
-apps=(polybar openbox i3 zathura mpv GIMP)
+apps=(polybar openbox i3 zathura mpv GIMP dunst alacritty)
 Dir="$HOME/.config/"
 BackupDir="$HOME/Documents/GitHub/dot-files/"
 

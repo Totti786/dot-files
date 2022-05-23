@@ -11,9 +11,9 @@ ZFILE="$HOME/.config/zathura/zathurarc"
 GZFILE="$HOME/.config/zathura/genzathurarc"
 ASFILE="$HOME/.cache/wal/colors-rofi-dark.rasi"
 AFILE="$HOME/.config/aniwrapper/themes/aniwrapper.rasi"
-apps=(betterlockscreen razer-cli kdeconnect-cli wal-telegram spicetify pywalfox openbox aniwrapper polybar \
-rofi zathura geany)
-#deviceID=$(kdeconnect-cli --id-only  -l)
+apps=(betterlockscreen razer-cli kdeconnect-cli wal-telegram spicetify pywalfox openbox\
+	 aniwrapper polybar rofi zathura geany alacritty dunst betterdiscordctl)
+
 
 # Change colors
 change_color() {
@@ -115,19 +115,56 @@ change_color() {
 }
 
 checkApps(){
+	i=0
 	for _apps in "${apps[@]}"; do
+		let i++
 		if ! command -v $_apps &> /dev/null; then
-		echo "$_apps is not installed"
-		yay -S $_apps
+			echo "$_apps is not installed"
+			yay -S $_apps && checkApps
 		else 
+			n="${#apps[@]}"
 			echo "$_apps is installed"
+			if [[ $i = $n ]]; then 
+				echo $n
+				main		
+			fi
 		fi
 	done
 	}
 
+phone_wal(){
+	deviceID=$(kdeconnect-cli --id-only  -l)
+	cp $wallpaper /home/tarek/.config/wpg/wallpapers/wallpaper.jpg \
+	&& kdeconnect-cli -d $deviceID --share \
+	/home/tarek/.config/wpg/wallpapers/wallpaper.jpg && kdeconnect-cli -d $deviceID --ping
+	}
 
-
+## Kill already running process
+kill(){
+	_ps=(polybar spotify dunst)
+	for _prs in "${_ps[@]}"; do
+		if [[ `pidof ${_prs}` ]]; then
+			killall -9 ${_prs}
+		fi
+	done
+	}
+	
 main(){
+	change_color
+	razer-cli -a
+	kill
+	pywalfox update
+	openbox --reconfigure
+	wal-telegram --wal
+	sh ~/.config/polybar/launch.sh
+	#pywal-discord
+	spicetify update
+	betterlockscreen -u $wallpaper
+	phone_wal
+	}
+
+
+# Check if wpg is installed and get colors
 if [[ -f "/usr/bin/wpg" ]]; then
 	
 	# Source the pywal color file
@@ -155,25 +192,10 @@ if [[ -f "/usr/bin/wpg" ]]; then
 	bright_magenta=`printf "%s\n" "$color13"`
 	bright_cyan=`printf "%s\n" "$color14"`
 	bright_white=`printf "%s\n" "$color15"`
-	
-	
-	change_color
 	xrdb -merge ~/.cache/wal/colors.Xresources
-	killall -9 polybar spotify dunst	
-	pywalfox update
-	openbox --reconfigure
-	wal-telegram --wal
-	sh ~/.config/polybar/launch.sh
-	pywal-discord
-	spicetify apply
-	razer-cli -a
-	cp $wallpaper /home/tarek/.config/wpg/wallpapers/wallpaper.jpg \
-	&& kdeconnect-cli -d $deviceID --share \
-	/home/tarek/.config/wpg/wallpapers/wallpaper.jpg && kdeconnect-cli -d $deviceID --ping
-	betterlockscreen -u $wallpaper
+	
 else
 	echo "[!] 'wpgtk' is not installed."
 fi
-}
 
 "$@"
