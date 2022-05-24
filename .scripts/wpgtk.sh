@@ -123,10 +123,11 @@ checkApps(){
 			yay -S $_apps && checkApps
 		else 
 			n="${#apps[@]}"
-			echo "$_apps is installed"
+			#echo "$_apps is installed"
 			if [[ $i = $n ]]; then 
-				echo $n
-				main		
+				#echo $n
+				main
+				break		
 			fi
 		fi
 	done
@@ -152,15 +153,14 @@ kill(){
 main(){
 	change_color
 	razer-cli -a
-	kill
+	#kill
 	pywalfox update
 	openbox --reconfigure
-	wal-telegram --wal
 	sh ~/.config/polybar/launch.sh
-	#pywal-discord
+	wal-telegram --wal
 	spicetify update
-	betterlockscreen -u $wallpaper
-	phone_wal
+	#betterlockscreen -u $wallpaper
+	#phone_wal
 	}
 
 

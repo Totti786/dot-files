@@ -4,7 +4,6 @@
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-RFILE="$DIR/.module"
 SFILE="$DIR/system.ini"
 CARD="$(light -L | grep 'backlight' | head -n1 | cut -d'/' -f3)"
 INTERFACE="$(ip link | awk '/state UP/ {print $2}' | tr -d :)"
@@ -54,24 +53,16 @@ set_values() {
 # Launch the bar
 launch_bar() {
 	# Terminate already running bar instances
-	killall -q polybar
+	killall -9 polybar
 
 	# Wait until the processes have been shut down
-	while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+	#while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 	# Launch the bar
 	polybar -q top -c "$DIR"/config.ini &
-	#polybar -q topRight -c "$DIR"/config.ini &
-	#polybar -q topCenter -c "$DIR"/config.ini &
-	#polybar -q topLeft -c "$DIR"/config.ini &
 	polybar -q bottom -c "$DIR"/config.ini &
 }
 
-# Execute functions
-#if [[ ! -f "$RFILE" ]]; then
-	
-	#touch "$RFILE"
-#fi	
 set_values
 fix_modules
 launch_bar
