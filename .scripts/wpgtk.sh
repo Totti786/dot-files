@@ -126,7 +126,7 @@ checkApps(){
 			#echo "$_apps is installed"
 			if [[ $i = $n ]]; then 
 				#echo $n
-				main
+				#main
 				break		
 			fi
 		fi
@@ -195,7 +195,7 @@ if [[ -f "/usr/bin/wpg" ]]; then
 	xrdb -merge ~/.cache/wal/colors.Xresources
 	
 else
-	echo "[!] 'wpgtk' is not installed."
+	echo "[!] 'wpgtk' is not installed." && yay -S wpgtk-git
 fi
 
 "$@"
