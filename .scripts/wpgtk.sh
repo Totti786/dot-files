@@ -159,8 +159,8 @@ main(){
 	sh ~/.config/polybar/launch.sh
 	wal-telegram --wal
 	spicetify update
-	#betterlockscreen -u $wallpaper
-	#phone_wal
+	betterlockscreen -u $wallpaper
+	phone_wal
 	}
 
 
@@ -195,7 +195,9 @@ if [[ -f "/usr/bin/wpg" ]]; then
 	xrdb -merge ~/.cache/wal/colors.Xresources
 	
 else
-	echo "[!] 'wpgtk' is not installed." && yay -S wpgtk-git
+	echo "[!] 'wpgtk' is not installed."
+	echo "Installing from the AUR..." 
+	yay -S wpgtk-git && wpg-install.sh -og
 fi
 
 "$@"

@@ -685,16 +685,10 @@
         <command>sh ~/.scripts/trayToggle.sh</command>
       </action>
     </keybind>
-    <!-- Bluetooth Disconnect -->
-    <keybind key="W-S-O">
-      <action name="Execute">
-        <command>bluetoothctl disconnect</command>
-      </action>
-    </keybind>
     <!-- Bluetooth Connect -->
-    <keybind key="W-S-P">
+    <keybind key="W-b">
       <action name="Execute">
-        <command>bluetoothctl connect 00:00:00:00:11:3F</command>
+        <command>sh ~/.scripts/bluetooth.sh</command>
       </action>
     </keybind>
     <!-- Openbox -->
