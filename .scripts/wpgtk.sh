@@ -11,7 +11,7 @@ ZFILE="$HOME/.config/zathura/zathurarc"
 GZFILE="$HOME/.config/zathura/genzathurarc"
 ASFILE="$HOME/.cache/wal/colors-rofi-dark.rasi"
 AFILE="$HOME/.config/aniwrapper/themes/aniwrapper.rasi"
-apps=(betterlockscreen kdeconnect wal-telegram spicetify pywalfox openbox\
+apps=(betterlockscreen wal-telegram spicetify pywalfox openbox\
 	 aniwrapper polybar rofi zathura geany alacritty dunst betterdiscordctl)
 
 
@@ -115,22 +115,22 @@ change_color() {
 }
 
 checkApps(){
-	i=0
 	for _apps in "${apps[@]}"; do
 		let i++
 		if ! command -v $_apps &> /dev/null; then
-			echo "$_apps is not installed"
-			yay -S $_apps && checkApps
+			apps1+=("$_apps ")			
 		else 
-			n="${#apps[@]}"
-			#echo "$_apps is installed"
-			if [[ $i = $n ]]; then 
-				#echo $n
-				#main
+			if [[ $i = "${#apps[@]}" ]]; then 
+				main
 				break		
 			fi
 		fi
 	done
+	
+	if [[ "${#apps1[@]}" > 0 ]]; then
+		yay -S ${apps1[@]} && checkApps
+		exit 0
+	fi
 	}
 
 phone_wal(){
@@ -152,15 +152,15 @@ kill(){
 	
 main(){
 	change_color
-	razer-cli -a
+	#razer-cli -a
 	#kill
-	pywalfox update
+	#pywalfox update
 	openbox --reconfigure
-	sh ~/.config/polybar/launch.sh
+	#sh ~/.config/polybar/launch.sh
 	wal-telegram --wal
 	spicetify update
-	betterlockscreen -u $wallpaper
-	phone_wal
+	#betterlockscreen -u $wallpaper
+	#phone_wal
 	}
 
 

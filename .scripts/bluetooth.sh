@@ -1,6 +1,6 @@
 #!/usr/bin/env bash 	
 
-device=$(bluetoothctl devices | sed -r 's/.{12}$//g' | sed 's/Device //g')
+device=$(bluetoothctl devices | head -n1 | sed -r 's/.{12}$//g' | sed 's/Device //g')
 
 toggle(){
 	if [[ $(bluetoothctl info) = "Missing device address argument" ]]; then
