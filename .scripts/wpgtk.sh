@@ -11,7 +11,7 @@ ZFILE="$HOME/.config/zathura/zathurarc"
 GZFILE="$HOME/.config/zathura/genzathurarc"
 ASFILE="$HOME/.cache/wal/colors-rofi-dark.rasi"
 AFILE="$HOME/.config/aniwrapper/themes/aniwrapper.rasi"
-apps=(betterlockscreen razer-cli kdeconnect-cli wal-telegram spicetify pywalfox openbox\
+apps=(betterlockscreen kdeconnect wal-telegram spicetify pywalfox openbox\
 	 aniwrapper polybar rofi zathura geany alacritty dunst betterdiscordctl)
 
 
