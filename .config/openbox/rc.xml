@@ -457,7 +457,7 @@
     <!-- Other Controls -->
     <keybind key="XF86Search">
       <action name="Execute">
-        <command>dmenu_run -nb '#071B21' -sf '#091D23' -sb '#61F3F4' -nf '#61F3F4'</command>
+        <command>sh ~/.scripts/dmenu.sh</command>
       </action>
     </keybind>
     <!-- Brightness Control -->
