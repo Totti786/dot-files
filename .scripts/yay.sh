@@ -14,4 +14,9 @@ else
 	sudo pacman -S git && yay
 fi	
 }
-yay
+
+if ! command -v yay &> /dev/null; then 
+	yay
+else 
+	echo "yay is already installed" 
+fi

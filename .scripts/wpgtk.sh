@@ -114,6 +114,7 @@ change_color() {
 	
 }
 
+# Check if all the required apps are installed and install the missing ones
 checkApps(){
 	for _apps in "${apps[@]}"; do
 		let i++
@@ -152,15 +153,15 @@ kill(){
 	
 main(){
 	change_color
-	#razer-cli -a
-	#kill
-	#pywalfox update
+	razer-cli -a
+	kill
+	pywalfox update
 	openbox --reconfigure
-	#sh ~/.config/polybar/launch.sh
+	sh ~/.config/polybar/launch.sh
 	wal-telegram --wal
 	spicetify update
-	#betterlockscreen -u $wallpaper
-	#phone_wal
+	betterlockscreen -u $wallpaper
+	phone_wal
 	}
 
 

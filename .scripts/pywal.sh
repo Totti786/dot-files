@@ -11,6 +11,8 @@ ZFILE="$HOME/.config/zathura/zathurarc"
 GZFILE="$HOME/.config/zathura/genzathurarc"
 ASFILE="$HOME/.cache/wal/colors-rofi-dark.rasi"
 AFILE="$HOME/.config/aniwrapper/themes/aniwrapper.rasi"
+apps=(betterlockscreen wal-telegram spicetify pywalfox openbox\
+	 aniwrapper polybar rofi zathura geany alacritty dunst betterdiscordctl)
 
 
 # Get colors
@@ -18,7 +20,6 @@ pywal_set() {
 	wpg -s "$1" 
 	
 }
-
 
 # Change colors
 change_color() {
@@ -115,50 +116,94 @@ change_color() {
 	sed -i -e "s/fg=#.*/fg=${FG}/g" $GFILE
 	sed -i -e "s/margin_bg_grey=#.*/margin_bg_grey=${black}/g" $GFILE
 	
+
+	
 }
 
-# Main
+checkApps(){
+	for _apps in "${apps[@]}"; do
+		let i++
+		if ! command -v $_apps &> /dev/null; then
+			apps1+=("$_apps ")			
+		else 
+			if [[ $i = "${#apps[@]}" ]]; then 
+				main
+				break		
+			fi
+		fi
+	done
+	
+	if [[ "${#apps1[@]}" > 0 ]]; then
+		yay -S ${apps1[@]} && checkApps
+		exit 0
+	fi
+	}
+
+phone_wal(){
+	deviceID=$(kdeconnect-cli --id-only  -l)
+	cp $wallpaper /home/tarek/.config/wpg/wallpapers/wallpaper.jpg \
+	&& kdeconnect-cli -d $deviceID --share \
+	/home/tarek/.config/wpg/wallpapers/wallpaper.jpg && kdeconnect-cli -d $deviceID --ping
+	}
+
+## Kill already running process
+kill(){
+	_ps=(polybar spotify dunst)
+	for _prs in "${_ps[@]}"; do
+		if [[ `pidof ${_prs}` ]]; then
+			killall -9 ${_prs}
+		fi
+	done
+	}
+	
+main(){
+	change_color
+	razer-cli -a
+	kill
+	pywalfox update
+	openbox --reconfigure
+	sh ~/.config/polybar/launch.sh
+	wal-telegram --wal
+	spicetify update
+	betterlockscreen -u $wallpaper
+	phone_wal
+	}
+
+
+# Check if wpg is installed and get colors
 if [[ -f "/usr/bin/wpg" ]]; then
 	if [[ "$1" ]]; then
 		pywal_set "$1"
+		
+	# Source the pywal color file
+	. "$HOME/.cache/wal/colors.sh"
 
-		# Source the pywal color file
-		. "$HOME/.cache/wal/colors.sh"
-
-		# Normal colors
-		BG=`printf "%s\n" "$background"`
-		ST=`printf "%s\n" "$background"`
-		FG=`printf "%s\n" "$foreground"`
-		FGA=`printf "%s\n" "$foreground"`
-		black=`printf "%s\n" "$color0"`
-		red=`printf "%s\n" "$color1"`
-		green=`printf "%s\n" "$color2"`
-		yellow=`printf "%s\n" "$color3"`
-		blue=`printf "%s\n" "$color4"`
-		magenta=`printf "%s\n" "$color5"`
-		cyan=`printf "%s\n" "$color6"`
-		white=`printf "%s\n" "$color7"`
-		# Bright colors
-		bright_black=`printf "%s\n" "$color8"`
-		bright_red=`printf "%s\n" "$color9"`
-		bright_green=`printf "%s\n" "$color10"`
-		bright_yellow=`printf "%s\n" "$color11"`
-		bright_blue=`printf "%s\n" "$color12"`
-		bright_magenta=`printf "%s\n" "$color13"`
-		bright_cyan=`printf "%s\n" "$color14"`
-		bright_white=`printf "%s\n" "$color15"`
+	# Normal colors
+	BG=`printf "%s\n" "$background"`
+	ST=`printf "%s\n" "$background"`
+	FG=`printf "%s\n" "$foreground"`
+	FGA=`printf "%s\n" "$foreground"`
+	black=`printf "%s\n" "$color0"`
+	red=`printf "%s\n" "$color1"`
+	green=`printf "%s\n" "$color2"`
+	yellow=`printf "%s\n" "$color3"`
+	blue=`printf "%s\n" "$color4"`
+	magenta=`printf "%s\n" "$color5"`
+	cyan=`printf "%s\n" "$color6"`
+	white=`printf "%s\n" "$color7"`
+	# Bright colors
+	bright_black=`printf "%s\n" "$color8"`
+	bright_red=`printf "%s\n" "$color9"`
+	bright_green=`printf "%s\n" "$color10"`
+	bright_yellow=`printf "%s\n" "$color11"`
+	bright_blue=`printf "%s\n" "$color12"`
+	bright_magenta=`printf "%s\n" "$color13"`
+	bright_cyan=`printf "%s\n" "$color14"`
+	bright_white=`printf "%s\n" "$color15"`
+	xrdb -merge ~/.cache/wal/colors.Xresources
 	
+	main
 	
-		change_color
-		xrdb -merge ~/.cache/wal/colors.Xresources
-		killall -9 polybar spotify dunst	
-		pywalfox update
-		openbox --reconfigure
-		razer-cli -a
-		wal-telegram --wal
-		sh ~/.config/polybar/launch.sh
-		pywal-discord
-		spicetify apply
 	else
 		echo -e "[!] Please enter the path to wallpaper. \n"
 		echo "Usage : ./pywal.sh path/to/image"

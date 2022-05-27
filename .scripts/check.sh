@@ -1,5 +1,7 @@
 #! /bin/bash
 
+DIR="$HOME/Pictures/Screenshots/Temp"
+
 screenshotScript(){
 	# Get PID of the screenshot script
   getPid=$(pgrep -f sc.sh)
@@ -10,8 +12,7 @@ screenshotScript(){
 	   disown
 	fi
 }
-
-DIR="$HOME/Pictures/Screenshots/Temp"
+main(){
 if [ -d "$DIR" ]; then
    # Take action if $DIR exists. #
    screenshotScript
@@ -19,4 +20,9 @@ if [ -d "$DIR" ]; then
    # Create Directory and then take action
    mkdir $DIR
    screenshotScript
+fi
+}
+
+if command -v scrot &> /dev/null; then 
+	main
 fi

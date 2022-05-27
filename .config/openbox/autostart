@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 
 # Kill already running process
-killall -9 picom dunst ksuperkey mpd xfce-polkit xfce4-power-manager polybar trackma-gtk xfsettingsd
+#killall -9 picom dunst ksuperkey mpd xfce-polkit xfce4-power-manager polybar trackma-gtk xfsettingsd
+
+_ps=(picom dunst ksuperkey mpd xfce-polkit xfce4-power-manager polybar trackma-gtk xfsettingsd touchegg)
+for _prs in "${_ps[@]}"; do
+	if [[ `pidof ${_prs}` ]]; then
+		killall -9 ${_prs}
+	fi
+done
 
 ## Restore Wallpaper
 #nitrogen --restore &
@@ -33,7 +40,7 @@ exec mpd &
 # exec plank &
 
 ## Thunar Daemon
-exec thunar --daemon &
+#exec thunar --daemon &
 
 ## Launch Polybar
 bash ~/.config/polybar/launch.sh &
@@ -48,7 +55,7 @@ exec kdeconnect-indicator &
 exec copyq &
 
 ## Syncthing
-exec syncthing &
+#exec syncthing &
 
 ## Excute Screenshot script
 bash ~/.scripts/check.sh &

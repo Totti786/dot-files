@@ -215,7 +215,7 @@
     <keybind key="W-Down">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
-        <width>60%</width>
+        <width>70%</width>
         <height>70%</height>
       </action>
       <action name="MoveToCenter"/>
@@ -689,6 +689,12 @@
     <keybind key="W-b">
       <action name="Execute">
         <command>sh ~/.scripts/bluetooth.sh</command>
+      </action>
+    </keybind>
+    <!-- Spotify -->
+    <keybind key="W-S-s">
+      <action name="Execute">
+        <command>spotify</command>
       </action>
     </keybind>
     <!-- Openbox -->

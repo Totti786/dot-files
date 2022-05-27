@@ -8,5 +8,4 @@ changeTray(){
 	fi
 }
 changeTray 
-killall -q polybar 
 sh ~/.config/polybar/launch.sh
