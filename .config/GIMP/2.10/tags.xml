@@ -1177,7 +1177,7 @@
   <resource identifier="${gimp_data_dir}/gradients/Yellow_Orange.ggr" checksum="428584726006e23e260baa2a7d79f295">
   </resource>
 
-  <resource identifier="gimp-palette-color-history" checksum="4327b5104b9114e1f759763d9b89db21">
+  <resource identifier="gimp-palette-color-history" checksum="67643397b2ddbff1f458cda1928aca66">
   </resource>
 
   <resource identifier="${gimp_data_dir}/palettes/Bears.gpl" checksum="e82e818c20ac12bdd21049924ea2d1e7">
@@ -1303,9 +1303,6 @@
   <resource identifier="${gimp_data_dir}/palettes/Web.gpl" checksum="f02e8dfa23d01d6acfbab7f895c2dd16">
   </resource>
 
-  <resource identifier="Amatic SC" checksum="(null)">
-  </resource>
-
   <resource identifier="Amiri" checksum="(null)">
   </resource>
 
@@ -1393,16 +1390,10 @@
   <resource identifier="Asana Math" checksum="(null)">
   </resource>
 
-  <resource identifier="Bangers" checksum="(null)">
-  </resource>
-
   <resource identifier="BitstreamVeraSansMono Nerd Font" checksum="(null)">
   </resource>
 
   <resource identifier="BlexMono Nerd Font" checksum="(null)">
-  </resource>
-
-  <resource identifier="Bubbler One" checksum="(null)">
   </resource>
 
   <resource identifier="C059" checksum="(null)">
@@ -1580,39 +1571,6 @@
   </resource>
 
   <resource identifier="Hack Nerd Font" checksum="(null)">
-  </resource>
-
-  <resource identifier="Hack Nerd Font Bold" checksum="(null)">
-  </resource>
-
-  <resource identifier="Hack Nerd Font Bold Italic" checksum="(null)">
-  </resource>
-
-  <resource identifier="Hack Nerd Font Italic" checksum="(null)">
-  </resource>
-
-  <resource identifier="Hack Nerd Font Mono" checksum="(null)">
-  </resource>
-
-  <resource identifier="Hack Nerd Font Mono Bold" checksum="(null)">
-  </resource>
-
-  <resource identifier="Hack Nerd Font Mono Bold Italic" checksum="(null)">
-  </resource>
-
-  <resource identifier="Hack Nerd Font Mono Italic" checksum="(null)">
-  </resource>
-
-  <resource identifier="Hack NF" checksum="(null)">
-  </resource>
-
-  <resource identifier="Hack NF Bold" checksum="(null)">
-  </resource>
-
-  <resource identifier="Hack NF Bold Italic" checksum="(null)">
-  </resource>
-
-  <resource identifier="Hack NF Italic" checksum="(null)">
   </resource>
 
   <resource identifier="IBM Plex Mono" checksum="(null)">
@@ -1859,12 +1817,6 @@
   </resource>
 
   <resource identifier="Latin Modern Math" checksum="(null)">
-  </resource>
-
-  <resource identifier="Lato Light" checksum="(null)">
-  </resource>
-
-  <resource identifier="Lato weight=250" checksum="(null)">
   </resource>
 
   <resource identifier="Liberation Mono" checksum="(null)">
@@ -4835,9 +4787,6 @@
   </resource>
 
   <resource identifier="URW Gothic Semi-Bold Oblique" checksum="(null)">
-  </resource>
-
-  <resource identifier="VT323" checksum="(null)">
   </resource>
 
   <resource identifier="waffle" checksum="(null)">
