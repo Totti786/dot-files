@@ -67,9 +67,6 @@
 			<menu id="CompositingPipeMenu" execute="&pipes;/ac-compositor" label="Compositor"/>
 			<menu id="XrandrPipeMenu" execute="&pipes;/ac-randr" label="Display / Monitor"/>
 			<separator/>
-<!--
-			<menu id="StylePipeMenu" execute="&pipes;/ac-change-style" label="Change Style"/>
--->
 			<menu id="FontPipeMenu" execute="&pipes;/ac-change-fonts" label="Change Font"/>
 			<separator/>
 			<item label="Change Wallpaper">
@@ -109,7 +106,6 @@
 				</action>
 			</item>
 		</menu>
-		<menu id="KeybindsPipeMenu" execute="&pipes;/ac-kb-pipemenu" label="Keybinds"/>
 		<item label="Lock Screen">
 			<action name="Execute">
 				<command>sh ~/.config/polybar/bin/i3lock.sh</command>
