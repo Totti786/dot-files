@@ -22,7 +22,7 @@ zsh(){
 	}
 
 programs(){
-		sudo yay -S - < essentials.txt
+		sudo pacman -S - < essentials.txt
 	}
 main(){
 	sudo cp -r /$DIR/.scripts/bin/ /usr/local/ && echo "moved bin to /usr/local"
@@ -30,6 +30,7 @@ main(){
 	cp -r /$DIR/.config/ ~/ && echo "moved config files"
 	cp -r /$DIR/.local/ ~/ && echo "moved fonts and icons"
 	cp -r /$DIR/.ncmpcpp/ ~/ && echo "moved nvmpcpp home"
-	programs
+
 }
-main
+
+"$@"

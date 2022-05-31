@@ -6,7 +6,6 @@ picom-ibhagwan-git
 alsa-utils
 wmctrl
 nm-connection-editor
-zscroll-git
 zsh
 zsh-autosuggestions
 playerctl
@@ -14,7 +13,6 @@ xorg-xbacklight
 axel
 rofi-calc
 termdown
-colorpicker
 dmenu
 htop
 i3lock-color
@@ -28,11 +26,9 @@ ranger
 megatools
 mkvtoolnix-cli
 networkmanager-openvpn
-obapps3
 obconf
 obkey
 obmenu-generator
-ookla-speedtest-bin
 openssh
 openvpn
 sddm
@@ -40,3 +36,4 @@ timeshift
 python
 xdotool
 xfce4-settings
+
