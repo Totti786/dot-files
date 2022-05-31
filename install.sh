@@ -24,12 +24,8 @@ zsh(){
 programs1(){
 		yay -S - < essentials.txt
 	}
-programs2(){
-		yay -S - < aur.txt
-	}
 main(){
 	programs1
-	programs2
 	cp -r /$DIR/.scripts/ ~/ && echo "moved scripts home" 
 	cp -r /$DIR/.config/ ~/ && echo "moved config files"
 	cp -r /$DIR/.local/ ~/ && echo "moved fonts and icons"

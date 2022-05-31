@@ -1,4 +1,0 @@
-ookla-speedtest-bin
-obapps3
-colorpicker
-zscroll-git
