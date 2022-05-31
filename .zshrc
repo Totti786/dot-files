@@ -8,7 +8,7 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
+ZSH_THEME="archcraft"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME="spaceship"
@@ -133,9 +133,6 @@ add-zsh-hook -Uz precmd rehash_precmd
 export PATH="/home/tarek/.local/bin:$PATH"
 export EDITOR=vim
 export PATH=$PATH:~/.scripts
-# oz
-alias zshconfig="geany ~/.zshrc"
-alias ohmyzsh="thunar ~/.oh-my-zsh"
 
 # ls
 alias l='ls -lh'
@@ -199,9 +196,6 @@ alias cdown='termdown'
 
 #Clear
 alias cls='clear'
-
-#FontCacheRefrech
-alias fontc='fc-cache -f -vo'
 
 #Toipe
 alias types='~/Applications/toipe'
