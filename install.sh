@@ -22,10 +22,10 @@ zsh(){
 	}
 
 programs1(){
-		sudo yay -S - < essentials.txt
+		yay -S - < essentials.txt
 	}
 programs2(){
-		sudo yay -S - < aur.txt
+		yay -S - < aur.txt
 	}
 main(){
 	programs1
