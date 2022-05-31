@@ -22,7 +22,8 @@ xfsettingsd &
 #fi
 
 ## Restore Wallpaper
-exec wal -Re &
+#exec wal -Re &
+feh --no-fehbg --bg-fill $HOME/.config/wpg/wallpapers/wallpaper.jpg &
 
 ## Enable power management
 xfce4-power-manager &
@@ -53,9 +54,6 @@ exec kdeconnect-indicator &
 
 #CopyQ
 exec copyq &
-
-## Syncthing
-#exec syncthing &
 
 ## Excute Screenshot script
 bash ~/.scripts/check.sh &

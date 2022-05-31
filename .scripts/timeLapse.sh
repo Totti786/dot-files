@@ -13,7 +13,7 @@ createVideo(){
 }
 # Deletes all the screen shot from the directory
 deleteScreenshots(){
-	cd $SDir && rm *.png
+	cd $SDIR && rm *.png
 }
 
 checkFile(){

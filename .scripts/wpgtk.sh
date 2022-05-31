@@ -138,7 +138,7 @@ phone_wal(){
 	deviceID=$(kdeconnect-cli --id-only  -l)
 	cp $wallpaper /home/tarek/.config/wpg/wallpapers/wallpaper.jpg \
 	&& kdeconnect-cli -d $deviceID --share \
-	/home/tarek/.config/wpg/wallpapers/wallpaper.jpg && kdeconnect-cli -d $deviceID --ping
+	$HOME/.config/wpg/wallpapers/wallpaper.jpg && kdeconnect-cli -d $deviceID --ping
 	}
 
 ## Kill already running process
