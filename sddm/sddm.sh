@@ -10,7 +10,9 @@ if command -v sddm &> /dev/null; then
 		sed -i -e "s/Current=.*/Current=$theme/g" /etc/sddm.conf.d/theme.conf
 	else
 		sudo mkdir /etc/sddm.conf.d/ &&
-		sudo cp $DIR/theme.conf /etc/sddm.conf.d/
+		sudo cp $DIR/theme.conf /etc/sddm.conf.d/ &&
+		sudo sed -i -e "s/Current=.*/Current=$theme/g" /etc/sddm.conf.d/theme.conf
+
 	fi
 else
 	yay -S sddm plasma-framework && 
