@@ -21,6 +21,9 @@ zsh(){
 		echo "zsh should be working now"
 	}
 
+programs(){
+		sudo yay -S - < essentials.txt
+	}
 main(){
 	zsh
 	sudo cp -r /$DIR/.scripts/bin/ /usr/local/ && echo "moved bin to /usr/local"
@@ -28,5 +31,6 @@ main(){
 	cp -r /$DIR/.config/ ~/.config && echo "moved config files"
 	cp -r /$DIR/.local/ ~/.local && echo "moved fonts and icons"
 	cp -r /$DIR/.ncmpcpp/ ~/ && echo "moved nvmpcpp home"
+	programs
 }
 main
