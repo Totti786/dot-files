@@ -11,8 +11,8 @@ else
 fi	
 }
 
-if ! command -v yay &> /dev/null; then 
-	yay
+if command -v yay &> /dev/null; then 
+	echo "yay is already installed"
 else 
-	echo "yay is already installed" 
+	 yay
 fi
