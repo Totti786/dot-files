@@ -18,6 +18,7 @@ zsh(){
 		cp /$DIR/.zshrc ~/ && 
 		sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 		echo "zsh should be working now"
+	fi
 	}
 
 programs(){
