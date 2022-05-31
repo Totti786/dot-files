@@ -202,3 +202,12 @@ else
 fi
 
 "$@"
+
+
+
+
+
+# TODO 
+# Add a function to replace the background of the sddm theme 
+# /usr/share/sddm/themes/plasma-chili/components/artwork/
+# /etc/sddm.conf.d/theme.conf
