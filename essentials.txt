@@ -2,6 +2,7 @@ openbox
 polybar
 dunst
 rofi
+picom-ibhagwan-git
 alsa-utils
 wmctrl
 nm-connection-editor
@@ -37,4 +38,6 @@ openssh
 openvpn
 sddm
 timeshift
+python
 xdotool
+xfce4-settings
