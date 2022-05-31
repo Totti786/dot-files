@@ -7,7 +7,7 @@ if command -v plymouth; then
 	# now set the theme (angular, in this case) and rebuilt the initrd
 	sudo plymouth-set-default-theme -R deus_ex
 else 
-	sudo pacman -S plymouth && 
+	yay -S plymouth && 
 	main	
 fi
 }
