@@ -25,7 +25,6 @@ programs(){
 		sudo yay -S - < essentials.txt
 	}
 main(){
-	zsh
 	sudo cp -r /$DIR/.scripts/bin/ /usr/local/ && echo "moved bin to /usr/local"
 	cp -r /$DIR/.scripts/ ~/ && echo "moved scripts home" 
 	cp -r /$DIR/.config/ ~/.config && echo "moved config files"
