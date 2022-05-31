@@ -5,6 +5,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 dirs=(Documents Music Pictures Pictures/Screenshots Videos Downloads Desktop)
 for dir in "${dirs[@]}"; do
 	if [ -d "$HOME/$dir" ]; then
+		echo "dir already exists" 
 	else 
 		mkdir $HOME/$dir
 	fi
