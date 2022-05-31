@@ -36,7 +36,6 @@ timeshift
 python
 xdotool
 xfce4-settings
-
 ookla-speedtest-bin
 obapps3
 colorpicker
