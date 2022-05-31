@@ -6,11 +6,15 @@ theme="plasma-chili"
 main(){
 if command -v sddm &> /dev/null; then
 	sudo cp -r $DIR/$theme /usr/share/sddm/themes/ &&
-	sudo mkdir /etc/sddm.conf.d/
-	sudo cp $DIR/theme.conf /etc/sddm.conf.d/ &&
-	sed -i -e "s/Current=.*/Current=$theme/g" /etc/sddm.conf.d/theme.conf
+	if [ -f /etc/sddm.conf.d/theme.conf ];then
+		sed -i -e "s/Current=.*/Current=$theme/g" /etc/sddm.conf.d/theme.conf
+	else
+		sudo mkdir /etc/sddm.conf.d/ &&
+		sudo cp $DIR/theme.conf /etc/sddm.conf.d/
+	fi
 else
 	yay -S sddm plasma-framework && 
 	sudo systemctl enable sddm.service
 fi	
 }
+main
