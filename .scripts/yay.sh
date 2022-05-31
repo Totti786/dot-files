@@ -12,5 +12,4 @@ else
 fi	
 }
 
-yay &&
-sudo rm -R $HOME/yay-git
+yay
