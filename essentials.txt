@@ -28,7 +28,6 @@ ranger
 megatools
 mkvtoolnix-cli
 networkmanager-openvpn
-nvtop
 obapps3
 obconf
 obkey
