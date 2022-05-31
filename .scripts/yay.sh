@@ -11,8 +11,5 @@ else
 fi	
 }
 
-if command -v yay &> /dev/null; then 
-	echo "yay is already installed"
-else 
-	 yay
-fi
+yay &&
+sudo rm -R yay-git
