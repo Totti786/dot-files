@@ -8,6 +8,7 @@ feh
 nm-connection-editor
 htop
 dmenu
+alacritty
 i3lock-color
 betterlockscreen
 
