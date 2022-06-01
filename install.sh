@@ -18,7 +18,7 @@ zsh(){
 		cp -r /$DIR/.zshrc ~/
 		echo "Zsh should be working now"
 	else 
-		echo "Error"
+		echo "make sure that zsh is installed"
 	fi
 	}
 
