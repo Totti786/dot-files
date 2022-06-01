@@ -18,7 +18,7 @@ zsh(){
 		cp -r /$DIR/.zshrc ~/
 		echo "Zsh should be working now"
 	else 
-		echo "Zsh is already installed"
+		echo "Eroor"
 	fi
 	}
 
@@ -26,7 +26,6 @@ moveConfigs(){
 	cp -r /$DIR/.scripts/ ~/ && echo "moved scripts home" 
 	cp -r /$DIR/.config/ ~/ && echo "moved config files"
 	cp -r /$DIR/.local/ ~/ && echo "moved fonts and icons"
-	cp -r /$DIR/.ncmpcpp/ ~/ && echo "moved nvmpcpp home"
 	sudo cp -r /$DIR/.scripts/bin/ /usr/local/ && echo "moved bin to /usr/local"
 	}
 

@@ -17,11 +17,10 @@ thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
-xfce4-settings-manager
+xfce4-settings
 pavucontrol
 
 zsh
-zsh-autosuggestions
 xorg-xbacklight
 alsa-utils
 wmctrl
