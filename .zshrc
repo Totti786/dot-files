@@ -158,23 +158,14 @@ alias disk='ncdu'
 #neofetch
 alias neo='neofetch'
 
-#ncmpcpp
-alias music='sh ~/.ncmpcpp/scripts/ncmpcpp-art'
-
 #pacman 
 alias pacs='sudo pacman -S'
 alias pacr='sudo pacman -R'
 alias pacu='sudo pacman -Syu'
 alias pacc='sudo pacman -Sc'
 
-#minecraft
-alias mine='prime-run java -jar /home/tarek/Desktop/TLauncher-2.83.jar'
-
 #alias edit 
 alias edit='vim ~/.zshrc'
-
-#alias heroic
-alias epic='prime-run heroic'
  
 #clock 
 alias clc='tty-clock -c'
@@ -199,6 +190,3 @@ alias cls='clear'
 
 #Toipe
 alias types='~/Applications/toipe'
-
-#temp audio german
-alias german='cd /mnt/SSD/Users/Tarek/Downloads/Books/Learning\ Languages/Learning\ German/Assimil\ German\ With\ Ease\ \(Book\ +\ Audio\)\ -\ Hilde\ Schneider\ A.\ Settler/Audio/'
