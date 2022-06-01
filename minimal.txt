@@ -34,7 +34,7 @@ ttf-dejavu
 ttf-liberation
 tty-clock
 termdown
-
+python-pip
 cava
 mpc
 mpd
