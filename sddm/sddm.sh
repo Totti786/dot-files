@@ -24,12 +24,4 @@ else
 fi	
 }
 
-
-#if [[ "$(grep 'ExecStart=' /etc/systemd/system/display-manager.service)"  = "ExecStart=/usr/bin/lightdm" ]]; then
-	sudo systemctl disable lightdm.service &&
-	#sudo pacman -R lightdm-gtk-greeter ligthdm
-	main
-#else
-	#main
-#fi
-
+main
