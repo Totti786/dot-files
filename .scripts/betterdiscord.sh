@@ -9,8 +9,8 @@ if command -v betterdiscordctl &> /dev/null; then
 			echo "Installed"
 		fi	
 else 
-	yay -S betterdiscordctl &&
-	installBetterdiscord
+	yay -S betterdiscordctl && installBetterdiscord
+	
 fi
 }
 

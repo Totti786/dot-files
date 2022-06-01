@@ -1,7 +1,7 @@
 #! /bin/bash
 
 yay(){
-if command -v git &> /dev/null; then
+if command -v git &> /dev/null && ! command -v yay; then
 	echo "git is found, continuing with the installation..."
 	git clone https://aur.archlinux.org/yay-git.git
 	cd yay-git
@@ -11,8 +11,4 @@ else
 fi	
 }
 
-if ! command -v yay &> /dev/null; then 
-	yay
-else 
-	echo "yay is already installed" 
-fi
+main

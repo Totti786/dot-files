@@ -25,6 +25,4 @@ fi
 
 if command -v scrot &> /dev/null; then 
 	main
-else 
-	echo "scrot is not installed"
 fi
