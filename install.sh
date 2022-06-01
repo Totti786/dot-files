@@ -14,6 +14,7 @@ zsh(){
 		cp /$DIR/.zshrc ~/ && 
 		sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &&
 		cp -r /$DIR/zsh/custom ~/.oh-my-zsh/ && echo "moved zsh custom files"
+		git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 		echo "Zsh should be working now"
 	else 
 		echo "Zsh is already installed"
