@@ -7,5 +7,6 @@ changeTray(){
 		sed -i -e 's/tray-position = none/tray-position = right/g' ~/.config/polybar/config.ini
 	fi
 }
+
 changeTray 
 sh ~/.config/polybar/launch.sh

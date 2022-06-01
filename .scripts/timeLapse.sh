@@ -41,4 +41,6 @@ fi
 
 if command -v ffmpeg &> /dev/null; then 
 	main	
+else 
+	echo "ffmpeg is not installed"
 fi

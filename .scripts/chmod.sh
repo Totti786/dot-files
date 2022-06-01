@@ -1,5 +1,5 @@
 #! /bin/bash
 
 for shell in *.sh; do
-        chmod +x $shell
+	chmod +x $shell
 done

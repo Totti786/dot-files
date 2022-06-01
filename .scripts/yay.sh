@@ -3,7 +3,6 @@
 yay(){
 if command -v git &> /dev/null; then
 	echo "git is found, continuing with the installation..."
-	cd $HOME
 	git clone https://aur.archlinux.org/yay-git.git
 	cd yay-git
 	makepkg -si && echo "yay installed successfully"
@@ -12,4 +11,8 @@ else
 fi	
 }
 
-yay
+if ! command -v yay &> /dev/null; then 
+	yay
+else 
+	echo "yay is already installed" 
+fi
