@@ -12,7 +12,8 @@ zsh(){
 	if command -v zsh &> /dev/null && [ ! -d $HOME/.oh-my-zsh ]; then 
 		chsh -s $(which zsh) &&
 		cp /$DIR/.zshrc ~/ && 
-		sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+		sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &&
+		cp -r /$DIR/zsh/custom ~/.oh-my-zsh/ && echo "moved zsh custom files"
 		echo "Zsh should be working now"
 	else 
 		echo "Zsh is already installed"
@@ -37,7 +38,9 @@ installFull(){
 	
 main(){
 	createDirs
+	installMinimal
+	moveConfigs
 	zsh
 }
 
-"$@"
+main
