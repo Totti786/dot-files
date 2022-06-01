@@ -11,4 +11,4 @@ else
 fi	
 }
 
-main
+yay
