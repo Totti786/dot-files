@@ -37,11 +37,11 @@ installFull(){
 		yay -S - < full.txt
 	}
 	
-main(){
+install(){
 	createDirs
 	installMinimal
 	moveConfigs
 	zsh
 }
 
-main
+"$@"

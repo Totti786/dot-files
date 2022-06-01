@@ -17,9 +17,9 @@ thunar
 thunar-archive-plugin
 thunar-media-tags-plugin
 thunar-volman
-xfce4-settings-manager
+xfce4-settings
 pavucontrol
-
+kdeconnect
 zsh
 zsh-autosuggestions
 xorg-xbacklight
@@ -63,8 +63,7 @@ noto-fonts-emoji
 
 
 python-pywalfox
-geany
-geany-plugins
+
 gimp
 github-desktop
 handbrake
@@ -112,7 +111,6 @@ baobab
 copyq
 2048.c
 curtail
-lxappearance-obconf
 spotify
 stacer
 steam
