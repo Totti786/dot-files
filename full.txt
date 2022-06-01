@@ -10,6 +10,7 @@ htop
 dmenu
 i3lock-color
 betterlockscreen
+alacritty
 
 firefox
 thunar
