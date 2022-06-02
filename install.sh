@@ -33,17 +33,17 @@ moveConfigs(){
 	sudo cp -r /$DIR/.scripts/bin/ /usr/local/ && echo "moved bin to /usr/local"
 	}
 
-installMinimal(){
-		yay -S - < minimal.txt
+minimal(){
+		sudo pacman -S - < minimal.txt
 	}
 	
-installFull(){
+full(){
 		yay -S - < extra.txt
 	}
 	
 install(){
 	createDirs
-	installMinimal
+	minimal
 	moveConfigs
 	zsh
 }
