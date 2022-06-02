@@ -15,7 +15,8 @@ xdg-user-dirs-update
 zsh(){
 	if command -v zsh &> /dev/null; then
 		if [ ! -d $HOME/.oh-my-zsh ]; then
-			sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+			sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && 
+			zsh
 		fi
 		#chsh -s $(which zsh) &&
 		cp -r $DIR/zsh/custom ~/.oh-my-zsh/ && echo "moved zsh custom files" &&
