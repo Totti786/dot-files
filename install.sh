@@ -14,13 +14,14 @@ xdg-user-dirs-update
 
 zsh(){
 	if command -v zsh &> /dev/null && [ ! -d $HOME/.oh-my-zsh ]; then 
+		yay -S zsh &&
 		chsh -s $(which zsh) &&
 		cp /$DIR/.zshrc ~/ && 
 		sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" &&
-		cp -r /$DIR/zsh/custom ~/.oh-my-zsh/ && echo "moved zsh custom files"
-		git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-		cp -r /$DIR/.zshrc ~/
-		echo "Zsh should be working now"
+		cp -r /$DIR/zsh/custom ~/.oh-my-zsh/ && echo "moved zsh custom files" &&
+		git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions &&
+		cp -r /$DIR/.zshrc ~/ &&
+		echo "Zsh should be working now" 
 	else 
 		echo "make sure that zsh is installed"
 	fi
