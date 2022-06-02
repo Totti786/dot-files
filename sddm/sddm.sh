@@ -13,7 +13,7 @@ if command -v sddm &> /dev/null; then
 			sudo mkdir /etc/sddm.conf.d/ &&
 			sudo cp $DIR/theme.conf /etc/sddm.conf.d/ &&
 			sudo sed -i -e "s/Current=.*/Current=$theme/g" /etc/sddm.conf.d/theme.conf
-			sudo cp -r $DIR/.face.icon /usr/share/sddm/faces
+			sudo cp -r $DIR/.face.icon/usr/share/sddm/faces
 		fi
 	else 
 		sudo cp -r $DIR/$theme /usr/share/sddm/themes/ &&

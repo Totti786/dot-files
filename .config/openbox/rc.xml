@@ -683,10 +683,16 @@
         <command>sh ~/.scripts/bluetooth.sh</command>
       </action>
     </keybind>
-    <!-- Bluetooth Connect -->
+    <!-- Rofi Calculator -->
     <keybind key="W-S-c">
       <action name="Execute">
-        <command>rofi options -theme ~/.config/polybar/rofi/themes/launcher -show calc -modi calc -no-show-match -no-sort</command>
+        <command>rofi options -theme ~/.config/polybar/rofi/themes/launcher.rasi -show calc -modi calc -no-show-match -no-sort</command>
+      </action>
+    </keybind>
+    <!-- Rofi Emoji Menu-->
+    <keybind key="W-S-e">
+      <action name="Execute">
+        <command>rofi options -theme ~/.config/polybar/rofi/themes/launcher.rasi -show emoji -modi emoji</command>
       </action>
     </keybind>
     <!-- Spotify -->
