@@ -686,13 +686,13 @@
     <!-- Rofi Calculator -->
     <keybind key="W-S-c">
       <action name="Execute">
-        <command>rofi options -theme ~/.config/polybar/rofi/themes/launcher.rasi -show calc -modi calc -no-show-match -no-sort</command>
+        <command>rofi options -show calc -modi calc</command>
       </action>
     </keybind>
     <!-- Rofi Emoji Menu-->
     <keybind key="W-S-e">
       <action name="Execute">
-        <command>rofi options -theme ~/.config/polybar/rofi/themes/launcher.rasi -show emoji -modi emoji</command>
+        <command> rofi options -show emoji -modi emoji</command>
       </action>
     </keybind>
     <!-- Spotify -->
