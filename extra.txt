@@ -44,11 +44,9 @@ lutris
 soundux
 syncplay
 viewnior
-yabridge-bin
 
 gping
 discover-overlay
-jpdfbookmarks
 jre-openjdk
 losslesscut-bin
 mangohud

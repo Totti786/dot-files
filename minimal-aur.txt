@@ -17,3 +17,4 @@ bullshit
 wal-telegram-git
 python-pywalfox
 manga-cli-git
+yabridge-bin
