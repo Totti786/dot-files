@@ -41,7 +41,6 @@ ttf-dejavu
 ttf-liberation
 termdown
 python-pip
-cava
 mpc
 mpd
 mpd-mpris
@@ -79,7 +78,7 @@ toilet
 plank
 
 xfce-polkit
-
+cava
 tty-clock
 ookla-speedtest-bin
 obapps3
