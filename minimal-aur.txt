@@ -1,6 +1,6 @@
 xfce-polkit-git
-cava-git
-tty-clock-git
+cava
+tty-clock
 ookla-speedtest-bin
 obapps3
 ytfzfim
@@ -12,7 +12,7 @@ toilet
 sndcpy-bin
 yetris
 typioca-git
-2048.c-git
+2048.c
 bullshit
 wal-telegram-git
 python-pywalfox
