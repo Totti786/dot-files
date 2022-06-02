@@ -25,7 +25,8 @@ zsh(){
 		echo "Zsh should be working now" 
 	else 
 		echo "Zsh is not installed, installing... "
-		yay -S zsh
+		sudo pacman -S zsh &&
+		zsh
 	fi
 	}
 
