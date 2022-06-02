@@ -75,5 +75,6 @@ qt5-styleplugins
 rtorrent
 plank
 
+xfce-polkit-git cava tty-clock ookla-speedtest-bin obapps3 ytfzfim aniwrapper-git zscroll-git unimatrix-git toilet
 
 
