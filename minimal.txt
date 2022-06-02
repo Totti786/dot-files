@@ -28,6 +28,7 @@ xarchiver
 pavucontrol
 geany
 geany-plugins
+gpick
 zsh
 xorg-xbacklight
 alsa-utils
@@ -53,6 +54,8 @@ ncmpcpp
 ranger
 megatools
 wget
+scrot
+light
 mkvtoolnix-cli
 grub-customizer
 rhythmbox
@@ -71,6 +74,7 @@ obkey
 obmenu-generator
 xorg-xkill
 appimagelauncher
+bluez-utils
 qt5-styleplugins
 rtorrent
 plank
