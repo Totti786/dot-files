@@ -34,7 +34,7 @@ moveConfigs(){
 	}
 
 minimal(){
-		sudo pacman -S - < minimal.txt
+		yay -S - < minimal.txt
 	}
 	
 full(){
