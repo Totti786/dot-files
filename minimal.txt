@@ -74,3 +74,6 @@ appimagelauncher
 qt5-styleplugins
 rtorrent
 plank
+
+
+

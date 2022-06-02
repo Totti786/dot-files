@@ -35,10 +35,11 @@ moveConfigs(){
 
 minimal(){
 		sudo pacman -S - < minimal.txt
+		yay -S - < minimal-aur.txt
 	}
 	
 full(){
-		yay -S - < extra.txt
+		sudo pacman -S - < extra.txt
 	}
 	
 install(){

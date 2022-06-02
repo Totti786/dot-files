@@ -32,7 +32,6 @@ spotify
 spicetify-cli
 stacer
 flatpak
-unimatrix-git
 syncthing
 touchegg
 openboard
@@ -57,27 +56,3 @@ nvidia
 nvidia-prime
 pulseeffects-legacy
 
-
-
-
-xfce-polkit
-cava
-tty-clock
-ookla-speedtest-bin
-obapps3
-ytfzfim
-aniwrapper-git
-zscroll-git
-unimatrix-git
-toilet
-
-
-
-sndcpy-bin
-yetris
-typioca-git
-2048.c
-bullshit
-wal-telegram-git
-python-pywalfox
-manga-cli-git
