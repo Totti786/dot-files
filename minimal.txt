@@ -73,5 +73,4 @@ xorg-xkill
 appimagelauncher
 qt5-styleplugins
 rtorrent
-toilet
 plank
