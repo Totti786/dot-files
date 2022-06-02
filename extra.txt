@@ -37,6 +37,28 @@ syncthing
 touchegg
 openboard
 scrcpy
+drawing
+evince
+gparted
+libreoffice-fresh
+lutris
+soundux
+syncplay
+viewnior
+yabridge-bin
+
+gping
+discover-overlay
+jpdfbookmarks
+jre-openjdk
+losslesscut-bin
+mangohud
+nvidia
+nvidia-prime
+pulseeffects-legacy
+
+
+
 
 sndcpy-bin
 yetris
@@ -45,3 +67,4 @@ typioca-git
 bullshit
 wal-telegram-git
 python-pywalfox
+manga-cli-git

@@ -1,5 +1,9 @@
 #!/bin/bash
 
+## TODO 
+#echo "export QT_QPA_PLATFORMTHEME=gtk2" >> ~/.profile
+#export QT_QPA_PLATFORMTHEME="qt5ct"
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 createDirs(){
@@ -34,7 +38,7 @@ installMinimal(){
 	}
 	
 installFull(){
-		yay -S - < full.txt
+		yay -S - < extra.txt
 	}
 	
 install(){
