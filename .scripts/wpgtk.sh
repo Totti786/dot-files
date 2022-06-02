@@ -134,6 +134,10 @@ checkApps(){
 	fi
 	}
 
+sddmWal(){
+	sudo cp $wallpaper /usr/share/sddm/themes/plasma-chili/components/artwork/background.jpg
+	}
+
 phone_wal(){
 	deviceID=$(kdeconnect-cli --id-only  -l)
 	cp $wallpaper /home/tarek/.config/wpg/wallpapers/wallpaper.jpg \
@@ -198,12 +202,12 @@ if [[ -f "/usr/bin/wpg" ]]; then
 else
 	echo "[!] 'wpgtk' is not installed."
 	echo "Installing from the AUR..." 
-	yay -S wpgtk-git && wpg-install.sh -og
+	yay -S wpgtk-git &&
+	wpg-install.sh -g &&
+	wpg-install.sh -o
 fi
 
 "$@"
-
-
 
 
 

@@ -1,71 +1,60 @@
-#!/usr/bin/env bash
+## Autostart Programs
 
-# Kill already running process
-#killall -9 picom dunst ksuperkey mpd xfce-polkit xfce4-power-manager polybar trackma-gtk xfsettingsd
-
-_ps=(picom dunst ksuperkey mpd xfce-polkit xfce4-power-manager polybar trackma-gtk xfsettingsd touchegg)
+## Kill already running process
+_ps=(picom dunst ksuperkey mpd xfce-polkit xfce4-power-manager polybar trackma-gtk)
 for _prs in "${_ps[@]}"; do
 	if [[ `pidof ${_prs}` ]]; then
 		killall -9 ${_prs}
 	fi
 done
 
-## Restore Wallpaper
-#nitrogen --restore &
+## Polkit agent
+/usr/lib/xfce-polkit/xfce-polkit &
 
-## xfce4-settings daemon
-xfsettingsd &
+## Dunst
+dunst &
 
-## polkit agent
-#if [[ ! `pidof xfce-polkit` ]]; then
-	#/usr/lib/xfce-polkit/xfce-polkit &
-#fi
+## Picom	
+picom &
 
 ## Restore Wallpaper
-#exec wal -Re &
-feh --no-fehbg --bg-fill $HOME/.config/wpg/wallpapers/wallpaper.jpg &
+wal -Re &
 
-## Enable power management
+# Enable power management
 xfce4-power-manager &
 
-## Start Compositing Manager
-exec picom &
+# Enable Super Keys For Menu
+ksuperkey -e 'Super_L=Alt_L|F1' &
+ksuperkey -e 'Super_R=Alt_L|F1' &
 
-## Notification Daemon
-exec dunst &
-
-## Start Music Player Daemon
-exec mpd &
-
-## Launch Plank
-# exec plank &
-
-## Thunar Daemon
-#exec thunar --daemon &
+## Restore Wallpaper
+#nitrogen --restore
 
 ## Launch Polybar
-bash ~/.config/polybar/launch.sh &
-
-## Discord Launch
-exec discord &
-
-## KDE Conenct
-exec kdeconnect-indicator &
-
-#CopyQ
-exec copyq &
+exec sh ~/.config/polybar/launch.sh &
 
 ## Excute Screenshot script
-bash ~/.scripts/check.sh &
+exec sh ~/.scripts/check.sh &
 
-## Trackma Launch
-exec trackma-gtk &
+## Start mpd
+exec mpd &
+exec mpd-mpris &
+
+## Thunar Daemon
+exec thunar --daemon &
 
 ## Touchegg
 exec touchegg --daemon &
 exec touchegg &
 
-## Enable Super Keys For Menu
-ksuperkey -e 'Super_L=Alt_L|F1' &
-ksuperkey -e 'Super_R=Alt_L|F1' &
+## Discord Launch
+exec discord &
 
+## Trackma Launch
+exec trackma-gtk 
+
+## KDE Conenct
+exec kdeconnect-indicator &
+
+## CopyQ
+exec copyq &

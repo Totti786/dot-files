@@ -1,6 +1,4 @@
 <?xml version="1.0"?>
-<!-- Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com> -->
-<!-- Everyone is permitted to copy and distribute copies of this file under GNU-GPL3 -->
 <!-- ################################ General Settings ################################ -->
 <openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
   <resistance>
@@ -23,7 +21,7 @@
   </placement>
   <theme>
     <name>colorbamboo</name>
-    <titleLayout>LC</titleLayout>
+    <titleLayout>LIC</titleLayout>
     <keepBorder>no</keepBorder>
     <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
@@ -64,7 +62,7 @@
     </font>
   </theme>
   <desktops>
-    <number>5</number>
+    <number>6</number>
     <firstdesk>0</firstdesk>
     <names>
       <name>1</name>
@@ -602,9 +600,9 @@
         <command>alacritty -e htop</command>
       </action>
     </keybind>
-    <keybind key="C-A-b">
+    <keybind key="C-A-d">
       <action name="Execute">
-        <command>alacritty -e bashtop</command>
+        <command>alacritty -e ncdu</command>
       </action>
     </keybind>
     <!-- Lockscreen -->
@@ -652,11 +650,11 @@
     <!-- Discord -->
     <keybind key="W-z">
       <action name="Execute">
-        <command>discord --no-sandbox</command>
+        <command>discord</command>
       </action>
     </keybind>
     <!-- Copyq -->
-    <keybind key="W-S-c">
+    <keybind key="W-S-v">
       <action name="Execute">
         <command>copyq show</command>
       </action>
@@ -665,12 +663,6 @@
     <keybind key="W-S-b">
       <action name="Execute">
         <command>blueman-manager</command>
-      </action>
-    </keybind>
-    <!-- pavucontrol -->
-    <keybind key="W-S-v">
-      <action name="Execute">
-        <command>pavucontrol</command>
       </action>
     </keybind>
     <!-- Dmenu -->
@@ -685,10 +677,16 @@
         <command>sh ~/.scripts/trayToggle.sh</command>
       </action>
     </keybind>
-    <!-- Bluetooth Connect -->
+    <!-- Bluetooth Toggle -->
     <keybind key="W-b">
       <action name="Execute">
         <command>sh ~/.scripts/bluetooth.sh</command>
+      </action>
+    </keybind>
+    <!-- Bluetooth Connect -->
+    <keybind key="W-S-c">
+      <action name="Execute">
+        <command>rofi options -theme ~/.config/polybar/rofi/themes/launcher -show calc -modi calc -no-show-match -no-sort</command>
       </action>
     </keybind>
     <!-- Spotify -->
