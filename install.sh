@@ -24,7 +24,7 @@ zsh(){
 		cp -r $DIR/.zshrc ~/ &&
 		echo "Zsh should be working now" 
 	else 
-		echo "Zsh is not installed, installing... "
+		echo "Zsh is not installed installing..." &&
 		sudo pacman -S zsh &&
 		zsh
 	fi
