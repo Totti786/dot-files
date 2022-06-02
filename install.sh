@@ -13,7 +13,7 @@ xdg-user-dirs-update
 }
 
 zsh(){
-	if command -v zsh &> /dev/null; then
+	if ! command -v zsh &> /dev/null; then
 		echo "wtf is this"
 		#if [ ! -d $HOME/.oh-my-zsh ]; then
 			#sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && 
