@@ -60,6 +60,19 @@ pulseeffects-legacy
 
 
 
+xfce-polkit
+cava
+tty-clock
+ookla-speedtest-bin
+obapps3
+ytfzfim
+aniwrapper-git
+zscroll-git
+unimatrix-git
+
+
+
+
 sndcpy-bin
 yetris
 typioca-git
