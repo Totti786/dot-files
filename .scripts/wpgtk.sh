@@ -138,7 +138,7 @@ sddmWal(){
 	sudo cp $wallpaper /usr/share/sddm/themes/plasma-chili/components/artwork/background.jpg
 	}
 
-phone_wal(){
+phoneWal(){
 	deviceID=$(kdeconnect-cli --id-only  -l)
 	cp $wallpaper /home/tarek/.config/wpg/wallpapers/wallpaper.jpg \
 	&& kdeconnect-cli -d $deviceID --share \

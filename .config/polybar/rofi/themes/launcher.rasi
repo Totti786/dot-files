@@ -6,7 +6,7 @@ configuration {
     fixed-num-lines: 				true;
     show-icons: 					true;
     sidebar-mode: 					true;
-    scroll-method: 					1;
+    scroll-method: 					2;
     window-format: 					"[{w}] ··· {c} ···   {t}";
     click-to-exit: 					true;
     combi-hide-mode-prefix: 		false;

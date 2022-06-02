@@ -35,9 +35,12 @@ moveConfigs(){
 
 minimal(){
 		sudo pacman -S - < minimal.txt
+	}
+
+aur(){
 		yay -S $(< minimal-aur.txt)
 	}
-	
+
 full(){
 		sudo pacman -S - < extra.txt
 	}
