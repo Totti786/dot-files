@@ -569,11 +569,6 @@
         <!--<command>color-picker</command>-->
       </action>
     </keybind>
-    <keybind key="W-v">
-      <action name="Execute">
-        <command>~/.config/polybar/rofi/bin/launcher</command>
-      </action>
-    </keybind>
     <!-- CLI Apps -->
     <keybind key="C-A-t">
       <action name="Execute">
@@ -654,7 +649,7 @@
       </action>
     </keybind>
     <!-- Copyq -->
-    <keybind key="W-S-v">
+    <keybind key="W-v">
       <action name="Execute">
         <command>copyq show</command>
       </action>
