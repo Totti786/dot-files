@@ -18,7 +18,7 @@ zsh(){
 			sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && 
 			zsh
 		fi
-		chsh -s $(which zsh) &&
+		#chsh -s $(which zsh) &&
 		cp -r $DIR/zsh/custom ~/.oh-my-zsh/ && echo "moved zsh custom files" &&
 		git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions &&
 		cp -r $DIR/.zshrc ~/ &&
