@@ -1,0 +1,11 @@
+sndcpy-bin
+yetris
+typioca-git
+2048.c
+bullshit
+wal-telegram-git
+python-pywalfox
+manga-cli-git
+yabridge-bin
+webtorrent-cli
+qt5-styleplugins
