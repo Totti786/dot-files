@@ -6,7 +6,7 @@ if command -v git &> /dev/null; then
 	cd $HOME
 	git clone https://aur.archlinux.org/yay-git.git
 	cd yay-git
-	makepkg -si && sudo rm -R ~/yay-git && echo "yay installed successfully"
+	makepkg -si && sudo pacman --noconfirm -R go && sudo rm -R ~/yay-git && echo "yay installed successfully"
 else 
 	sudo pacman -S git && yay
 fi	
