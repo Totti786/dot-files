@@ -12,8 +12,6 @@ htop
 lxappearance-obconf
 dmenu
 alacritty
-i3lock-color
-betterlockscreen
 zathura
 zathura-cb
 zathura-pdf-mupdf
@@ -73,10 +71,7 @@ brightnessctl
 blueman
 bluez-utils
 kdeconnect
-obkey
-obmenu-generator
 xorg-xkill
 appimagelauncher
-qt5-styleplugins
 rtorrent
 plank

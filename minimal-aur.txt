@@ -8,6 +8,10 @@ aniwrapper-git
 zscroll-git
 unimatrix-git 
 toilet
+betterlockscreen
+i3lock-color
+obkey
+obmenu-generator
 
 sndcpy-bin
 yetris
@@ -19,3 +23,5 @@ python-pywalfox
 manga-cli-git
 yabridge-bin
 webtorrent-cli
+qt5-styleplugins
+
