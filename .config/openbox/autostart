@@ -34,6 +34,7 @@ ksuperkey -e 'Super_R=Alt_L|F1' &
 
 # CopyQ
 copyq &
+
 ## Restore Wallpaper
 #nitrogen --restore
 
@@ -62,5 +63,3 @@ exec trackma-gtk
 
 ## KDE Conenct
 exec kdeconnect-indicator &
-
-
