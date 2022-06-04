@@ -18,7 +18,7 @@ if [ -d "$DIR" ]; then
    screenshotScript
   else 
    # Create Directory and then take action
-   mkdir $DIR
+   mkdir $DIR &&
    screenshotScript
 fi
 }
