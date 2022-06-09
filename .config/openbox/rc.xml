@@ -569,11 +569,6 @@
         <!--<command>color-picker</command>-->
       </action>
     </keybind>
-    <keybind key="W-v">
-      <action name="Execute">
-        <command>~/.config/polybar/rofi/bin/launcher</command>
-      </action>
-    </keybind>
     <!-- CLI Apps -->
     <keybind key="C-A-t">
       <action name="Execute">
@@ -654,7 +649,7 @@
       </action>
     </keybind>
     <!-- Copyq -->
-    <keybind key="W-S-v">
+    <keybind key="W-v">
       <action name="Execute">
         <command>copyq show</command>
       </action>
@@ -686,13 +681,13 @@
     <!-- Rofi Calculator -->
     <keybind key="W-S-c">
       <action name="Execute">
-        <command>rofi options -show calc -modi calc</command>
+        <command>rofi options -show calc</command>
       </action>
     </keybind>
     <!-- Rofi Emoji Menu-->
     <keybind key="W-S-e">
       <action name="Execute">
-        <command> rofi options -show emoji -modi emoji</command>
+        <command>rofi options -show emoji -modi emoji</command>
       </action>
     </keybind>
     <!-- Spotify -->
@@ -1009,6 +1004,15 @@ s      <mousebind action="Press" button="A-Right"><action name="ShowMenu"><menu>
   </menu>
   <!-- ################################ Applications Rules ################################ -->
   <applications>
+    <application name="obconf">
+      <position force="yes">
+        <x>center</x>
+        <y>center</y>
+      </position>
+      <size>
+        <width>50%</width>
+      </size>
+    </application>
     <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.
