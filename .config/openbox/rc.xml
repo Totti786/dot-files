@@ -1009,15 +1009,6 @@ s      <mousebind action="Press" button="A-Right"><action name="ShowMenu"><menu>
   </menu>
   <!-- ################################ Applications Rules ################################ -->
   <applications>
-    <application name="obconf">
-      <position force="yes">
-        <x>center</x>
-        <y>center</y>
-      </position>
-      <size>
-        <width>50%</width>
-      </size>
-    </application>
     <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.
@@ -1112,30 +1103,6 @@ s      <mousebind action="Press" button="A-Right"><action name="ShowMenu"><menu>
 
   # end of the example
 -->
-    <application name="obs">
-      <decor>yes</decor>
-      <layer>default</layer>
-    </application>
-    <application name="gl" class="mpv" type="normal">
-      <decor>no</decor>
-    </application>
-    <application name="discord" class="discord" role="browser-window" type="normal">
-      <decor>no</decor>
-      <position force="no">
-        <x>default</x>
-        <y>default</y>
-      </position>
-    </application>
-    <application/>
-    <application/>
-    <application name="Alacritty" class="Alacritty" type="normal">
-      <decor>yes</decor>
-    </application>
-    <application name="org.pwmt.zathura" class="Zathura" title="org.pwmt.zathura" type="normal">
-      <decor>no</decor>
-      <fullscreen>default</fullscreen>
-      <maximized>yes</maximized>
-    </application>
   </applications>
 </openbox_config>
 <!-- vim:sw=2
