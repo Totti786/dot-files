@@ -27,10 +27,6 @@ fix_modules() {
 	else 
 		sed -i -e 's/modules-center = bspwm/modules-center = workspaces/g' "$DIR"/config.ini
 	fi
-	
-	if [[ "$INTERFACE" == e* ]]; then
-		sed -i -e 's/network/ethernet/g' "$DIR"/config.ini
-	fi
 }
 
 ## Write values to `system` file
@@ -54,9 +50,6 @@ set_values() {
 launch_bar() {
 	# Terminate already running bar instances
 	killall -9 polybar
-
-	# Wait until the processes have been shut down
-	#while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 	# Launch the bar
 	polybar -q top -c "$DIR"/config.ini &
