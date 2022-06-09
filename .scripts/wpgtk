@@ -156,16 +156,16 @@ kill(){
 	}
 	
 main(){
-	change_color
-	razer-cli -a
-	kill
-	pywalfox update
-	openbox --reconfigure
-	sh ~/.config/polybar/launch.sh
-	wal-telegram --wal
-	spicetify update
+	change_color &
+	razer-cli -a && echo "razer"
+	kill 
+	pywalfox update 
+	openbox --reconfigure 
+	sh ~/.config/polybar/launch.sh 
+	wal-telegram --wal 
+	spicetify update 
+	phoneWal 
 	betterlockscreen -u $wallpaper
-	phone_wal
 	}
 
 

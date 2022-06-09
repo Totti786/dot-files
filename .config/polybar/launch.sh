@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
+## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 SFILE="$DIR/system.ini"
 CARD="$(light -L | grep 'backlight' | head -n1 | cut -d'/' -f3)"
@@ -9,7 +12,8 @@ ADAPTER=$(upower -i `upower -e | grep 'AC'` | grep 'native-path' | cut -d':' -f2
 current_desktop=$(wmctrl -m |sed -n 1p | sed -e 's/Name: //g') 
 
 
-# Fix backlight and workspaces modules
+
+# Fix backlight and network modules
 fix_modules() {
 	if [[ -z "$CARD" ]]; then
 		sed -i -e 's/backlight/bna/g' "$DIR"/config.ini
@@ -22,6 +26,10 @@ fix_modules() {
 	
 	else 
 		sed -i -e 's/modules-center = bspwm/modules-center = workspaces/g' "$DIR"/config.ini
+	fi
+	
+	if [[ "$INTERFACE" == e* ]]; then
+		sed -i -e 's/network/ethernet/g' "$DIR"/config.ini
 	fi
 }
 
@@ -41,10 +49,14 @@ set_values() {
 	fi
 }
 
+
 # Launch the bar
 launch_bar() {
 	# Terminate already running bar instances
 	killall -9 polybar
+
+	# Wait until the processes have been shut down
+	#while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 	# Launch the bar
 	polybar -q top -c "$DIR"/config.ini &
@@ -52,4 +64,5 @@ launch_bar() {
 }
 
 set_values
+fix_modules
 launch_bar

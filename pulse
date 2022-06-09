@@ -1,0 +1,5 @@
+
+# Creates a device where AudioRelay can stream audio into
+load-module module-null-sink sink_name=Source
+# Creates a device usable by communications apps (e.g: skype)
+load-module module-virtual-source source_name=VirtualMic master=Source.monitor

@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!-- ################################ General Settings ################################ --><openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
+<?xml version="1.0"?>
+<!-- ################################ General Settings ################################ -->
+<openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
   <resistance>
     <strength>10</strength>
     <screen_edge_strength>20</screen_edge_strength>
@@ -19,7 +21,7 @@
   </placement>
   <theme>
     <name>colorbamboo</name>
-    <titleLayout>LIC</titleLayout>
+    <titleLayout>LC</titleLayout>
     <keepBorder>no</keepBorder>
     <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
@@ -567,6 +569,11 @@
         <!--<command>color-picker</command>-->
       </action>
     </keybind>
+    <keybind key="W-v">
+      <action name="Execute">
+        <command>~/.config/polybar/rofi/bin/launcher</command>
+      </action>
+    </keybind>
     <!-- CLI Apps -->
     <keybind key="C-A-t">
       <action name="Execute">
@@ -647,7 +654,7 @@
       </action>
     </keybind>
     <!-- Copyq -->
-    <keybind key="W-v">
+    <keybind key="W-S-v">
       <action name="Execute">
         <command>copyq show</command>
       </action>
@@ -1128,7 +1135,8 @@ s      <mousebind action="Press" button="A-Right"><action name="ShowMenu"><menu>
       <decor>no</decor>
       <fullscreen>default</fullscreen>
       <maximized>yes</maximized>
-    <desktop>4</desktop></application>
+    </application>
   </applications>
-</openbox_config><!-- vim:sw=2
+</openbox_config>
+<!-- vim:sw=2
 -->

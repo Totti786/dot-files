@@ -1,3 +1,5 @@
+#!/bin/bash
+
 git add .
 
 echo 'Enter the commit message:'

@@ -15,6 +15,7 @@ button_next=''
 button_previous=''
 button_repeat=''
 button_shuffle=''
+button_shift=''
 button_error=''
 
 # Colors
@@ -52,11 +53,11 @@ else
 fi
 
 # Variable passed to rofi
-options="$toggle\n$button_previous\n$button_next\n$button_stop"
+options="$toggle\n$button_previous\n$button_next\n$button_stop\n$button_shift"
 
 # Get the current playing song
 current=$(playerctl  metadata --format "{{ title }} - {{ artist }}")
-# If mpd isn't running it will return an empty string, we don't want to display that
+
 if [[ -z "$current" ]]; then
     current="None"
 fi
@@ -65,21 +66,18 @@ fi
 chosen="$(echo -e "$options" | $rofi_command -p "$current" -dmenu $active $urgent -selected-row 0)"
 case $chosen in
     $button_previous)
-        playerctl previous && kunst --size 60x60 --silent
+        playerctl previous
         ;;
     $toggle)
-        playerctl play-pause && kunst --size 60x60 --silent
+        playerctl play-pause
         ;;
     $button_stop)
        playerctl stop
         ;;
     $button_next)
-        playerctl next && kunst --size 60x60 --silent
+        playerctl next 
         ;;
-    $tog_repeat)
-        mpc -q repeat
-        ;;
-    $tog_random)
-        mpc -q random
+	$button_shift)
+		playerctld shift
         ;;
 esac

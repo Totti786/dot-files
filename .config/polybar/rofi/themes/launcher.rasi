@@ -15,6 +15,7 @@ configuration {
     display-run: 					"";
     display-ssh: 					"";
     display-drun: 					"";
+    display-filebrowser:     		"";
     display-combi: 					"";
 }
 

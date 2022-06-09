@@ -32,9 +32,6 @@ xfce4-power-manager &
 ksuperkey -e 'Super_L=Alt_L|F1' &
 ksuperkey -e 'Super_R=Alt_L|F1' &
 
-# CopyQ
-copyq &
-
 ## Restore Wallpaper
 #nitrogen --restore
 
@@ -63,3 +60,6 @@ exec trackma-gtk
 
 ## KDE Conenct
 exec kdeconnect-indicator &
+
+## CopyQ
+exec copyq &

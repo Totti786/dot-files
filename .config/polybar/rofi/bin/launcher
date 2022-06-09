@@ -7,7 +7,7 @@ DIR="$HOME/.config/polybar"
 
 rofi \
 	-show drun \
-	-modi run,drun,ssh,window \
+	-modi run,drun,filebrowser,ssh,window \
 	-no-lazy-grab \
 	-scroll-method 0 \
 	-drun-match-fields all \
