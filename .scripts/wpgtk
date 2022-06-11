@@ -134,9 +134,12 @@ checkApps(){
 	fi
 	}
 
-sddmWal(){
+lockWal(){
 	sudo cp $wallpaper /usr/share/sddm/themes/plasma-chili/components/artwork/background.jpg
+	sudo cp $wallpaper /usr/share/grub/themes/Stylish/background.jpg
 	}
+	
+
 
 phoneWal(){
 	deviceID=$(kdeconnect-cli --id-only  -l)

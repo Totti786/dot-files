@@ -33,7 +33,7 @@ err () {
 
 get_query () {
 	if [ -z "$*" ]; then
-		[ "$is_show" -eq "0" ] && printf "search movie: " || printf "search tv-show: "
+		[ "$is_show" -eq "0" ] && printf "Search Movie: " || printf "Search TV-Show: "
 		read -r movie
 	else
 		movie=$*
