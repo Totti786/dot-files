@@ -38,6 +38,9 @@ ksuperkey -e 'Super_R=Alt_L|F1' &
 ## Launch Polybar
 exec sh ~/.config/polybar/launch.sh &
 
+## CopyQ
+copyq --start-server &
+
 ## Excute Screenshot script
 exec sh ~/.scripts/check.sh &
 
@@ -61,5 +64,3 @@ exec trackma-gtk
 ## KDE Conenct
 exec kdeconnect-indicator &
 
-## CopyQ
-exec copyq &

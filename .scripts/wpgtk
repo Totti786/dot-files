@@ -136,7 +136,7 @@ checkApps(){
 
 lockWal(){
 	sudo cp $wallpaper /usr/share/sddm/themes/plasma-chili/components/artwork/background.jpg
-	sudo cp $wallpaper /usr/share/grub/themes/Stylish/background.jpg
+	sudo cp $wallpaper /boot/grub/themes/Arch/background.jpg
 	}
 	
 
