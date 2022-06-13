@@ -82,6 +82,7 @@ change_color() {
 	EOF
 	
 	# discord
+	if [[ -f $DFILE ]]; then 
 	sed -i -e "s/--accent-color: #.*/--accent-color: ${FG};/g" $DFILE
 	sed -i -e "s/--settings-icon-color: #.*/--settings-icon-color: ${FG};/g" $DFILE
 	sed -i -e "s/--background-1: #.*/--background-1: ${BG};/g" $DFILE
@@ -90,6 +91,7 @@ change_color() {
 	sed -i -e "s/--button-background-hover: #.*/--button-background-hover: ${red};/g" $DFILE
 	sed -i -e "s/--tab-selected: #.*/--tab-selected: ${blue};/g" $DFILE
 	sed -i -e "s/--text-muted: #.*/--text-muted: ${FG};/g" $DFILE
+	fi 
 	
 	# dunst
 	sed -i -e "s/background = \"#.*\"/background = \"${BG}\"/g" $NFILE
@@ -215,6 +217,4 @@ fi
 
 
 # TODO 
-# Add a function to replace the background of the sddm theme 
-# /usr/share/sddm/themes/plasma-chili/components/artwork/
-# /etc/sddm.conf.d/theme.conf
+# add auto fix of the wpg.conf with the user name s
