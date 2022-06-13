@@ -4,6 +4,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 zsh(){
 	if command -v zsh &> /dev/null; then
+		sudo pacman -S zsh
 		if [ ! -d $HOME/.oh-my-zsh ]; then
 			sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh --keep-zshrc --skip-chsh)" && 
 			zsh
