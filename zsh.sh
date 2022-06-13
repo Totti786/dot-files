@@ -6,7 +6,7 @@ zsh(){
 	if pacman -Q zsh &> /dev/null; then
 	echo "zsh is installed"
 		if [ ! -d $HOME/.oh-my-zsh ]; then
-			sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh --keep-zshrc --skip-chsh)" && 
+			sh $DIR/zsh-install.sh --keep-zshrc --skip-chsh && 
 			zsh
 		fi
 		chsh -s $(which zsh) &&
