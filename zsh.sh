@@ -6,8 +6,7 @@ zsh(){
 	if pacman -Q zsh &> /dev/null; then
 	echo "zsh is installed"
 		if [ ! -d $HOME/.oh-my-zsh ]; then
-			sh $DIR/zsh-install.sh && 
-			exit
+			git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh &&
 			zsh
 		fi
 		chsh -s $(which zsh) &&
