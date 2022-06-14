@@ -14,15 +14,12 @@
 
 
 import requests
-
 CITY = "169389"
 API_KEY = "9db8910d883726866ecc1dac1216708d"
 UNITS = "metric"
 UNIT_KEY = "C"
-#UNIT_KEY = "F"
-LANG = "en"
-#LANG = "nl"
-#LANG = "hu"
+LANG = "de"
+
 
 REQ = requests.get("http://api.openweathermap.org/data/2.5/weather?id={}&lang={}&appid={}&units={}".format(CITY, LANG,  API_KEY, UNITS))
 try:

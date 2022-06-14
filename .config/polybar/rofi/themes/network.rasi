@@ -135,6 +135,7 @@ element.active,
 element.selected.urgent {
   background-color: @on;
   text-color: @background;
+  border-radius: 10px;
   border-color: @on;
 }
 
