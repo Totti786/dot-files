@@ -15,7 +15,7 @@ apps=(betterlockscreen wal-telegram spicetify pywalfox openbox\
 	 aniwrapper polybar rofi zathura geany alacritty dunst betterdiscordctl)
 
 
-# Change colors
+## Change colors
 change_color() {
 	
 	# polybar	
@@ -105,7 +105,7 @@ change_color() {
 	cat $ASFILE > $AFILE
 	
 	# spotify
-	# Spotify can be theme using the xrdb backend i.e. ${xrdb:color0:#222}
+	# Spotify can be themed using the xrdb backend i.e. ${xrdb:color0:#222}
 	
 	# geany
 	sed -i -e "s/bg=#.*/bg=${BG}/g" $GFILE
@@ -116,7 +116,7 @@ change_color() {
 	
 }
 
-# Check if all the required apps are installed and install the missing ones
+## Check if all the required apps are installed and install the missing ones
 checkApps(){
 	for _apps in "${apps[@]}"; do
 		let i++
@@ -136,23 +136,27 @@ checkApps(){
 	fi
 	}
 
+## Change the wallpaper for both sddm and grub 
 lockWal(){
 	sudo cp $wallpaper /usr/share/sddm/themes/plasma-chili/components/artwork/background.jpg
 	sudo cp $wallpaper /boot/grub/themes/Arch/background.jpg
 	}
-	
 
-
+## Send a signal to phone to change wallpaper (requires automate to be set up)
 phoneWal(){
-	deviceID=$(kdeconnect-cli --id-only  -l)
-	cp $wallpaper /home/tarek/.config/wpg/wallpapers/wallpaper.jpg \
-	&& kdeconnect-cli -d $deviceID --share \
-	$HOME/.config/wpg/wallpapers/wallpaper.jpg && kdeconnect-cli -d $deviceID --ping
+	if command -v kdeconnect-cli &> /dev/null; then 
+		deviceID=$(kdeconnect-cli --id-only  -l)
+		cp $wallpaper /home/tarek/.config/wpg/wallpapers/wallpaper.jpg \
+		&& kdeconnect-cli -d $deviceID --share \
+		$HOME/.config/wpg/wallpapers/wallpaper.jpg && kdeconnect-cli -d $deviceID --ping
+	else 
+		echo "kde connect is not installed"
+	fi
 	}
 
 ## Kill already running process
 kill(){
-	_ps=(polybar spotify dunst)
+	_ps=(spotify dunst)
 	for _prs in "${_ps[@]}"; do
 		if [[ `pidof ${_prs}` ]]; then
 			killall -9 ${_prs}
@@ -160,24 +164,32 @@ kill(){
 	done
 	}
 	
+## Check if the command exists and then runs it
+check(){
+	if command -v $1 &> /dev/null; then 
+		$1 $2 $3
+	else 
+		echo " $1 is not installed"
+	fi
+	}
+	
 main(){
-	change_color &
-	razer-cli -a && echo "razer"
-	kill 
-	pywalfox update 
-	openbox --reconfigure 
+	change_color 
 	sh ~/.config/polybar/launch.sh 
-	wal-telegram --wal 
-	spicetify update 
-	phoneWal 
-	betterlockscreen -u $wallpaper
+	check razer-cli -a && echo "razer" 
+	check pywalfox update 
+	check openbox --reconfigure 
+	check wal-telegram --wal 
+	check spicetify update 
+	check betterlockscreen -u $wallpaper
+	phoneWal
 	}
 
 
-# Check if wpg is installed and get colors
+## Check if wpg is installed and get colors
 if [[ -f "/usr/bin/wpg" ]]; then
 	
-	# Source the pywal color file
+	## Import colors from wal
 	. "$HOME/.cache/wal/colors.sh"
 
 	# Normal colors
@@ -207,14 +219,11 @@ if [[ -f "/usr/bin/wpg" ]]; then
 else
 	echo "[!] 'wpgtk' is not installed."
 	echo "Installing from the AUR..." 
-	yay -S wpgtk-git &&
+	yay -S wpgtk-git
+	sed -i -e 's/execute_cmd = false/execute_cmd = true/g' ~/.config/wpg/wpg.conf
+	sed -i -e "s/command = .*/command = \/home\/$(whoami)\/.scripts\/wpgtk main/g" ~/.config/wpg/wpg.conf
 	wpg-install.sh -g &&
 	wpg-install.sh -o
 fi
 
 "$@"
-
-
-
-# TODO 
-# add auto fix of the wpg.conf with the user name s

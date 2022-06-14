@@ -74,5 +74,6 @@ kdeconnect
 xorg-xkill
 appimagelauncher
 rtorrent
+qt5-styleplugins
 xfce4-power-manager
 plank
