@@ -8,7 +8,7 @@ File="$VDIR/$Name.mp4"
 # Created a timelaspe of the screenshots taken by the screenshot scripts
 createVideo(){
 	cd $VDIR
-	ffmpeg -framerate 10 -pattern_type glob -i "$HOME/Pictures/Screenshots/Temp/*.png" \
+	ffmpeg -framerate 10 -pattern_type glob -i "$SDIR/*.png" \
 	-s:v 1920x1080 -c:v libx264 -crf 17 -pix_fmt yuv420p $Name.mp4 
 }
 # Deletes all the screen shot from the directory

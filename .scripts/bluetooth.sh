@@ -7,7 +7,6 @@ toggle(){
 		bluetoothctl connect $device
 	else
 		bluetoothctl disconnect
-
 	fi
 	}
 

@@ -16,7 +16,7 @@ apps=(betterlockscreen wal-telegram spicetify pywalfox openbox\
 
 
 ## Change colors
-change_color() {
+change_colors() {
 	
 	# polybar	
 	cat > $PFILE <<- EOF
@@ -137,17 +137,23 @@ checkApps(){
 	}
 
 ## Change the wallpaper for both sddm and grub 
+# this function only works with the themes included in the install script 
 lockWal(){
-	sudo cp $wallpaper /usr/share/sddm/themes/plasma-chili/components/artwork/background.jpg
-	sudo cp $wallpaper /boot/grub/themes/Arch/background.jpg
+	## remove the background file for sddm and replace it with a hard link of the wallpaper 
+	sudo rm /usr/share/sddm/themes/plasma-chili/components/artwork/background.jpg && \
+	sudo ln ~/.config/wpg/wallpapers/wallpaper.jpg \
+	/usr/share/sddm/themes/plasma-chili/components/artwork/background.jpg
+	## remove the background file for grub and replace it with a hard link of the wallpaper 
+	sudo rm /boot/grub/themes/Arch/background.jpg && \
+	sudo ln ~/.config/wpg/wallpapers/wallpaper.jpg \
+	/boot/grub/themes/Arch/background.jpg
 	}
 
 ## Send a signal to phone to change wallpaper (requires automate to be set up)
 phoneWal(){
 	if command -v kdeconnect-cli &> /dev/null; then 
 		deviceID=$(kdeconnect-cli --id-only  -l)
-		cp $wallpaper /home/tarek/.config/wpg/wallpapers/wallpaper.jpg \
-		&& kdeconnect-cli -d $deviceID --share \
+		kdeconnect-cli -d $deviceID --share \
 		$HOME/.config/wpg/wallpapers/wallpaper.jpg && kdeconnect-cli -d $deviceID --ping
 	else 
 		echo "kde connect is not installed"
@@ -174,7 +180,7 @@ check(){
 	}
 	
 main(){
-	change_color 
+	change_colors 
 	sh ~/.config/polybar/launch.sh 
 	check razer-cli -a && echo "razer" 
 	check pywalfox update 
@@ -182,13 +188,14 @@ main(){
 	check wal-telegram --wal 
 	check spicetify update 
 	check betterlockscreen -u $wallpaper
-	phoneWal
+	phoneWal &
 	}
 
 
 ## Check if wpg is installed and get colors
 if [[ -f "/usr/bin/wpg" ]]; then
-	
+		wpg -s "$1"
+		
 	## Import colors from wal
 	. "$HOME/.cache/wal/colors.sh"
 
@@ -214,6 +221,7 @@ if [[ -f "/usr/bin/wpg" ]]; then
 	bright_magenta=`printf "%s\n" "$color13"`
 	bright_cyan=`printf "%s\n" "$color14"`
 	bright_white=`printf "%s\n" "$color15"`
+	cp $wallpaper ~/.config/wpg/wallpapers/wallpaper.jpg
 	xrdb -merge ~/.cache/wal/colors.Xresources
 	
 else
