@@ -143,9 +143,9 @@ lockWal(){
 	sudo rm /usr/share/sddm/themes/plasma-chili/components/artwork/background.jpg && \
 	sudo ln ~/.config/wpg/wallpapers/wallpaper.jpg \
 	/usr/share/sddm/themes/plasma-chili/components/artwork/background.jpg
-	## remove the background file for grub and replace it with a hard link of the wallpaper 
+	## remove the background file for grub and replace it with a symbolic  link of the wallpaper 
 	sudo rm /boot/grub/themes/Arch/background.jpg && \
-	sudo ln ~/.config/wpg/wallpapers/wallpaper.jpg \
+	sudo ln -s ~/.config/wpg/wallpapers/wallpaper.jpg \
 	/boot/grub/themes/Arch/background.jpg
 	}
 
