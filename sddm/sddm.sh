@@ -1,14 +1,15 @@
 #!/bin/bash
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-theme="plasma-chili"
+theme="arch"
 
 main(){
 if command -v sddm &> /dev/null; then
 	if [ -d "/usr/share/sddm/themes/$theme" ]; then  
 		if [ -f "/etc/sddm.conf.d/theme.conf" ];then
 			sudo sed -i -e "s/Current=.*/Current=$theme/g" /etc/sddm.conf.d/theme.conf
-			sudo cp -r $DIR/.face.icon ~/ 
+			cp -r $DIR/.face.icon ~/.face.icon
+			sudo rm /usr/share/sddm/faces/.face.icon
 			sudo ln ~/.face.icon /usr/share/sddm/faces/.face.icon
 		else
 			sudo mkdir /etc/sddm.conf.d/ &&

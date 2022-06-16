@@ -1,4 +1,4 @@
-#!/usr/bin/env bash 	
+#!/bin/bash
 
 # Color files
 ALFILE="$HOME/.config/alacritty/colors.yml"
@@ -11,8 +11,6 @@ ZFILE="$HOME/.config/zathura/zathurarc"
 GZFILE="$HOME/.config/zathura/genzathurarc"
 ASFILE="$HOME/.cache/wal/colors-rofi-dark.rasi"
 AFILE="$HOME/.config/aniwrapper/themes/aniwrapper.rasi"
-apps=(betterlockscreen wal-telegram spicetify pywalfox openbox\
-	 aniwrapper polybar rofi zathura geany alacritty dunst betterdiscordctl)
 
 
 ## Change colors
@@ -117,6 +115,9 @@ change_colors() {
 }
 
 ## Check if all the required apps are installed and install the missing ones
+apps=(betterlockscreen wal-telegram spicetify pywalfox openbox\
+	 aniwrapper polybar rofi zathura geany alacritty dunst betterdiscordctl)
+
 checkApps(){
 	for _apps in "${apps[@]}"; do
 		let i++
@@ -140,9 +141,9 @@ checkApps(){
 # this function only works with the themes included in the install script 
 lockWal(){
 	## remove the background file for sddm and replace it with a hard link of the wallpaper 
-	sudo rm /usr/share/sddm/themes/plasma-chili/components/artwork/background.jpg && \
+	sudo rm /usr/share/sddm/themes/arch/components/artwork/background.jpg && \
 	sudo ln ~/.config/wpg/wallpapers/wallpaper.jpg \
-	/usr/share/sddm/themes/plasma-chili/components/artwork/background.jpg
+	/usr/share/sddm/themes/arch/components/artwork/background.jpg
 	## remove the background file for grub and replace it with a symbolic  link of the wallpaper 
 	sudo rm /usr/share/grub/themes/Arch/background.jpg && \
 	sudo ln ~/.config/wpg/wallpapers/wallpaper.jpg \
@@ -154,7 +155,8 @@ phoneWal(){
 	if command -v kdeconnect-cli &> /dev/null; then 
 		deviceID=$(kdeconnect-cli --id-only  -l)
 		kdeconnect-cli -d $deviceID --share \
-		$HOME/.config/wpg/wallpapers/wallpaper.jpg && kdeconnect-cli -d $deviceID --ping
+		$HOME/.config/wpg/wallpapers/wallpaper.jpg && kdeconnect-cli -d $deviceID --ping 
+		exit 0
 	else 
 		echo "kde connect is not installed"
 	fi
@@ -179,16 +181,21 @@ check(){
 	fi
 	}
 	
+wpgConfi(){
+	sed -i -e 's/execute_cmd = false/execute_cmd = true/g' ~/.config/wpg/wpg.conf
+	sed -i -e "s/command = .*/command = \/home\/$(whoami)\/.scripts\/wpgtk main/g" ~/.config/wpg/wpg.conf
+	}	
+	
 main(){
 	change_colors 
 	sh ~/.config/polybar/launch.sh 
-	check razer-cli -a && echo "razer" 
+	check razer-cli -a
 	check pywalfox update 
 	check openbox --reconfigure 
 	check wal-telegram --wal 
 	check spicetify update 
-	check betterlockscreen -u $wallpaper
-	phoneWal &
+	#check betterlockscreen -u $wallpaper
+	phoneWal 
 	}
 
 
@@ -227,10 +234,9 @@ else
 	echo "[!] 'wpgtk' is not installed."
 	echo "Installing from the AUR..." 
 	yay -S wpgtk-git
-	sed -i -e 's/execute_cmd = false/execute_cmd = true/g' ~/.config/wpg/wpg.conf
-	sed -i -e "s/command = .*/command = \/home\/$(whoami)\/.scripts\/wpgtk main/g" ~/.config/wpg/wpg.conf
-	wpg-install.sh -g &&
-	wpg-install.sh -o
+	wpgConfig
+	wpg-install.sh -o -g
+	
 fi
 
 "$@"

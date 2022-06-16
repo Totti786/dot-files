@@ -1,0 +1,5 @@
+#!/bin/bash
+image = $1
+
+
+convert -background transparent -define icon:auto-resize=16,24,32,48,64,72,96,128,256 $image ~/.face1.icon
