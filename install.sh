@@ -16,7 +16,7 @@ moveConfigs(){
 	cp -r $DIR/.scripts/ ~/ && echo "moved scripts home" 
 	cp -r $DIR/.config/ ~/ && echo "moved config files"
 	cp -r $DIR/.local/ ~/ && echo "moved fonts and icons"
-	sudo cp -r $DIR/.scripts/bin/ /usr/local/ && echo "moved bin to /usr/local"
+	sudo cp -r $DIR/bin/ /usr/local/ && echo "moved bin to /usr/local"
 	}
 
 minimal(){
