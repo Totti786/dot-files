@@ -676,6 +676,12 @@
         <command>sh ~/.scripts/bluetooth.sh</command>
       </action>
     </keybind>
+    <!-- wpgtk sxiv pick-->
+    <keybind key="W-S-w">
+      <action name="Execute">
+        <command>sh ~/.scripts/wpgtk pick</command>
+      </action>
+    </keybind>
     <!-- Rofi Calculator -->
     <keybind key="W-S-c">
       <action name="Execute">

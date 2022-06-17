@@ -94,6 +94,7 @@ change_colors() {
 	# dunst
 	sed -i -e "s/background = \"#.*\"/background = \"${BG}\"/g" $NFILE
 	sed -i -e "s/foreground = \"#.*\"/foreground = \"${FG}\"/g" $NFILE
+	sed -i -e "s/highlight = \"#.*\"/highlight = \"${FG}\"/g" $NFILE
 	sed -i -e "s/frame_color = \"#.*\"/frame_color = \"${yellow}\"/g" $NFILE
 
 	# zathura
@@ -164,10 +165,11 @@ phoneWal(){
 
 ## Kill already running process
 kill(){
-	_ps=(spotify dunst)
+	_ps=(dunst)
 	for _prs in "${_ps[@]}"; do
 		if [[ `pidof ${_prs}` ]]; then
-			killall -9 ${_prs}
+			killall -9 ${_prs} 
+			${_prs} 
 		fi
 	done
 	}
@@ -186,15 +188,23 @@ wpgConfi(){
 	sed -i -e "s/command = .*/command = \/home\/$(whoami)\/.scripts\/wpgtk main/g" ~/.config/wpg/wpg.conf
 	}	
 	
+pick(){
+	wal=$(sxiv -t -o -r -b -g $(echo 900x700+$xl+$yl) ~/Pictures/Wallpapers | xargs)
+	fixed=$(echo "$wal" | sed 's/ /\\ /g')
+	echo $fixed
+	wpg -s $fixed
+	}	
+	
 main(){
 	change_colors 
 	sh ~/.config/polybar/launch.sh 
+	kill 
 	check razer-cli -a
 	check pywalfox update 
 	check openbox --reconfigure 
 	check wal-telegram --wal 
 	check spicetify update 
-	#check betterlockscreen -u $wallpaper
+	check betterlockscreen -u $wallpaper
 	phoneWal 
 	}
 

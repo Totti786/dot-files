@@ -24,6 +24,7 @@ thunar-media-tags-plugin
 thunar-volman
 xfce4-settings
 copyq
+sxiv
 xarchiver
 pavucontrol
 geany
