@@ -50,7 +50,7 @@ install(){
 	minimal
 	moveConfigs
 	aur
-	sh $DIR/plymouth/plymouth.sh
+	sh $DIR/.scripts/wpgtk main $DIR/background.jpg
 }
 
 "$@"

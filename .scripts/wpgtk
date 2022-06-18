@@ -199,7 +199,7 @@ main(){
 	change_colors 
 	sh ~/.config/polybar/launch.sh 
 	kill &
-	check razer-cli -a
+	check razer-cli -a &
 	check pywalfox update 
 	check openbox --reconfigure 
 	check wal-telegram --wal 
@@ -211,7 +211,9 @@ main(){
 
 ## Check if wpg is installed and get colors
 if [[ -f "/usr/bin/wpg" ]]; then
-		
+	if [[ "$2" ]]; then
+		wpg -s "$2"
+	fi
 	## Import colors from wal
 	. "$HOME/.cache/wal/colors.sh"
 
