@@ -8,8 +8,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 createDirs(){
 yay -S xdg-user-dirs xdg-user-dirs-gtk &&
-xdg-user-dirs-gtk-update
-xdg-user-dirs-update
+xdg-user-dirs-update && xdg-user-dirs-gtk-update
 }
 
 moveConfigs(){
