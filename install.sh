@@ -23,6 +23,17 @@ minimal(){
 		sudo pacman -S - < minimal.txt
 	}
 
+sddm(){
+	if command -v sddm &> /dev/null && [ -d "/usr/share/sddm/themes/$theme" ]; then
+		echo "SDDM is already installed"
+	elif command -v sddm &> /dev/null && [ ! -d "/usr/share/sddm/themes/$theme" ]; then
+		sh $DIR/sddm/sddm.sh
+	else 
+		echo "sddm is not installed"
+		
+	fi 
+	}
+
 aur(){
 		yay -S $(< minimal-aur.txt)
 	}
@@ -32,9 +43,14 @@ full(){
 	}
 	
 install(){
+	sh $DIR/zsh/zsh.sh
+	sh $DIR/grub/grub.sh
+	sddm
 	createDirs
 	minimal
 	moveConfigs
+	aur
+	sh $DIR/plymouth/plymouth.sh
 }
 
 "$@"

@@ -3,7 +3,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 theme="arch"
 
-main(){
+installSDDM(){
 if command -v sddm &> /dev/null; then
 	if [ -d "/usr/share/sddm/themes/$theme" ]; then  
 		if [ -f "/etc/sddm.conf.d/theme.conf" ];then
@@ -28,4 +28,4 @@ else
 fi	
 }
 
-main
+installSDDM
