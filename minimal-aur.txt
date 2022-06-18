@@ -7,11 +7,9 @@ ytfzfim
 aniwrapper-git
 zscroll-git
 unimatrix-git 
-toilet
 betterlockscreen
 i3lock-color
-obkey
-obmenu-generator
+
 
 
 

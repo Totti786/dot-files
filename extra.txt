@@ -1,3 +1,4 @@
+i3-gaps
 github-desktop
 handbrake
 gnome-clocks

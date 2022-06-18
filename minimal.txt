@@ -1,5 +1,4 @@
 openbox
-i3-gaps
 polybar
 dunst
 rofi

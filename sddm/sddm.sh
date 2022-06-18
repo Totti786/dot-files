@@ -19,7 +19,7 @@ if command -v sddm &> /dev/null; then
 		fi
 	else 
 		sudo cp -r $DIR/$theme /usr/share/sddm/themes/ &&
-		main
+		installSDDM
 	fi
 else
 	yay -S sddm plasma-framework && 

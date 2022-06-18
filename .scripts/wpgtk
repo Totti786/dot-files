@@ -208,11 +208,15 @@ main(){
 	check betterlockscreen -u $wallpaper
 	}
 
-## Check if wpg is installed and get colors
-if [[ -f "/usr/bin/wpg" ]]; then
+setWal(){
 	if [[ "$2" ]]; then
 		wpg -s "$2"
 	fi
+	}
+## Check if wpg is installed and get colors
+if [[ -f "/usr/bin/wpg" ]]; then
+	setWal
+	
 	## Import colors from wal
 	. "$HOME/.cache/wal/colors.sh"
 
@@ -246,8 +250,9 @@ else
 	echo "Installing from the AUR..." 
 	yay -S wpgtk-git
 	wpgConfig
-	wpg-install.sh -r -o -g 
-	
+	wpg-install.sh -r -g 
+	wpg-install.sh -o
+	setWal
 fi
 
 "$@"

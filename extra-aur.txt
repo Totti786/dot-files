@@ -8,3 +8,6 @@ python-pywalfox
 manga-cli-git
 yabridge-bin
 webtorrent-cli
+toilet
+obkey
+obmenu-generator

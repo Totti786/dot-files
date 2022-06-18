@@ -8,7 +8,7 @@ zsh(){
 		if [ ! -d $HOME/.oh-my-zsh ]; then
 			git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 		fi
-		sudo chsh -s $(which zsh) &&
+		chsh -s $(which zsh) &&
 		cp -r $DIR/custom ~/.oh-my-zsh/ && echo "moved zsh custom files" &&
 		git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions 
 		cp -r $DIR/.zshrc ~/ &&

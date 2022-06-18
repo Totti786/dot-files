@@ -63,7 +63,6 @@ install(){
 	aur
 	sh $DIR/.scripts/wpgtk main $DIR/background.jpg
 	changeTheme
-	sh $DIR/plymouth/plymouth.sh
 }
 
 "$@"
