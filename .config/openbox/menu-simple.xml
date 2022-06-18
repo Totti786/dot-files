@@ -105,15 +105,15 @@
 					<command>pavucontrol</command>
 				</action>
 			</item>
-			<item label="Settings Manager">
-				<action name="Execute">
-					<command>xfce4-settings-manager</command>
-				</action>
-			</item>
 		</menu>
 		<item label="Lock Screen">
 			<action name="Execute">
 				<command>betterlockscreen --lock</command>
+			</action>
+		</item>
+		<item label="Settings Manager">
+			<action name="Execute">
+				<command>xfce4-settings-manager</command>
 			</action>
 		</item>
 		<menu id="Exit" label="System">

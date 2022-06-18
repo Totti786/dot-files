@@ -19,6 +19,17 @@ moveConfigs(){
 	sudo cp -r $DIR/bin/ /usr/local/ && echo "moved bin to /usr/local"
 	}
 
+changeTheme(){
+	xfconf-query -c xsettings -p /Net/ThemeName -s "FlatColor"
+	xfconf-query -c xsettings -p /Net/IconThemeName -s "Luna-Dark"	
+	cat > ~/.icons/default/index.theme <<- EOF
+		[Icon Theme]
+		Name=Default
+		Comment=Default Cursor Theme
+		Inherits=Fluent-dark
+	EOF
+	}
+
 minimal(){
 		sudo pacman -S - < minimal.txt
 	}
@@ -51,6 +62,7 @@ install(){
 	moveConfigs
 	aur
 	sh $DIR/.scripts/wpgtk main $DIR/background.jpg
+	changeTheme
 }
 
 "$@"

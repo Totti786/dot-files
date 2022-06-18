@@ -12,7 +12,6 @@ GZFILE="$HOME/.config/zathura/genzathurarc"
 ASFILE="$HOME/.cache/wal/colors-rofi-dark.rasi"
 AFILE="$HOME/.config/aniwrapper/themes/aniwrapper.rasi"
 
-
 ## Change colors
 change_colors() {
 	
@@ -185,6 +184,7 @@ check(){
 	
 wpgConfi(){
 	sed -i -e 's/execute_cmd = false/execute_cmd = true/g' ~/.config/wpg/wpg.conf
+	sed -i -e 's/auto_adjust = false/auto_adjust = true/g' ~/.config/wpg/wpg.conf
 	sed -i -e "s/command = .*/command = \/home\/$(whoami)\/.scripts\/wpgtk main/g" ~/.config/wpg/wpg.conf
 	}	
 	
@@ -207,7 +207,6 @@ main(){
 	phoneWal
 	check betterlockscreen -u $wallpaper
 	}
-
 
 ## Check if wpg is installed and get colors
 if [[ -f "/usr/bin/wpg" ]]; then
@@ -247,7 +246,7 @@ else
 	echo "Installing from the AUR..." 
 	yay -S wpgtk-git
 	wpgConfig
-	wpg-install.sh -o -g
+	wpg-install.sh -r -o -g 
 	
 fi
 
