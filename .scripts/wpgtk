@@ -154,7 +154,7 @@ lockWal(){
 ## Send a signal to phone to change wallpaper (requires automate to be set up)
 phoneWal(){
 	if command -v kdeconnect-cli &> /dev/null; then 
-		deviceID=$(kdeconnect-cli --id-only  -l)
+		deviceID=$(kdeconnect-cli -a --id-only)  
 		kdeconnect-cli -d $deviceID --share \
 		$HOME/.config/wpg/wallpapers/wallpaper.jpg && kdeconnect-cli -d $deviceID --ping 
 		exit 0
@@ -198,14 +198,14 @@ pick(){
 main(){
 	change_colors 
 	sh ~/.config/polybar/launch.sh 
-	kill 
+	kill &
 	check razer-cli -a
 	check pywalfox update 
 	check openbox --reconfigure 
 	check wal-telegram --wal 
 	check spicetify update 
+	phoneWal
 	check betterlockscreen -u $wallpaper
-	phoneWal 
 	}
 
 
