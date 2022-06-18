@@ -6,8 +6,8 @@
 ## Openbox Pipemenu to change fonts for various applications
 
 # Dir
-pdir="$HOME/.config/openbox/polybar"
-rdir="$HOME/.config/openbox/rofi"
+pdir="$HOME/.config/polybar"
+rdir="$HOME/.config/polybar/rofi"
 tdir="$HOME/.config/alacritty"
 odir="$HOME/.config/openbox"
 ddir="$HOME/.config/dunst"
@@ -39,9 +39,7 @@ font_bar () {
 
 font_rofi () {
 	if [[ "$FONT" ]]; then
-		RSTYLE=$(cat $rdir/bin/music | grep STYLE | head -n 1 | tr -d 'STYLE=' | tr -d \")
-		sed -i -e "s/font:.*/font:				 	\"$FNAME $FSTYLE $FSIZE\";/g" $rdir/"$RSTYLE"/font.rasi
-		sed -i -e "s/font:.*/font:				 	\"$FNAME $FSTYLE $FSIZE\";/g" "$rdir/dialogs/askpass.rasi" "$rdir/dialogs/confirm.rasi"
+		sed -i -e "s/font:.*/font:				 	\"$FNAME $FSTYLE $FSIZE\";/g" $rdir/themes/fonts.rasi
 	else
 		exit 0
 	fi
@@ -49,8 +47,8 @@ font_rofi () {
 
 font_term () {
 	if [[ "$FONT" ]]; then
-		sed -i -e "s/family: .*/family: \"$FNAME\"/g" "$tdir"/fonts.yml "$tdir"/fullscreen-fonts.yml
-		sed -i -e "s/size: .*/size: $FSIZE/g" "$tdir"/fonts.yml "$tdir"/fullscreen-fonts.yml
+		sed -i -e "s/family: .*/family: \"$FNAME\"/g" "$tdir"/alacritty.yml 
+		sed -i -e "s/size: .*/size: $FSIZE/g" "$tdir"/alacritty.yml 
 	else
 		exit 0
 	fi

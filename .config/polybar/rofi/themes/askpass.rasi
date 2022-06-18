@@ -2,6 +2,7 @@
 /* Everyone is permitted to copy and distribute copies of this file under GNU-GPL3 */
 
 @import "colors.rasi"
+@import "fonts.rasi"
 
 * {
     background-color:       @background;

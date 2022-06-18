@@ -5,6 +5,7 @@
 ## Rofi #############################################
 DIR="$HOME/.config/polybar/rofi/themes"
 MSG="Options  -  yes / y / no / n"
+current_desktop=$(wmctrl -m |sed -n 1p | sed -e 's/Name: //g') 
 
 cdialog () {
 rofi -dmenu\
@@ -18,7 +19,13 @@ rofi -dmenu\
 if  [[ $1 = "--logout" ]]; then
 	ans=$(cdialog)
 	if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
-        openbox --exit
+        if [[ $current_desktop == "Openbox" ]]; then
+			openbox --exit
+		elif [[ $current_desktop == "i3" ]]; then
+			i3 exit
+		elif [[ $current_desktop == "bspwm" ]]; then
+			bspc quit
+		fi
 	elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
         exit
     else
@@ -29,6 +36,7 @@ elif  [[ $1 = "--suspend" ]]; then
 	ans=$(cdialog)
 	if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
 		mpc -q pause
+		playerctl -a stop
 		amixer set Master mute
 		betterlockscreen --suspend
 	elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
