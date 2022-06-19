@@ -47,8 +47,8 @@ full(){
 	
 install(){
 	sh $DIR/zsh/zsh.sh
-	sh $DIR/grub/grub.sh
-	sh $DIR/sddm/sddm.sh
+	cd grub && sudo sh $DIR/grub/grub.sh && cd $DIR
+	cd sddm && sh $DIR/sddm/sddm.sh && cd $DIR
 	createDirs
 	minimal
 	moveConfigs

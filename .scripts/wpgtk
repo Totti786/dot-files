@@ -208,9 +208,6 @@ main(){
 	check betterlockscreen -u $wallpaper
 	}
 
-setWal(){
-		wpg -s "$2"
-	}
 ## Check if wpg is installed and get colors
 if [[ -f "/usr/bin/wpg" ]]; then
 	
