@@ -182,7 +182,7 @@ check(){
 	fi
 	}
 	
-wpgConfi(){
+wpgConfig(){
 	sed -i -e 's/execute_cmd = false/execute_cmd = true/g' ~/.config/wpg/wpg.conf
 	sed -i -e 's/auto_adjust = false/auto_adjust = true/g' ~/.config/wpg/wpg.conf
 	sed -i -e "s/command = .*/command = \/home\/$(whoami)\/.scripts\/wpgtk main/g" ~/.config/wpg/wpg.conf
@@ -244,9 +244,7 @@ else
 	echo "Installing from the AUR..." 
 	yay -S wpgtk-git
 	wpgConfig
-	wpg-install.sh -r -g 
-	wpg-install.sh -o
-	setWal
+	wpg-install.sh -r -g -o
 fi
 
 "$@"
