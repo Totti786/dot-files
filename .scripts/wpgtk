@@ -238,7 +238,8 @@ if [[ -f "/usr/bin/wpg" ]]; then
 	bright_white=`printf "%s\n" "$color15"`
 	if [ "$(echo $(file --extension $wallpaper | sed -e 's/.*://'))" = "png" ]; then
 		cp $wallpaper ~/.config/wpg/wallpapers/ && 
-		mogrify -format jpg ~/.config/wpg/wallpapers/*.png && rm ~/.config/wpg/wallpapers/*.png &&
+		mogrify -format jpg ~/.config/wpg/wallpapers/*.png && rm ~/.config/wpg/wallpapers/$wallpaper &&
+		rm ~/.config/wpg/wallpapers/wallpaper.jpg 
 		mv ~/.config/wpg/wallpapers/*.jpg ~/.config/wpg/wallpapers/wallpaper.jpg 
 		echo "file was png" 
 	else	
