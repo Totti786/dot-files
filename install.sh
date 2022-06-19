@@ -59,6 +59,7 @@ install(){
 	moveConfigs
 	aur
 	changeTheme
+	wpgtk
 }
 
 "$@"
