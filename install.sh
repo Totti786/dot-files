@@ -33,16 +33,6 @@ minimal(){
 		sudo pacman -S - < minimal.txt
 	}
 
-sddm(){
-	if command -v sddm &> /dev/null && [ -d "/usr/share/sddm/themes/$theme" ]; then
-		echo "SDDM is already installed"
-	elif command -v sddm &> /dev/null && [ ! -d "/usr/share/sddm/themes/$theme" ]; then
-		sh $DIR/sddm/sddm.sh
-	else 
-		echo "sddm is not installed"
-		
-	fi 
-	}
 wpgtk(){
 	sh $DIR/.scripts/wpgtk 
 	cp $DIR/background.jpg ~/.config/wpg/wallpapers/wallpaper.jpg
@@ -63,7 +53,7 @@ full(){
 install(){
 	sh $DIR/zsh/zsh.sh
 	sh $DIR/grub/grub.sh
-	sddm
+	sh $DIR/sddm/sddm.sh
 	createDirs
 	minimal
 	moveConfigs
