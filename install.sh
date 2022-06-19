@@ -22,7 +22,7 @@ changeTheme(){
 	xfconf-query -c xsettings -p /Net/ThemeName -s "FlatColor"
 	xfconf-query -c xsettings -p /Net/IconThemeName -s "Luna-Dark"	
 	xfconf-query -c displays -p\ 
-	/Default/$(xrandr | grep -w connected | awk '{print $1}')/Reflection -s "1920x1080"
+	/Default/$(xrandr | grep -w connected | awk '{print $1}')/Resolution -s "1920x1080"
 	cp -r $DIR/.icons ~/
 	}
 
