@@ -31,7 +31,7 @@ minimal(){
 wpgtk(){
 	sh $DIR/.scripts/wpgtk 
 	cp $DIR/background.jpg ~/.config/wpg/wallpapers/wallpaper.jpg
-	sh $DIR/.scripts/wpgtk setWal
+	wpg -m
 	sh $DIR/.scripts/wpgtk lockWal
 
 
