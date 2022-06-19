@@ -21,12 +21,7 @@ moveConfigs(){
 changeTheme(){
 	xfconf-query -c xsettings -p /Net/ThemeName -s "FlatColor"
 	xfconf-query -c xsettings -p /Net/IconThemeName -s "Luna-Dark"	
-	cat > ~/.icons/default/index.theme <<- EOF
-		[Icon Theme]
-		Name=Default
-		Comment=Default Cursor Theme
-		Inherits=Fluent-dark
-	EOF
+	cp -r $DIR/.icons ~/
 	}
 
 minimal(){
