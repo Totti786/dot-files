@@ -240,7 +240,9 @@ if [[ -f "/usr/bin/wpg" ]]; then
 		cp $wallpaper ~/.config/wpg/wallpapers/ && 
 		mogrify -format jpg ~/.config/wpg/wallpapers/$(echo "$wallpaper" | rev |cut -f1 -d "/" | rev | cut -f1 -d ".").png &&
 		rm ~/.config/wpg/wallpapers/$(echo "$wallpaper" | rev |cut -f1 -d "/" | rev) &&
-		mv ~/.config/wpg/wallpapers/$(echo "$wallpaper" | rev |cut -f1 -d "/" | rev | cut -f1 -d ".").jpg ~/.config/wpg/wallpapers/wallpaper.jpg 
+		cp ~/.config/wpg/wallpapers/$(echo "$wallpaper" | rev |cut -f1 -d "/" | rev | cut -f1 -d ".").jpg ~/.config/wpg/wallpapers/wallpaper.jpg &&
+		rm ~/.config/wpg/wallpapers/$(echo "$wallpaper" | rev |cut -f1 -d "/" | rev | cut -f1 -d ".").jpg &&
+
 	else	
 		cp $wallpaper ~/.config/wpg/wallpapers/wallpaper.jpg
 	fi
