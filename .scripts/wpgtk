@@ -177,8 +177,8 @@ kill(){
 check(){
 	if command -v $1 &> /dev/null; then 
 		$1 $2 $3
-	else 
-		echo " $1 is not installed"
+	#else 
+		#echo " $1 is not installed"
 	fi
 	}
 	
@@ -209,13 +209,10 @@ main(){
 	}
 
 setWal(){
-	if [[ "$2" ]]; then
 		wpg -s "$2"
-	fi
 	}
 ## Check if wpg is installed and get colors
 if [[ -f "/usr/bin/wpg" ]]; then
-	setWal
 	
 	## Import colors from wal
 	. "$HOME/.cache/wal/colors.sh"

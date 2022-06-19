@@ -43,6 +43,14 @@ sddm(){
 		
 	fi 
 	}
+wpgtk(){
+	sh $DIR/.scripts/wpgtk 
+	cp $DIR/background.jpg ~/.config/wpg/wallpapers/wallpaper.jpg
+	sh $DIR/.scripts/wpgtk setWal
+	sh $DIR/.scripts/wpgtk lockWal
+
+
+	}
 
 aur(){
 		yay -S $(< minimal-aur.txt)
@@ -60,9 +68,7 @@ install(){
 	minimal
 	moveConfigs
 	aur
-	sh $DIR/.scripts/wpgtk main $DIR/background.jpg
 	changeTheme
-	sh $DIR/.scripts/wpgtk lockWal
 }
 
 "$@"
