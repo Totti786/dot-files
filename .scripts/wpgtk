@@ -142,11 +142,11 @@ checkApps(){
 lockWal(){
 	## remove the background file for sddm and replace it with a hard link of the wallpaper 
 	sudo rm /usr/share/sddm/themes/arch/components/artwork/background.jpg && \
-	sudo ln ~/.config/wpg/wallpapers/wallpaper.jpg \
+	sudo ln ~/.config/wpg/wallpapers/wallpaper-1.jpg \
 	/usr/share/sddm/themes/arch/components/artwork/background.jpg
 	## remove the background file for grub and replace it with a symbolic  link of the wallpaper 
 	sudo rm /usr/share/grub/themes/Arch/background.jpg && \
-	sudo ln -s ~/.config/wpg/wallpapers/wallpaper.jpg \
+	sudo ln -s ~/.config/wpg/wallpapers/wallpaper-1.jpg \
 	/usr/share/grub/themes/Arch/background.jpg
 	}
 
@@ -241,12 +241,13 @@ if [[ -f "/usr/bin/wpg" ]]; then
 		mogrify -format jpg ~/.config/wpg/wallpapers/$(echo "$wallpaper" | rev |cut -f1 -d "/" | rev | cut -f1 -d ".").png &&
 		rm ~/.config/wpg/wallpapers/$(echo "$wallpaper" | rev |cut -f1 -d "/" | rev) &&
 		cp ~/.config/wpg/wallpapers/$(echo "$wallpaper" | rev |cut -f1 -d "/" | rev | cut -f1 -d ".").jpg ~/.config/wpg/wallpapers/wallpaper.jpg &&
-		rm ~/.config/wpg/wallpapers/$(echo "$wallpaper" | rev |cut -f1 -d "/" | rev | cut -f1 -d ".").jpg &&
+		rm ~/.config/wpg/wallpapers/$(echo "$wallpaper" | rev |cut -f1 -d "/" | rev | cut -f1 -d ".").jpg
 
 	else	
 		cp $wallpaper ~/.config/wpg/wallpapers/wallpaper.jpg
 	fi
 	xrdb -merge ~/.cache/wal/colors.Xresources
+	convert -resize 1920x1080! ~/.config/wpg/wallpapers/wallpaper.jpg ~/.config/wpg/wallpapers/wallpaper-1.jpg
 	
 else
 	echo "[!] 'wpgtk' is not installed."
