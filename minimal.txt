@@ -53,6 +53,7 @@ ncdu
 ncmpcpp
 ranger
 megatools
+imagemagick
 wget
 scrot
 light
