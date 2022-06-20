@@ -44,8 +44,6 @@ libreoffice-fresh
 lutris
 soundux
 syncplay
-viewnior
-
 gping
 discover-overlay
 jre-openjdk

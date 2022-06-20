@@ -16,6 +16,7 @@ zathura-cb
 zathura-pdf-mupdf
 firefox
 gnome-disk-utility
+breeze
 nitrogen
 thunar
 thunar-archive-plugin
@@ -23,6 +24,7 @@ thunar-media-tags-plugin
 thunar-volman
 xfce4-settings
 copyq
+viewnior
 sxiv
 xarchiver
 pavucontrol

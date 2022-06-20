@@ -189,7 +189,7 @@ wpgConfig(){
 	}	
 	
 pick(){
-	wal=$(sxiv -t -o -r -b -g $(echo 900x700+$xl+$yl) ~/Pictures/Wallpapers | xargs)
+	wal=$(sxiv -t -o -r -b ~/Pictures/Wallpapers | xargs)
 	fixed=$(echo "$wal" | sed 's/ /\\ /g')
 	echo $fixed
 	wpg -s $fixed
@@ -203,9 +203,9 @@ main(){
 	check pywalfox update 
 	check openbox --reconfigure 
 	check wal-telegram --wal 
-	check spicetify update 
-	phoneWal
+	check spicetify update  
 	check betterlockscreen -u $wallpaper
+	phoneWal &
 	}
 
 ## Check if wpg is installed and get colors

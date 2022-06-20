@@ -24,17 +24,15 @@ changeTheme(){
 	cp -r $DIR/.icons ~/
 	}
 
-minimal(){
-		sudo pacman -S - < minimal.txt
-	}
-
 wpgtk(){
 	sh $DIR/.scripts/wpgtk 
 	cp $DIR/background.jpg ~/.config/wpg/wallpapers/wallpaper.jpg
 	wpg -m
 	sh $DIR/.scripts/wpgtk lockWal
+	}
 
-
+minimal(){
+		sudo yay -S - < minimal.txt
 	}
 
 aur(){
