@@ -115,6 +115,7 @@ change_colors() {
 }
 
 ## Check if all the required apps are installed and install the missing ones
+# this functin is kind of useless 
 apps=(betterlockscreen wal-telegram spicetify pywalfox openbox\
 	 aniwrapper polybar rofi zathura geany alacritty dunst betterdiscordctl)
 
@@ -158,7 +159,7 @@ phoneWal(){
 		$HOME/.config/wpg/wallpapers/wallpaper.jpg && kdeconnect-cli -d $deviceID --ping 
 		exit 0
 	else 
-		echo "kde connect is not installed"
+		echo "KDE Connect is not installed"
 	fi
 	}
 
@@ -182,14 +183,18 @@ check(){
 	fi
 	}
 	
+# change the wpg config file so this script can run whenever wpg is invoked 
 wpgConfig(){
 	sed -i -e 's/execute_cmd = false/execute_cmd = true/g' ~/.config/wpg/wpg.conf
 	sed -i -e 's/auto_adjust = false/auto_adjust = true/g' ~/.config/wpg/wpg.conf
 	sed -i -e "s/command = .*/command = \/home\/$(whoami)\/.scripts\/wpgtk main/g" ~/.config/wpg/wpg.conf
 	}	
-	
+
+# this function uses implements a sxiv to create a wallpaper selector for wpg 
+# to set a wallpaper you should select a wallpaper by pressing "m" and then quitting the sxiv
 pick(){
 	wal=$(sxiv -t -o -r -b ~/Pictures/Wallpapers | xargs)
+	echo $wal
 	fixed=$(echo "$wal" | sed 's/ /\\ /g')
 	echo $fixed
 	wpg -s $fixed
@@ -210,50 +215,57 @@ main(){
 
 ## Check if wpg is installed and get colors
 if [[ -f "/usr/bin/wpg" ]]; then
-	
-	## Import colors from wal
-	. "$HOME/.cache/wal/colors.sh"
+	## check if the files exists and import colors from wpg
+	if [[ -f "$HOME/.cache/wal/colors.sh" ]]; then
+		. "$HOME/.cache/wal/colors.sh"
+		# Normal colors
+		BG=`printf "%s\n" "$background"`
+		ST=`printf "%s\n" "$background"`
+		FG=`printf "%s\n" "$foreground"`
+		FGA=`printf "%s\n" "$foreground"`
+		black=`printf "%s\n" "$color0"`
+		red=`printf "%s\n" "$color1"`
+		green=`printf "%s\n" "$color2"`
+		yellow=`printf "%s\n" "$color3"`
+		blue=`printf "%s\n" "$color4"`
+		magenta=`printf "%s\n" "$color5"`
+		cyan=`printf "%s\n" "$color6"`
+		white=`printf "%s\n" "$color7"`
+		# Bright colors
+		bright_black=`printf "%s\n" "$color8"`
+		bright_red=`printf "%s\n" "$color9"`
+		bright_green=`printf "%s\n" "$color10"`
+		bright_yellow=`printf "%s\n" "$color11"`
+		bright_blue=`printf "%s\n" "$color12"`
+		bright_magenta=`printf "%s\n" "$color13"`
+		bright_cyan=`printf "%s\n" "$color14"`
+		bright_white=`printf "%s\n" "$color15"`
+		# check if the image is a png file and convert it to jpg and then copy it to the directory
+		if [ "$(echo $(file --extension $wallpaper | sed -e 's/.*://'))" = "png" ]; then
+			cp $wallpaper ~/.config/wpg/wallpapers/ && 
+			mogrify -format jpg ~/.config/wpg/wallpapers/$(echo "$wallpaper" | rev |cut -f1 -d "/" | rev | cut -f1 -d ".").png &&
+			rm ~/.config/wpg/wallpapers/$(echo "$wallpaper" | rev |cut -f1 -d "/" | rev) &&
+			cp ~/.config/wpg/wallpapers/$(echo "$wallpaper" | rev |cut -f1 -d "/" | rev | cut -f1 -d ".").jpg ~/.config/wpg/wallpapers/wallpaper.jpg &&
+			rm ~/.config/wpg/wallpapers/$(echo "$wallpaper" | rev |cut -f1 -d "/" | rev | cut -f1 -d ".").jpg
+		else	
+			# copy the current wallpaper so it can be used with kdeconnect and sddm and grub
+			cp $wallpaper ~/.config/wpg/wallpapers/wallpaper.jpg
+		fi
+		
+		# merging the Xresources files with the main one
+		xrdb -merge ~/.cache/wal/colors.Xresources
+		#rescaling the image to 16:9 so it works with grub
+		convert -resize 1920x1080! ~/.config/wpg/wallpapers/wallpaper.jpg ~/.config/wpg/wallpapers/wallpaper-1.jpg
+		
 
-	# Normal colors
-	BG=`printf "%s\n" "$background"`
-	ST=`printf "%s\n" "$background"`
-	FG=`printf "%s\n" "$foreground"`
-	FGA=`printf "%s\n" "$foreground"`
-	black=`printf "%s\n" "$color0"`
-	red=`printf "%s\n" "$color1"`
-	green=`printf "%s\n" "$color2"`
-	yellow=`printf "%s\n" "$color3"`
-	blue=`printf "%s\n" "$color4"`
-	magenta=`printf "%s\n" "$color5"`
-	cyan=`printf "%s\n" "$color6"`
-	white=`printf "%s\n" "$color7"`
-	# Bright colors
-	bright_black=`printf "%s\n" "$color8"`
-	bright_red=`printf "%s\n" "$color9"`
-	bright_green=`printf "%s\n" "$color10"`
-	bright_yellow=`printf "%s\n" "$color11"`
-	bright_blue=`printf "%s\n" "$color12"`
-	bright_magenta=`printf "%s\n" "$color13"`
-	bright_cyan=`printf "%s\n" "$color14"`
-	bright_white=`printf "%s\n" "$color15"`
-	if [ "$(echo $(file --extension $wallpaper | sed -e 's/.*://'))" = "png" ]; then
-		cp $wallpaper ~/.config/wpg/wallpapers/ && 
-		mogrify -format jpg ~/.config/wpg/wallpapers/$(echo "$wallpaper" | rev |cut -f1 -d "/" | rev | cut -f1 -d ".").png &&
-		rm ~/.config/wpg/wallpapers/$(echo "$wallpaper" | rev |cut -f1 -d "/" | rev) &&
-		cp ~/.config/wpg/wallpapers/$(echo "$wallpaper" | rev |cut -f1 -d "/" | rev | cut -f1 -d ".").jpg ~/.config/wpg/wallpapers/wallpaper.jpg &&
-		rm ~/.config/wpg/wallpapers/$(echo "$wallpaper" | rev |cut -f1 -d "/" | rev | cut -f1 -d ".").jpg
-
-	else	
-		cp $wallpaper ~/.config/wpg/wallpapers/wallpaper.jpg
-	fi
-	xrdb -merge ~/.cache/wal/colors.Xresources
-	convert -resize 1920x1080! ~/.config/wpg/wallpapers/wallpaper.jpg ~/.config/wpg/wallpapers/wallpaper-1.jpg
+	fi 
 	
 else
 	echo "[!] 'wpgtk' is not installed."
 	echo "Installing from the AUR..." 
 	yay -S wpgtk-git
 	wpgConfig
+	# this command installed rofi, gtk, and openbox themes
 	wpg-install.sh -r -g -o
 fi
 

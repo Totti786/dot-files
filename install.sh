@@ -32,7 +32,7 @@ wpgtk(){
 	}
 
 minimal(){
-		sudo yay -S - < minimal.txt
+		yay -S - < minimal.txt
 	}
 
 aur(){
