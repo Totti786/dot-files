@@ -44,6 +44,13 @@ full(){
 	}
 	
 install(){
+	minimal
+	moveConfigs
+	aur	
+	changeTheme
+	wpgtk
+	}
+installFull(){
 	sh $DIR/zsh/zsh.sh
 	cd grub && sudo sh $DIR/grub/grub.sh && cd $DIR
 	cd sddm && sh $DIR/sddm/sddm.sh && cd $DIR
