@@ -11,7 +11,7 @@ for _prs in "${_ps[@]}"; do
 done
 
 ## Polkit agent
-/usr/lib/xfce-polkit/xfce-polkit &
+#/usr/lib/xfce-polkit/xfce-polkit &
 
 ## Dunst
 dunst &
@@ -59,7 +59,7 @@ exec touchegg &
 exec discord &
 
 ## Trackma Launch
-exec trackma-gtk 
+exec trackma-gtk &
 
 ## KDE Conenct
 exec kdeconnect-indicator &

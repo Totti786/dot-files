@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!-- ################################ General Settings ################################ --><openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
+<?xml version="1.0"?>
+<!-- ################################ General Settings ################################ -->
+<openbox_config xmlns="http://openbox.org/3.4/rc" xmlns:xi="http://www.w3.org/2001/XInclude">
   <resistance>
     <strength>10</strength>
     <screen_edge_strength>20</screen_edge_strength>
@@ -655,7 +657,7 @@
     <!-- Blueman -->
     <keybind key="W-S-b">
       <action name="Execute">
-        <command>blueman-manager</command>
+        <command>rofi-bluetooth</command>
       </action>
     </keybind>
     <!-- Dmenu -->
@@ -1016,7 +1018,8 @@ s      <mousebind action="Press" button="A-Right"><action name="ShowMenu"><menu>
       <size>
         <width>50%</width>
       </size>
-    <decor>no</decor></application>
+      <decor>no</decor>
+    </application>
     <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.
@@ -1111,7 +1114,12 @@ s      <mousebind action="Press" button="A-Right"><action name="ShowMenu"><menu>
 
   # end of the example
 -->
-  <application name="org.pwmt.zathura" class="Zathura" title="org.pwmt.zathura" type="normal"><decor>no</decor><layer>default</layer><maximized>yes</maximized></application>
+    <application name="org.pwmt.zathura" class="Zathura" title="org.pwmt.zathura" type="normal">
+      <decor>no</decor>
+      <layer>default</layer>
+      <maximized>yes</maximized>
+    </application>
   </applications>
-</openbox_config><!-- vim:sw=2
+</openbox_config>
+<!-- vim:sw=2
 -->
