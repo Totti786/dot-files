@@ -1,6 +1,6 @@
 #!/bin/python
 # -*- coding: utf-8 -*-
-
+ 
 # Procedure
 # Surf to https://openweathermap.org/city
 # Fill in your CITY
@@ -13,12 +13,13 @@
 # LANG included thanks to krive001 on discord
 
 
+
 import requests
-CITY = "169389"
-API_KEY = "9db8910d883726866ecc1dac1216708d"
+CITY = "ADD CITY ID HERE"
+API_KEY = "Add API HERE"
 UNITS = "metric"
 UNIT_KEY = "C"
-LANG = "de"
+LANG = "en"
 
 
 REQ = requests.get("http://api.openweathermap.org/data/2.5/weather?id={}&lang={}&appid={}&units={}".format(CITY, LANG,  API_KEY, UNITS))
