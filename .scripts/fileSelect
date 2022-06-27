@@ -1,0 +1,2 @@
+file=$(yad --title="Choose File" --center --geometry 800x500 --file)
+zathura $file

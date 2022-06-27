@@ -6,6 +6,14 @@ theme="arch"
 # TODO add a feature that check the window manager and disables it 
 # grep 'ExecStart=' /etc/systemd/system/display-manager.service | cut -f2 -d  "="
 
+changeDM(){
+current=$(grep 'ExecStart=' /etc/systemd/system/display-manager.service | cut -f2 -d  "=")
+  
+
+
+
+}
+
 installSDDM(){
 if command -v sddm &> /dev/null; then
 	if [ -d "/usr/share/sddm/themes/$theme" ]; then  

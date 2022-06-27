@@ -9,8 +9,6 @@ NFILE="$HOME/.config/dunst/dunstrc"
 GFILE="$HOME/.config/geany/colorschemes/darcula.conf"
 ZFILE="$HOME/.config/zathura/zathurarc"
 GZFILE="$HOME/.config/zathura/genzathurarc"
-ASFILE="$HOME/.cache/wal/colors-rofi-dark.rasi"
-AFILE="$HOME/.config/aniwrapper/themes/aniwrapper.rasi"
 
 ## Change colors
 change_colors() {
@@ -19,8 +17,8 @@ change_colors() {
 	cat > $PFILE <<- EOF
 		[color]
 		;; main colors
-		background = ${BG}
-		systemtray = ${ST}
+		background = ${BG}97
+		systemtray = ${ST}97
 		foreground = $FG
 		primary = $FG
 		red = $red
@@ -99,9 +97,6 @@ change_colors() {
 	# zathura
 	$GZFILE > $ZFILE
 		
-	# aniwrapper 
-	cat $ASFILE > $AFILE
-	
 	# spotify
 	# Spotify can be themed using the xrdb backend i.e. ${xrdb:color0:#222}
 	

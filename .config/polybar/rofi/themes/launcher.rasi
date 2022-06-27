@@ -15,6 +15,7 @@ configuration {
     display-drun: 					"";
     display-filebrowser:     		"";
     display-calc:     	   			"";
+    display-emoji:     	   			"";
     display-combi: 					"";
 }
 
