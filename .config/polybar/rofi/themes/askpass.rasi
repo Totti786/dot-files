@@ -7,7 +7,6 @@
 * {
     background-color:       @background;
     text-color:             @foreground;
-	font:				 	"JetBrains Mono Medium 10";
 }
 
 window {

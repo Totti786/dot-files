@@ -109,30 +109,6 @@ change_colors() {
 	
 }
 
-## Check if all the required apps are installed and install the missing ones
-# this functin is kind of useless 
-apps=(betterlockscreen wal-telegram spicetify pywalfox openbox\
-	 aniwrapper polybar rofi zathura geany alacritty dunst betterdiscordctl)
-
-checkApps(){
-	for _apps in "${apps[@]}"; do
-		let i++
-		if ! command -v $_apps &> /dev/null; then
-			apps1+=("$_apps ")			
-		else 
-			if [[ $i = "${#apps[@]}" ]]; then 
-				main
-				break		
-			fi
-		fi
-	done
-	
-	if [[ "${#apps1[@]}" > 0 ]]; then
-		yay -S ${apps1[@]} && checkApps
-		exit 0
-	fi
-	}
-
 ## Change the wallpaper for both sddm and grub 
 # this function only works with the themes included in the install script 
 lockWal(){
@@ -173,8 +149,8 @@ kill(){
 check(){
 	if command -v $1 &> /dev/null; then 
 		$1 $2 $3
-	#else 
-		#echo " $1 is not installed"
+	else 
+		echo " $1 is not installed"
 	fi
 	}
 	
@@ -188,11 +164,8 @@ wpgConfig(){
 # this function uses implements a sxiv to create a wallpaper selector for wpg 
 # to set a wallpaper you should select a wallpaper by pressing "m" and then quitting the sxiv
 pick(){
-	wal=$(sxiv -t -o -r -b ~/Pictures/Wallpapers | xargs)
-	echo $wal
-	fixed=$(echo "$wal" | sed 's/ /\\ /g')
-	echo $fixed
-	wpg -s $fixed
+	wal=$(sxiv -t -o -r -b ~/Pictures/Wallpapers )
+	wpg -s "$wal"
 	}	
 	
 main(){
@@ -200,7 +173,6 @@ main(){
 	sh ~/.config/polybar/launch.sh 
 	kill &
 	check razer-cli -a &
-	check pywalfox update 
 	check openbox --reconfigure 
 	check wal-telegram --wal 
 	check spicetify update  
@@ -249,7 +221,7 @@ if [[ -f "/usr/bin/wpg" ]]; then
 		
 		# merging the Xresources files with the main one
 		xrdb -merge ~/.cache/wal/colors.Xresources
-		#rescaling the image to 16:9 so it works with grub
+		# rescaling the image to 16:9 so it works with grub
 		convert -resize 1920x1080! ~/.config/wpg/wallpapers/wallpaper.jpg ~/.config/wpg/wallpapers/wallpaper-1.jpg
 		
 
@@ -260,7 +232,7 @@ else
 	echo "Installing from the AUR..." 
 	yay -S wpgtk-git
 	wpgConfig
-	# this command installed rofi, gtk, and openbox themes
+	# this command installs rofi, gtk, and openbox themes
 	wpg-install.sh -r -g -o
 fi
 

@@ -41,10 +41,6 @@ exec sh ~/.config/polybar/launch.sh &
 ## Excute Screenshot script
 exec sh ~/.scripts/check.sh &
 
-## Start mpd
-exec mpd &
-exec mpd-mpris &
-
 ## Thunar Daemon
 exec thunar --daemon &
 
@@ -56,7 +52,7 @@ exec touchegg &
 exec discord &
 
 ## Trackma Launch
-exec trackma-gtk 
+exec trackma-gtk &
 
 ## KDE Conenct
 exec kdeconnect-indicator &

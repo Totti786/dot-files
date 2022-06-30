@@ -71,6 +71,10 @@
       <name>4</name>
       <name>5</name>
       <name>6</name>
+      <name>7</name>
+      <name>8</name>
+      <name>9</name>
+      <name>10</name>
     </names>
     <popupTime>0</popupTime>
   </desktops>
@@ -133,6 +137,26 @@
     <keybind key="W-6">
       <action name="GoToDesktop">
         <to>6</to>
+      </action>
+    </keybind>
+    <keybind key="W-7">
+      <action name="GoToDesktop">
+        <to>7</to>
+      </action>
+    </keybind>
+    <keybind key="W-8">
+      <action name="GoToDesktop">
+        <to>8</to>
+      </action>
+    </keybind>
+    <keybind key="W-9">
+      <action name="GoToDesktop">
+        <to>9</to>
+      </action>
+    </keybind>
+    <keybind key="W-0">
+      <action name="GoToDesktop">
+        <to>10</to>
       </action>
     </keybind>
     <!-- Move application to specific desktop -->
@@ -271,7 +295,7 @@
     <keybind key="A-c">
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
-        <x>-1</x>
+        <x>-0.5</x>
         <y>31</y>
         <height>97%</height>
         <width>33%</width>

@@ -44,10 +44,6 @@ copyq --start-server &
 ## Excute Screenshot script
 exec sh ~/.scripts/check.sh &
 
-## Start mpd
-exec mpd &
-exec mpd-mpris &
-
 ## Thunar Daemon
 exec thunar --daemon &
 
