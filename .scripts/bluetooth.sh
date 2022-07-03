@@ -1,6 +1,6 @@
 #!/usr/bin/env bash 	
 
-device=$(bluetoothctl devices | head -n1 | sed -r 's/.{12}$//g' | sed 's/Device //g')
+device=$(bluetoothctl devices | head -n1 | cut -d " " -f2)
 
 toggle(){
 	if [[ $(bluetoothctl info) = "Missing device address argument" ]]; then
@@ -11,9 +11,10 @@ toggle(){
 	}
 
 main(){
-if command -v bluetoothctl; then
-	if [[ $(bluetooth) = "bluetooth = on" ]]; then
+if command -v bluetoothctl &> /dev/null; then
+	if bluetoothctl show | grep -q "Powered: yes"; then
 		 toggle	
+		   bluetoothctl power on >> /dev/null
 	else 
 		bluetoothctl power on
 		main

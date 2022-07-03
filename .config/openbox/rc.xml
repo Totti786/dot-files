@@ -33,7 +33,7 @@
     <font place="InactiveWindow">
       <name>JetBrains Mono</name>
       <size>9</size>
-      <weight>Normal</weight>
+      <weight>Bold</weight>
       <slant>Normal</slant>
     </font>
     <font place="MenuHeader">
@@ -45,7 +45,7 @@
     <font place="MenuItem">
       <name>JetBrains Mono</name>
       <size>9</size>
-      <weight>Normal</weight>
+      <weight>Bold</weight>
       <slant>Normal</slant>
     </font>
     <font place="ActiveOnScreenDisplay">

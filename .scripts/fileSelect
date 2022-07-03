@@ -1,2 +1,3 @@
-file=$(yad --title="Choose File" --center --geometry 800x500 --file)
-zathura $file
+#!/bin/bash
+ 
+name=$(bluetoothctl devices | head -n1 | cut -d " " -f3,4,5)

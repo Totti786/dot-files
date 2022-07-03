@@ -82,7 +82,9 @@ change_colors() {
 	sed -i -e "s/--settings-icon-color: #.*/--settings-icon-color: ${FG};/g" $DFILE
 	sed -i -e "s/--background-1: #.*/--background-1: ${BG};/g" $DFILE
 	sed -i -e "s/--background-2: #.*/--background-2: ${BG};/g" $DFILE
+	sed -i -e "s/--background-modifier-hover: #.*/--background-modifier-hover: ${blue};/g" $DFILE
 	sed -i -e "s/--background-accent: #.*/--background-accent: ${BG};/g" $DFILE
+	sed -i -e "s/--button-destructive: #.*/--button-destructive: ${yellow};/g" $DFILE
 	sed -i -e "s/--button-background-hover: #.*/--button-background-hover: ${red};/g" $DFILE
 	sed -i -e "s/--tab-selected: #.*/--tab-selected: ${blue};/g" $DFILE
 	sed -i -e "s/--text-muted: #.*/--text-muted: ${FG};/g" $DFILE
@@ -103,6 +105,7 @@ change_colors() {
 	# geany
 	sed -i -e "s/bg=#.*/bg=${BG}/g" $GFILE
 	sed -i -e "s/fg=#.*/fg=${FG}/g" $GFILE
+	sed -i -e "s/fold_bg_grey=#.*/fold_bg_grey=${bright_cyan}/g" $GFILE
 	sed -i -e "s/margin_bg_grey=#.*/margin_bg_grey=${black}/g" $GFILE
 	
 
@@ -150,7 +153,7 @@ check(){
 	if command -v $1 &> /dev/null; then 
 		$1 $2 $3
 	else 
-		echo " $1 is not installed"
+		echo "$1 is not installed"
 	fi
 	}
 	
@@ -164,8 +167,12 @@ wpgConfig(){
 # this function uses implements a sxiv to create a wallpaper selector for wpg 
 # to set a wallpaper you should select a wallpaper by pressing "m" and then quitting the sxiv
 pick(){
-	wal=$(sxiv -t -o -r -b ~/Pictures/Wallpapers )
+	wal=$(sxiv -t -o -r -b ~/Pictures/Wallpapers)
+	if [ -z "$wal" ]; then
+	echo "No image was selected"
+	else 
 	wpg -s "$wal"
+	fi
 	}	
 	
 main(){

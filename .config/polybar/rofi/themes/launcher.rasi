@@ -16,6 +16,7 @@ configuration {
     display-filebrowser:     		"";
     display-calc:     	   			"";
     display-emoji:     	   			"";
+    display-clipboard:     	   		"";
     display-combi: 					"";
 }
 
