@@ -68,7 +68,6 @@
 				</item>
 			</menu>
 			<menu id="CompositingPipeMenu" execute="&pipes;/compositor" label="Compositor"/>
-			<menu id="XrandrPipeMenu" execute="&pipes;/randr" label="Display / Monitor"/>
 			<separator/>
 			<menu id="FontPipeMenu" execute="&pipes;/change-fonts" label="Change Font"/>
 			<separator/>

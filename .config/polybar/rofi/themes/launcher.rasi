@@ -3,6 +3,7 @@
 
 configuration {
     location: 						0;
+    background-color:             	@background;
     fixed-num-lines: 				true;
     show-icons: 					true;
     sidebar-mode: 					true;

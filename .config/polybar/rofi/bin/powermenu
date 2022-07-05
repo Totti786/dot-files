@@ -23,22 +23,18 @@ chosen="$(echo -e "$options" | $rofi_command -p "UP - $uptime" -dmenu -selected-
 case $chosen in
     $shutdown)
 		ans=$($HOME/.config/polybar/rofi/bin/confirm &)
-		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+		if [[ $ans == "Yes" ]]; then
 			systemctl poweroff
-		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+		elif [[ $ans == "No" ]]; then
 			exit
-        else
-			rofi -theme ~/.config/polybar/rofi/themes/askpass.rasi -e "$_msg"
         fi
         ;;
     $reboot)
 		ans=$($HOME/.config/polybar/rofi/bin/confirm &)
-		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+		if [[ $ans == "Yes" ]]; then
 			systemctl reboot
-		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+		elif [[ $ans == "No" ]]; then
 			exit
-        else
-			rofi -theme ~/.config/polybar/rofi/themes/askpass.rasi -e "$_msg"
         fi
         ;;
     $lock)
@@ -46,20 +42,18 @@ case $chosen in
         ;;
     $suspend)
 		ans=$($HOME/.config/polybar/rofi/bin/confirm &)
-		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+		if [[ $ans == "Yes" ]]; then
 			mpc -q pause
 			playerctl -a stop 
 			amixer set Master mute
 			betterlockscreen --suspend
-		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+		elif [[ $ans == "No" ]]; then
 			exit
-        else
-			rofi -theme ~/.config/polybar/rofi/themes/askpass.rasi -e "$_msg"
         fi
         ;;
     $logout)
 		ans=$($HOME/.config/polybar/rofi/bin/confirm &)
-		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+		if [[ $ans == "Yes" ]]; then
 			if [[ $current_desktop == "Openbox" ]]; then
 				openbox --exit
 			elif [[ $current_desktop == "i3" ]]; then
@@ -67,10 +61,8 @@ case $chosen in
 			elif [[ $current_desktop == "bspwm" ]]; then
 				bspc quit
 			fi
-		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+		elif [[ $ans == "No" ]]; then
 			exit
-        else
-			rofi -theme ~/.config/polybar/rofi/themes/askpass.rasi -e "$_msg"
         fi
         ;;
 esac
