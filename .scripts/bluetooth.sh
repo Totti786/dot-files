@@ -11,7 +11,7 @@ toggle(){
 	}
 
 main(){
-if command -v bluetoothctl &> /dev/null; then
+#if command -v bluetoothctl &> /dev/null; then
 	if bluetoothctl show | grep -q "Powered: yes"; then
 		 toggle	
 		   bluetoothctl power on >> /dev/null
@@ -19,9 +19,9 @@ if command -v bluetoothctl &> /dev/null; then
 		bluetoothctl power on
 		main
 	fi
-else 
-	echo "bluetoothctl not installed"
-	exit 0
-fi
+#else 
+	#echo "bluetoothctl not installed"
+	#exit 0
+#fi
 }
 main

@@ -43,7 +43,7 @@
 
     frame_width = 0
 
-    frame_color = "#54718A"
+    frame_color = "#346A71"
 
     separator_color = frame
 
@@ -84,19 +84,19 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#03060E"
-    foreground = "#e9c5c9"
+    background = "#0F131C"
+    foreground = "#9fc6c7"
     highlight  = "#b6beca"
     timeout = 6
 
 [urgency_normal]
-    background = "#03060E"
-    foreground = "#e9c5c9"
+    background = "#0F131C"
+    foreground = "#9fc6c7"
     highlight  = "#b6beca"
     timeout = 6
 
 [urgency_critical]
-    background = "#03060E"
-    foreground = "#e9c5c9"
+    background = "#0F131C"
+    foreground = "#9fc6c7"
     highlight  = "#b6beca"
     timeout = 10

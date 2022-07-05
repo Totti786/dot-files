@@ -1,20 +1,21 @@
 #!/bin/bash
 
 # Color files
-ALFILE="$HOME/.config/alacritty/colors.yml"
-PFILE="$HOME/.config/polybar/colors.ini"
-RFILE="$HOME/.config/polybar/rofi/themes/colors.rasi"
-DFILE="$HOME/.config/BetterDiscord/data/stable/custom.css"
-NFILE="$HOME/.config/dunst/dunstrc"
-GFILE="$HOME/.config/geany/colorschemes/darcula.conf"
-ZFILE="$HOME/.config/zathura/zathurarc"
-GZFILE="$HOME/.config/zathura/genzathurarc"
+alacritty="$HOME/.config/alacritty/colors.yml"
+polybar="$HOME/.config/polybar/colors.ini"
+rofi="$HOME/.config/polybar/rofi/themes/colors.rasi"
+discord="$HOME/.config/BetterDiscord/data/stable/custom.css"
+dunst="$HOME/.config/dunst/dunstrc"
+geany="$HOME/.config/geany/colorschemes/darcula.conf"
+zathura="$HOME/.config/zathura/zathurarc"
+gzathura="$HOME/.config/zathura/genzathurarc"
+Wallpapers="$HOME/Pictures/Wallpapers"
 
 ## Change colors
 change_colors() {
 	
 	# polybar	
-	cat > $PFILE <<- EOF
+	cat > $polybar <<- EOF
 		[color]
 		;; main colors
 		background = ${BG}97
@@ -32,7 +33,7 @@ change_colors() {
 		EOF
 		
 	# rofi
-	cat > $RFILE <<- EOF
+	cat > $rofi <<- EOF
 	/* colors */
 	* {
 		background:       ${BG}FF; 
@@ -47,7 +48,7 @@ change_colors() {
 		EOF
 	
 	# alacritty 
-	cat > $ALFILE <<- EOF 
+	cat > $alacritty <<- EOF 
 	#Colors 
 	colors:
 	  primary:
@@ -77,36 +78,36 @@ change_colors() {
 	EOF
 	
 	# discord
-	if [[ -f $DFILE ]]; then 
+	if [[ -f $discord ]]; then 
 	sed -i -e "s/--accent-color: #.*/--accent-color: ${FG};/g" $DFILE
-	sed -i -e "s/--settings-icon-color: #.*/--settings-icon-color: ${FG};/g" $DFILE
-	sed -i -e "s/--background-1: #.*/--background-1: ${BG};/g" $DFILE
-	sed -i -e "s/--background-2: #.*/--background-2: ${BG};/g" $DFILE
-	sed -i -e "s/--background-modifier-hover: #.*/--background-modifier-hover: ${blue};/g" $DFILE
-	sed -i -e "s/--background-accent: #.*/--background-accent: ${BG};/g" $DFILE
-	sed -i -e "s/--button-destructive: #.*/--button-destructive: ${yellow};/g" $DFILE
-	sed -i -e "s/--button-background-hover: #.*/--button-background-hover: ${red};/g" $DFILE
-	sed -i -e "s/--tab-selected: #.*/--tab-selected: ${blue};/g" $DFILE
-	sed -i -e "s/--text-muted: #.*/--text-muted: ${FG};/g" $DFILE
+	sed -i -e "s/--settings-icon-color: #.*/--settings-icon-color: ${FG};/g" $discord
+	sed -i -e "s/--background-1: #.*/--background-1: ${BG};/g" $discord
+	sed -i -e "s/--background-2: #.*/--background-2: ${BG};/g" $discord
+	sed -i -e "s/--background-modifier-hover: #.*/--background-modifier-hover: ${blue};/g" $discord
+	sed -i -e "s/--background-accent: #.*/--background-accent: ${BG};/g" $discord
+	sed -i -e "s/--button-destructive: #.*/--button-destructive: ${yellow};/g" $discord
+	sed -i -e "s/--button-background-hover: #.*/--button-background-hover: ${red};/g" $discord
+	sed -i -e "s/--tab-selected: #.*/--tab-selected: ${blue};/g" $discord
+	sed -i -e "s/--text-muted: #.*/--text-muted: ${FG};/g" $discord
 	fi 
 	
 	# dunst
-	sed -i -e "s/background = \"#.*\"/background = \"${BG}\"/g" $NFILE
-	sed -i -e "s/foreground = \"#.*\"/foreground = \"${FG}\"/g" $NFILE
-	sed -i -e "s/highlight = \"#.*\"/highlight = \"${FG}\"/g" $NFILE
-	sed -i -e "s/frame_color = \"#.*\"/frame_color = \"${yellow}\"/g" $NFILE
+	sed -i -e "s/background = \"#.*\"/background = \"${BG}\"/g" $dunst
+	sed -i -e "s/foreground = \"#.*\"/foreground = \"${FG}\"/g" $dunst
+	sed -i -e "s/highlight = \"#.*\"/highlight = \"${FG}\"/g" $dunst
+	sed -i -e "s/frame_color = \"#.*\"/frame_color = \"${yellow}\"/g" $dunst
 
 	# zathura
-	$GZFILE > $ZFILE
+	$gzathura > $zathura
 		
 	# spotify
 	# Spotify can be themed using the xrdb backend i.e. ${xrdb:color0:#222}
 	
 	# geany
-	sed -i -e "s/bg=#.*/bg=${BG}/g" $GFILE
-	sed -i -e "s/fg=#.*/fg=${FG}/g" $GFILE
-	sed -i -e "s/fold_bg_grey=#.*/fold_bg_grey=${bright_cyan}/g" $GFILE
-	sed -i -e "s/margin_bg_grey=#.*/margin_bg_grey=${black}/g" $GFILE
+	sed -i -e "s/bg=#.*/bg=${BG}/g" $geany
+	sed -i -e "s/fg=#.*/fg=${FG}/g" $geany
+	sed -i -e "s/fold_bg_grey=#.*/fold_bg_grey=${red}/g" $geany
+	sed -i -e "s/margin_bg_grey=#.*/margin_bg_grey=${black}/g" $geany
 	
 
 	
@@ -167,7 +168,7 @@ wpgConfig(){
 # this function uses implements a sxiv to create a wallpaper selector for wpg 
 # to set a wallpaper you should select a wallpaper by pressing "m" and then quitting the sxiv
 pick(){
-	wal=$(sxiv -t -o -r -b ~/Pictures/Wallpapers)
+	wal=$(sxiv -torb $Wallpapers)
 	if [ -z "$wal" ]; then
 	echo "No image was selected"
 	else 
@@ -185,6 +186,7 @@ main(){
 	check spicetify update  
 	check betterlockscreen -u $wallpaper
 	phoneWal &
+	exit 0
 	}
 
 ## Check if wpg is installed and get colors

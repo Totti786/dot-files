@@ -74,7 +74,7 @@
 			<separator/>
 			<item label="Change Wallpaper">
 				<action name="Execute">
-					<command>nitrogen</command>
+					<command>sh ~/.scripts/wpgtk pick</command>
 				</action>
 			</item>
 			<item label="Appearance Settings">
