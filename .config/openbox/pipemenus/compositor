@@ -7,7 +7,7 @@
 
 # User's config dir
 dir="$HOME/.config/"
-MENUS_LIBDIR="$HOME/.config/openbox/menulib"
+MENUS_LIBDIR="$HOME/.config/openbox/pipemenus"
 
 # Variables and functions
 if ! . "$MENUS_LIBDIR/pipemenu.cfg" 2> /dev/null; then

@@ -1,12 +1,15 @@
 #!/usr/bin/env bash 	
 
 device=$(bluetoothctl devices | head -n1 | cut -d " " -f2)
+name=$(bluetoothctl devices | head -n1 | cut -d " " -f3,4,5)
 
 toggle(){
 	if [[ $(bluetoothctl info) = "Missing device address argument" ]]; then
-		bluetoothctl connect $device
+		bluetoothctl connect $device 
+		#&& notify-send "$name Connected"
 	else
 		bluetoothctl disconnect
+		#&& notify-send "$name Disconnected"
 	fi
 	}
 

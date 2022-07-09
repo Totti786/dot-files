@@ -11,7 +11,7 @@ dir="`xdg-user-dir PICTURES`/Screenshots"
 file="Screenshot_${time}_${geometry}.png"
 
 # Variables and functions
-MENUS_LIBDIR="$HOME/.config/openbox/menulib"
+MENUS_LIBDIR="$HOME/.config/openbox/pipemenus"
 if ! . "$MENUS_LIBDIR/pipemenu.cfg" 2> /dev/null; then
 	echo "Error: Failed to locate pipemenu.cfg in $MENUS_LIBDIR" >&2
 	exit 1

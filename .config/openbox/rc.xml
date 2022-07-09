@@ -88,8 +88,8 @@
     </popupFixedPosition>
   </resize>
   <margins>
-    <top>0</top>
-    <bottom>0</bottom>
+    <top>10</top>
+    <bottom>10</bottom>
     <left>10</left>
     <right>10</right>
   </margins>
@@ -246,6 +246,8 @@
     <keybind key="W-k">
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
+        <width>49%</width>
+        <height>48%</height>		 
         <x>-5</x>
         <y>5</y>
       </action>
@@ -254,6 +256,8 @@
     <keybind key="W-h">
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
+        <width>50%</width>
+        <height>48%</height>
         <x>5</x>
         <y>5</y>
       </action>
@@ -262,6 +266,8 @@
     <keybind key="W-j">
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
+		<width>50%</width>
+        <height>50%</height>
         <x>5</x>
         <y>-5</y>
       </action>
@@ -270,6 +276,8 @@
     <keybind key="W-l">
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
+		<width>49%</width>
+        <height>50%</height>		  
         <x>-5</x>
         <y>-5</y>
       </action>
@@ -747,8 +755,17 @@
     <keybind key="W-q">
       <action name="Close"/>
     </keybind>
+    <keybind key="A-F4">
+      <action name="ToggleOmnipresent"/>
+    </keybind>
     <keybind key="A-F5">
       <action name="Iconify"/>
+    </keybind>
+    <keybind key="A-F6">
+      <action name="ToggleDecorations"/>
+    </keybind>
+    <keybind key="A-F8">
+      <action name="ToggleAlwaysOnTop"/>
     </keybind>
     <keybind key="W-S-f">
       <action name="ToggleMaximize"/>
@@ -1024,7 +1041,7 @@ s      <mousebind action="Press" button="A-Right"><action name="ShowMenu"><menu>
   </mouse>
   <!-- ################################ Menu Settings ################################ -->
   <menu>
-    <file>menu-simple.xml</file>
+    <file>menu.xml</file>
     <hideDelay>400</hideDelay>
     <middle>no</middle>
     <submenuShowDelay>100</submenuShowDelay>

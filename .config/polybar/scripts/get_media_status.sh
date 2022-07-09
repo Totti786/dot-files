@@ -4,19 +4,6 @@
 PARENT_BAR="bottom"
 PARENT_BAR_PID=$(pgrep -a "polybar" | grep "$PARENT_BAR" | cut -d" " -f1)
 
-# Set the source audio player here.
-# Players supporting the MPRIS spec are supported.
-# Examples: spotify, vlc, chrome, mpv and others.
-# Use `playerctld` to always detect the latest player.
-# See more here: https://github.com/altdesktop/playerctl/#selecting-players-to-control
-PLAYER="%any"
-
-# Format of the information displayed
-# Eg. {{ artist }} - {{ album }} - {{ title }}
-# See more attributes here: https://github.com/altdesktop/playerctl/#printing-properties-and-metadata
-#FORMAT="{{ title }} - {{ artist }} - {{duration(position) }} "/" {{ duration(mpris:length)}}"
-FORMAT="{{ title }}: {{ artist }}"
-
 # Sends $2 as message to all polybar PIDs that are part of $1
 update_hooks() {
     while IFS= read -r id
@@ -25,7 +12,29 @@ update_hooks() {
     done < <(echo "$1")
 }
 
-PLAYERCTL_STATUS=$(playerctl --player=$PLAYER status 2>/dev/null)
+# Format of the information displayed
+# Eg. {{ artist }} - {{ album }} - {{ title }}
+# See more attributes here: https://github.com/altdesktop/playerctl/#printing-properties-and-metadata
+#FORMAT="{{ title }} - {{ artist }} - {{duration(position) }} "/" {{ duration(mpris:length)}}"
+FORMAT="{{ title }}: {{ artist }}"
+
+player(){
+Current="$(playerctl metadata --format "$FORMAT")"
+PlayerName="$(playerctl -l | head -n1 | cut -f1 -d ".")"
+	case $PlayerName in
+	  spotify) echo $Current 
+	  ;;
+	  firefox) echo $Current 
+	  ;;
+	  kdeconnect) echo $Current 
+	  ;;  
+	  rhythmbox) echo $Current 蓼
+	  ;;
+	  *) echo $Current
+	esac
+}
+
+PLAYERCTL_STATUS=$(playerctl status 2>/dev/null)
 EXIT_CODE=$?
 
 if [ $EXIT_CODE -eq 0 ]; then
@@ -41,12 +50,11 @@ else
         echo "No music is playing"
     elif [ "$STATUS" = "Paused"  ]; then
         update_hooks "$PARENT_BAR_PID" 2
-        playerctl --player=$PLAYER metadata --format "$FORMAT"
+        player
     elif [ "$STATUS" = "No player is running"  ]; then
         echo "Doesn't look like anything to me"
     else
         update_hooks "$PARENT_BAR_PID" 1
-        playerctl --player=$PLAYER metadata --format "$FORMAT"
+		player
     fi
 fi
-

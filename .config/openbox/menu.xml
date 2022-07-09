@@ -81,12 +81,12 @@
 					<command>xfce4-appearance-settings</command>
 				</action>
 			</item>
-			<item label="QT5 Settings">
+			<separator/>
+			<item label="Display Settings">
 				<action name="Execute">
-					<command>qt5ct</command>
+					<command>xfce4-display-settings</command>
 				</action>
 			</item>
-			<separator/>
 			<item label="Power Settings">
 				<action name="Execute">
 					<command>xfce4-power-manager-settings</command>
