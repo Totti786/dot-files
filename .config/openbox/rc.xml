@@ -23,7 +23,7 @@
     <name>colorbamboo</name>
     <titleLayout>LC</titleLayout>
     <keepBorder>no</keepBorder>
-    <animateIconify>no</animateIconify>
+    <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
       <name>JetBrains Mono</name>
       <size>9</size>
@@ -247,7 +247,7 @@
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
         <width>49%</width>
-        <height>48%</height>		 
+        <height>48%</height>
         <x>-5</x>
         <y>5</y>
       </action>
@@ -266,7 +266,7 @@
     <keybind key="W-j">
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
-		<width>50%</width>
+        <width>50%</width>
         <height>50%</height>
         <x>5</x>
         <y>-5</y>
@@ -276,8 +276,8 @@
     <keybind key="W-l">
       <action name="Unmaximize"/>
       <action name="MoveResizeTo">
-		<width>49%</width>
-        <height>50%</height>		  
+        <width>49%</width>
+        <height>50%</height>
         <x>-5</x>
         <y>-5</y>
       </action>

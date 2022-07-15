@@ -44,9 +44,6 @@ copyq --start-server &
 ## Excute Screenshot script
 exec sh ~/.scripts/check.sh &
 
-## Thunar Daemon
-exec thunar --daemon &
-
 ## Touchegg
 exec touchegg --daemon &
 exec touchegg &

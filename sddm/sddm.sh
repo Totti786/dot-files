@@ -8,10 +8,6 @@ theme="arch"
 
 changeDM(){
 current=$(grep 'ExecStart=' /etc/systemd/system/display-manager.service | cut -f2 -d  "=")
-  
-
-
-
 }
 
 installSDDM(){

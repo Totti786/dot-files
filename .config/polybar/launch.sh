@@ -15,15 +15,26 @@ current_desktop=$(wmctrl -m |sed -n 1p | sed -e 's/Name: //g')
 
 # Fix backlight and network modules
 fix_modules() {
+	
+	# check the graphics card and adjust the backlight module accordingly
 	if [[ -z "$CARD" ]]; then
-		sed -i -e 's/backlight/bna/g' "$DIR"/config.ini
+		sed -i -e 's/sep backlight/bna/g' "$DIR"/config.ini
 	elif [[ "$CARD" != *"intel_"* ]]; then
 		sed -i -e 's/backlight/brightness/g' "$DIR"/config.ini
+	else 
+		sed -i -e 's/bna/sep backlight/g' "$DIR"/config.ini
 	fi
 	
+	# check if device has a battery and enable battery module 
+	if [[ -z "$BATTERY" ]]; then
+		sed -i -e 's/ sep battery/ bat/g' "$DIR"/config.ini
+	else
+		sed -i -e 's/ bat/ sep battery/g' "$DIR"/config.ini
+	fi
+	
+	# check if bspwm is the curren wm and changes the workspaces module 
 	if [[ $current_desktop == "bspwm" ]]; then
 		sed -i -e 's/modules-center = workspaces/modules-center = bspwm/g' "$DIR"/config.ini
-	
 	else 
 		sed -i -e 's/modules-center = bspwm/modules-center = workspaces/g' "$DIR"/config.ini
 	fi

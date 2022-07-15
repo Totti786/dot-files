@@ -140,13 +140,17 @@ phoneWal(){
 
 ## Kill already running process
 kill(){
-	_ps=(dunst)
-	for _prs in "${_ps[@]}"; do
-		if [[ `pidof ${_prs}` ]]; then
-			killall -9 ${_prs} 
-			${_prs} 
+	#_ps=(dunst)
+	#for _prs in "${_ps[@]}"; do
+		#if [[ `pidof ${_prs}` ]]; then
+			#killall -9 ${_prs} 
+			#${_prs} 
+		#fi
+		if [[ `pidof $1` ]]; then
+			killall -9 $1
+			$1 
 		fi
-	done
+	#done
 	}
 	
 ## Check if the command exists and then runs it
@@ -179,7 +183,7 @@ pick(){
 main(){
 	change_colors 
 	sh ~/.config/polybar/launch.sh 
-	kill &
+	kill dunst &
 	check razer-cli -a &
 	check openbox --reconfigure 
 	check wal-telegram --wal 
