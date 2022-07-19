@@ -169,6 +169,7 @@ wpgConfig(){
 	sed -i -e "s/command = .*/command = \/home\/$(whoami)\/.scripts\/wpgtk main/g" ~/.config/wpg/wpg.conf
 	}	
 
+
 # this function uses implements a sxiv to create a wallpaper selector for wpg 
 # to set a wallpaper you should select a wallpaper by pressing "m" and then quitting the sxiv
 pick(){
@@ -176,7 +177,8 @@ pick(){
 	if [ -z "$wal" ]; then
 	echo "No image was selected"
 	else 
-	wpg -s "$wal"
+	wpg -A "$wal" && wpg -s "$wal"
+	rm "$wal""_wal_sample.png"
 	fi
 	}	
 	
@@ -231,7 +233,6 @@ if [[ -f "/usr/bin/wpg" ]]; then
 			# copy the current wallpaper so it can be used with kdeconnect and sddm and grub
 			cp $wallpaper ~/.config/wpg/wallpapers/wallpaper.jpg
 		fi
-		
 		# merging the Xresources files with the main one
 		xrdb -merge ~/.cache/wal/colors.Xresources
 		# rescaling the image to 16:9 so it works with grub

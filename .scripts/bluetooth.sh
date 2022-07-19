@@ -1,4 +1,4 @@
-#!/usr/bin/env bash 	
+#!/bin/bash
 
 device=$(bluetoothctl devices | head -n1 | cut -d " " -f2)
 name=$(bluetoothctl devices | head -n1 | cut -d " " -f3,4,5)
@@ -17,7 +17,7 @@ main(){
 #if command -v bluetoothctl &> /dev/null; then
 	if bluetoothctl show | grep -q "Powered: yes"; then
 		 toggle	
-		   bluetoothctl power on >> /dev/null
+		 bluetoothctl power on >> /dev/null
 	else 
 		bluetoothctl power on
 		main

@@ -39,7 +39,7 @@ prompt {
 
 textbox-prompt-colon {
 	expand: 						false;
-	str: 							"ﱘ";
+	str: 							"";
     border-radius:                  8px;
     background-color:               @on;
     text-color:                     @background;

@@ -43,13 +43,13 @@
 
     frame_width = 0
 
-    frame_color = "#B4B2B3"
+    frame_color = "#978E69"
 
     separator_color = frame
 
     sort = yes
 
-    font = Iosevka Nerd Font 10
+    font = JetBrains Mono Regular 10
 
     line_height = 0
 
@@ -84,19 +84,19 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#0b0a12"
-    foreground = "#ffede9"
+    background = "#08111B"
+    foreground = "#c9ffff"
     highlight  = "#b6beca"
     timeout = 6
 
 [urgency_normal]
-    background = "#0b0a12"
-    foreground = "#ffede9"
+    background = "#08111B"
+    foreground = "#c9ffff"
     highlight  = "#b6beca"
     timeout = 6
 
 [urgency_critical]
-    background = "#0b0a12"
-    foreground = "#ffede9"
+    background = "#08111B"
+    foreground = "#c9ffff"
     highlight  = "#b6beca"
     timeout = 10
