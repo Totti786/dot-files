@@ -106,7 +106,10 @@ change_colors() {
 	# geany
 	sed -i -e "s/bg=#.*/bg=${BG}/g" $geany
 	sed -i -e "s/fg=#.*/fg=${FG}/g" $geany
+	sed -i -e "s/tag_yellow=#.*/tag_yellow=${cyan}/g" $geany
 	sed -i -e "s/fold_bg_grey=#.*/fold_bg_grey=${red}/g" $geany
+	sed -i -e "s/keyword_orange=#.*/keyword_orange=${magenta}/g" $geany
+	sed -i -e "s/string_green=#.*/string_green=${green}/g" $geany
 	sed -i -e "s/margin_bg_grey=#.*/margin_bg_grey=${black}/g" $geany
 	
 
@@ -189,10 +192,9 @@ main(){
 	check razer-cli -a &
 	check openbox --reconfigure 
 	check wal-telegram --wal 
-	check spicetify update  
-	check betterlockscreen -u $wallpaper
+	check spicetify update 
 	phoneWal &
-	exit 0
+	check betterlockscreen -u $wallpaper
 	}
 
 ## Check if wpg is installed and get colors
